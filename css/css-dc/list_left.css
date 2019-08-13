@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.wrap {
+  width: 2rem;
+  height: 100%;
+  background-color: pink;
+  overflow: hidden; }
+  .wrap .box {
+    list-style: none; }
+  .wrap .list {
+    width: 2rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    background-color: white;
+    color: #333;
+    background-color: #eee;
+    font-size: 0.28rem;
+    list-style: none; }
+
+/*# sourceMappingURL=list_left.css.map */
