@@ -10,33 +10,12 @@
     <link rel="stylesheet" href="../../css/reset.css">
 </head>
 <div class="wrap fl">
-    <ul class="box">
-        <!-- <li class="list active">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li> -->
-    </ul>
-    <span hidden id="index">0</span>
+    <ul class="box"></ul>
 </div>
 
 <div class="content_wrap fr">
     <ul class="box">
-        <li class="item_list">
+        <!-- <li class="item_list">
             <p class="li_header">女鞋</p>
             <ul>
                 <li class="pro_list">
@@ -60,7 +39,7 @@
                     <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
     </ul>
 </div>
 
@@ -105,8 +84,58 @@
             $('.list').tap(function () {
                 var index = $(this).index() + 1;
                 $(this).addClass("active").siblings().removeClass("active");
+                right_content(index)
             });
         };
+        right_content(1)
+
+        function right_content(index) {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    index: index,
+                },
+                url: '../../php/php-dc/right_content.php',
+                error: function () {
+                    console.log(404);
+                },
+                success: function (res) {
+                    // list_content(index)
+                    var index = index
+                    var str = '';
+                    for (key in res) {
+                        // console.log(key)
+                        list_content(key)
+                        str += `
+                        <li class="item_list">
+                            <p class="li_header">${res[key].li_head}</p>
+                            <ul class="pro_content"></ul>
+                        </li>
+                        `;
+                    };
+                    $('.content_wrap>.box').html(str);
+                },
+            });
+        }
+        // list_content()
+        function list_content(key) {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    num: index,
+                    key: key,
+                },
+                url: '../../php/php-dc/list_content.php',
+                error: function () {
+                    console.log(404);
+                },
+                success: function (res) {
+                    console.log(res)
+                }
+            })
+        }
     </script>
 </body>
 
