@@ -7,36 +7,79 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/css-dc/list_left.css">
+    <link rel="stylesheet" href="../../css/reset.css">
 </head>
-    <div class="wrap">
-        <ul class="box">
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-            <li class="list">母婴专区</li>
-        </ul>
-    </div>
+<div class="wrap fl">
+    <ul class="box">
+        <li class="list active">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li>
+    </ul>
+    <span hidden id="index">0</span>
+</div>
+
+<div class="content_wrap fr">
+    <ul class="box">
+        <li class="item_list">
+            <p class="li_header">女鞋</p>
+            <ul>
+                <li class="pro_list">
+                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
+                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
+                </li>
+                <li class="pro_list">
+                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
+                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
+                </li>
+                <li class="pro_list">
+                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
+                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
+                </li>
+                <li class="pro_list">
+                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
+                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
+                </li>
+                <li class="pro_list">
+                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
+                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
 <body>
     <script src="../../js/bscroll.min.js"></script>
-    <script src="../../js/swiper-4.5.0/src/swiper.js"></script>
     <script src="../../js/rem.js"></script>
+    <script src="../../js/zepto-master/src/zepto.js"></script>
+    <script src="../../js/zepto-master/src/event.js"></script>
+    <script src="../../js/zepto-master/src/touch.js"></script>
     <script>
-        
+        var bs = new BScroll(".wrap", {
+            scrollY: true,
+            probeType: 2,
+        });
+        $('.list').tap(function () {
+            var index = $(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $('#index').html(index);
+        })
     </script>
 </body>
 
