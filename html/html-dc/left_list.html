@@ -11,7 +11,7 @@
 </head>
 <div class="wrap fl">
     <ul class="box">
-        <li class="list active">母婴专区</li>
+        <!-- <li class="list active">母婴专区</li>
         <li class="list">母婴专区</li>
         <li class="list">母婴专区</li>
         <li class="list">母婴专区</li>
@@ -29,7 +29,7 @@
         <li class="list">母婴专区</li>
         <li class="list">母婴专区</li>
         <li class="list">母婴专区</li>
-        <li class="list">母婴专区</li>
+        <li class="list">母婴专区</li> -->
     </ul>
     <span hidden id="index">0</span>
 </div>
@@ -70,16 +70,43 @@
     <script src="../../js/zepto-master/src/zepto.js"></script>
     <script src="../../js/zepto-master/src/event.js"></script>
     <script src="../../js/zepto-master/src/touch.js"></script>
+    <script src="../../js/zepto-master/src/ajax.js"></script>
     <script>
         var bs = new BScroll(".wrap", {
             scrollY: true,
             probeType: 2,
         });
-        $('.list').tap(function () {
-            var index = $(this).index();
-            $(this).addClass("active").siblings().removeClass("active");
-            $('#index').html(index);
-        })
+        left_list();
+
+        function left_list(index) {
+            var str = '';
+            $.ajax({
+                type: 'POST',
+                url: '../../php/php-dc/list-dc.php',
+                dataType: 'json',
+                error: function () {
+                    console.log('404')
+                },
+                success: function (res) {
+                    var str = '';
+                    for (key in res) {
+                        str += `
+                        <li class="list">${res[key].title}</li>
+                        `;
+                    }
+                    $('.wrap>.box').html(str);
+                    $('.box>.list:first-child').addClass('active');
+                    click();
+                },
+            });
+        };
+        // 下面是点击的时候右侧出现商品展示
+        function click() {
+            $('.list').tap(function () {
+                var index = $(this).index() + 1;
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+        };
     </script>
 </body>
 
