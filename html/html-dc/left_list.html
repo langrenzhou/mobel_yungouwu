@@ -15,9 +15,35 @@
         <i class="iconfont iconsousuokuang"></i>
         <p>搜索你想找的商品</p>
     </div>
-    <i class="iconfont iconshenglvehao iconfontActive"></i>
-    <i class="iconfont iconclose"></i>
+    <div class="more">
+        <i class="iconfont iconshenglvehao iconfontActive"></i>
+        <i class="iconfont iconclose "></i>
+    </div>
+
 </div>
+<div class="nav">
+    <div class="box">
+        <i class="iconfont iconshouye1"></i>
+        <p class="title">首页</p>
+    </div>
+    <div class="box">
+        <i class="iconfont iconsousuo"></i>
+        <p class="title">搜索</p>
+    </div>
+    <div class="box">
+        <i class="iconfont iconfenlei1"></i>
+        <p class="title">分类</p>
+    </div>
+    <div class="box">
+        <i class="iconfont icongouwuche"></i>
+        <p class="title">购物车</p>
+    </div>
+    <div class="box">
+        <i class="iconfont iconxingmingyonghumingnicheng"></i>
+        <p class="title">我的</p>
+    </div>
+</div>
+
 <div class="wrap fl">
     <ul class="box"></ul>
 </div>
@@ -33,6 +59,7 @@
     <script src="../../js/zepto-master/src/event.js"></script>
     <script src="../../js/zepto-master/src/touch.js"></script>
     <script src="../../js/zepto-master/src/ajax.js"></script>
+    <script src="../../js/zepto-master/src/fx.js"></script>
     <script>
         var bs = new BScroll(".wrap", {
             scrollY: true,
@@ -140,7 +167,31 @@
 
                 }
             })
-        }
+        };
+        // 下面是点击三个点导航的动画
+        var flag = true;
+        $(".search>.more>.iconfont").tap(function () {
+            if (flag) {
+                $(this).removeClass('iconfontActive').siblings().addClass('iconfontActive');
+                $('.nav').animate({
+                    top: '0.88rem',
+                }, 500, function () {
+                    $(this).css({
+                        zIndex: '30'
+                    })
+                });
+                flag = false;
+            } else {
+                $(this).removeClass('iconfontActive').siblings().addClass('iconfontActive');
+                $('.nav').css({
+                    zIndex: '10'
+                }).animate({
+                    top: '-2rem',
+                },500)
+
+                flag = true;
+            };
+        });
     </script>
 </body>
 
