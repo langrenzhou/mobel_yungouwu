@@ -158,9 +158,11 @@ textarea::-webkit-input-placeholder {
     clear: both;
     visibility: hidden;
 }
-.fl{
+
+.fl {
     float: left;
 }
-.fr{
+
+.fr {
     float: right;
 }

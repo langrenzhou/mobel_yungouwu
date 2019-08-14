@@ -13,34 +13,8 @@
     <ul class="box"></ul>
 </div>
 
-<div class="content_wrap fr">
-    <ul class="box">
-        <!-- <li class="item_list">
-            <p class="li_header">女鞋</p>
-            <ul>
-                <li class="pro_list">
-                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
-                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
-                </li>
-                <li class="pro_list">
-                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
-                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
-                </li>
-                <li class="pro_list">
-                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
-                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
-                </li>
-                <li class="pro_list">
-                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
-                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
-                </li>
-                <li class="pro_list">
-                    <a href="javaScript;:"><img src="./123.jpg" alt=""></a>
-                    <a href="javaScripot:;" class="pro_title">进口乳液/面霜</a>
-                </li>
-            </ul>
-        </li> -->
-    </ul>
+<div class="content_wrap fl">
+    <ul class="box"></ul>
 </div>
 
 <body>
@@ -52,6 +26,10 @@
     <script src="../../js/zepto-master/src/ajax.js"></script>
     <script>
         var bs = new BScroll(".wrap", {
+            scrollY: true,
+            probeType: 2,
+        });
+        var bs = new BScroll(".content_wrap", {
             scrollY: true,
             probeType: 2,
         });
@@ -88,7 +66,7 @@
             });
         };
         right_content(1)
-
+        // 下面是右边的小标题ajax请求
         function right_content(index) {
             $.ajax({
                 type: 'GET',
@@ -101,39 +79,56 @@
                     console.log(404);
                 },
                 success: function (res) {
-                    // list_content(index)
-                    var index = index
+                    // console.log(index);
                     var str = '';
                     for (key in res) {
-                        // console.log(key)
-                        list_content(key)
                         str += `
-                        <li class="item_list">
+                        <li class="item_list clearfix">
                             <p class="li_header">${res[key].li_head}</p>
                             <ul class="pro_content"></ul>
                         </li>
                         `;
+                        // console.log(key)
                     };
                     $('.content_wrap>.box').html(str);
+                    list_content(index);
                 },
             });
         }
-        // list_content()
-        function list_content(key) {
+        // list_content(1)
+        // 下面是右边的商品详情请求
+        function list_content(index) {
             $.ajax({
                 type: 'GET',
                 dataType: 'json',
                 data: {
-                    num: index,
-                    key: key,
+                    num: index
                 },
-                url: '../../php/php-dc/list_content.php',
+                url: '../../php/php-dc/more_select.php',
                 error: function () {
                     console.log(404);
                 },
-                success: function (res) {
-                    console.log(res)
-                    console.log(res2)
+                success: function (pro_content) {
+                    var length = $(".content_wrap .item_list").length;
+                    for (var i = 0; i < length; i++) {
+                        content_list(i)
+                    }
+
+                    function content_list(aaa) {
+                        for (key in pro_content) {
+                            var str = '';
+                            if (pro_content[key].pro_id == aaa) {
+                                str += `
+                                <li class="pro_list">
+                    <a href="javaScript;:"><img src="${pro_content[key].img_url}" alt=""></a>
+                    <a href="javaScripot:;" class="pro_title">${pro_content[key].pro_title}</a>
+                    </li>
+                                `;
+                                $(' .item_list').eq(i).find('ul').append(str)
+                            };
+                        }
+                    }
+
                 }
             })
         }

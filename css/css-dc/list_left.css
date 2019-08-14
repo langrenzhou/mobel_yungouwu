@@ -1,57 +1,68 @@
 .wrap {
   width: 2rem;
   height: 100vh;
-  overflow: hidden; }
-  .wrap .box,
-  .wrap .list {
-    width: 2rem; }
-  .wrap .list {
-    height: 0.88rem;
-    line-height: 0.88rem;
-    text-align: center;
-    color: #333;
-    background-color: #eee;
-    font-size: 0.28rem;
-    border: 0.01rem solid #ddd;
-    border-top: none;
-    border-left: 5px solid transparent; }
+  overflow: hidden;
+}
+.wrap .box,
+.wrap .list {
+  width: 2rem;
+}
+.wrap .list {
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  color: #333;
+  background-color: #eee;
+  font-size: 0.28rem;
+  border: 0.01rem solid #ddd;
+  border-top: none;
+  border-left: 5px solid transparent;
+}
 
 .active {
   background-color: #fff !important;
   border-left: 5px solid #fe5b4a !important;
-  border-right: 1px solid transparent !important; }
+  border-right: 1px solid transparent !important;
+}
 
 .content_wrap {
   width: 5.5rem;
   height: 100vh;
-  background-color: pink; }
-  .content_wrap .box {
-    width: 5.5rem; }
+  overflow: hidden;
+}
+.content_wrap .box {
+  width: 5.5rem;
+}
 
 .item_list {
   width: 5.5rem;
-  padding: 0.2rem; }
-  .item_list .li_header {
-    font-size: 0.24rem;
-    color: #999;
-    border-left: 0.02rem solid #fe5b4a;
-    padding-left: 0.1rem;
-    font-family: "PingFangSC-Regular,Helvetica,sans-serif"; }
-  .item_list .pro_list {
-    float: left;
-    width: 1.63rem;
-    height: 1.92rem;
-    background-color: red;
-    margin-top: 0.2rem;
-    margin-left: 0.1rem;
-    text-align: center;
-    font-size: 0.24rem; }
-  .item_list .pro_list:nth-child(3n+1) {
-    margin-left: 0; }
-  .item_list .pro_list > .pro_title {
-    color: #666; }
-  .item_list .pro_list img {
-    width: 1.556rem;
-    height: 1.556rem; }
+  padding: 0.2rem;
+}
+.item_list .li_header {
+  font-size: 0.24rem;
+  color: #999;
+  border-left: 0.02rem solid #fe5b4a;
+  padding-left: 0.1rem;
+  font-family: "PingFangSC-Regular,Helvetica,sans-serif";
+}
+.item_list .pro_list {
+  float: left;
+  width: 1.63rem;
+  height: 2rem;
+  margin-top: 0.25rem;
+  margin-left: 0.1rem;
+  text-align: center;
+  font-size: 0.24rem;
+}
+.item_list .pro_list:nth-child(3n+1) {
+  margin-left: 0;
+}
+.item_list .pro_list > .pro_title {
+  color: #666;
+}
+.item_list .pro_list img {
+  width: 1.556rem;
+  height: 1.556rem;
+}
 
 /*# sourceMappingURL=list_left.css.map */

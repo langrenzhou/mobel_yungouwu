@@ -31,8 +31,7 @@
 .content_wrap {
     width: 5.5rem;
     height: 100vh;
-    background-color: pink;
-
+    overflow: hidden;
     .box {
         width: 5.5rem;
     }
@@ -53,9 +52,8 @@
     .pro_list {
         float: left;
         width: 1.63rem;
-        height: 1.92rem;
-        background-color: red;
-        margin-top: 0.2rem;
+        height: 2rem;
+        margin-top: 0.25rem;
         margin-left: 0.1rem;
         text-align: center;
         font-size: 0.24rem;
