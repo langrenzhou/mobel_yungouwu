@@ -2,8 +2,72 @@
   width: 100vw;
   height: 0.88rem;
   padding: 0 0.2rem;
-  background-color: pink;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
+  .search_box > .iconfont {
+    font-size: 0.4rem;
+    color: #666; }
+  .search_box > .input_box {
+    width: 5.45rem;
+    height: 0.64rem;
+    background-color: #f6f6f6;
+    border-radius: 0.08rem;
+    padding: 0 0.18rem;
+    justify-content: space-between;
+    display: flex;
+    align-items: center; }
+    .search_box > .input_box > .iconfont {
+      font-size: 0.28rem;
+      font-weight: 600;
+      color: #ddd; }
+    .search_box > .input_box input {
+      width: 4.2rem;
+      color: #999;
+      font-size: 0.24rem;
+      background-color: #f6f6f6;
+      outline: none;
+      border: none; }
+  .search_box .icon {
+    font-size: 0.38rem;
+    color: #999; }
+
+.rank {
+  width: 100vw;
+  height: 0.88rem;
+  border-top: 0.01rem solid #ddd;
+  border-bottom: 0.01rem solid #ddd;
+  display: flex; }
+  .rank > .box {
+    width: 25vw;
+    height: 0.88rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .rank > .box > span {
+      font-size: 0.28rem;
+      padding-right: 0.05rem;
+      color: #777; }
+    .rank > .box .iconfont {
+      color: #777; }
+    .rank > .box .icon {
+      font-size: 0.23rem; }
+
+.option {
+  width: 100vw;
+  height: 0.75rem;
+  border-bottom: 0.01rem solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .option > .box {
+    width: 1.62rem;
+    height: 0.48rem;
+    background-color: #F6F6F6;
+    border-radius: 0.08rem;
+    font-size: 0.25rem;
+    color: #777;
+    text-align: center;
+    line-height: 0.48rem; }
 
 /*# sourceMappingURL=pro_list.css.map */

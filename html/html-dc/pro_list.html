@@ -8,6 +8,7 @@
     <title>商品列表</title>
     <link rel="stylesheet" href="../../css/css-dc/pro_list.css">
     <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
     <script src="../../font/iconfont.js"></script>
     <style>
         .icon {
@@ -22,9 +23,77 @@
 
 <body>
     <div class="search_box">
+        <i class="iconfont iconico_leftarrow"></i>
+        <div class="input_box">
+            <i class="iconfont iconsousuo"></i>
+            <input type="text" placeholder="查找你喜欢的商品"></input>
+            <i class="iconfont iconguanbi1"></i>
+        </div>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#iconfenlei-copy"></use>
+        </svg>
+    </div>
+    <!-- 下面是排序选择 -->
+    <div class="rank">
+        <div class="box">
+            <span>综合</span>
+            <i class="iconfont iconrl-xiala"></i>
+        </div>
+        <div class="box">
+            <span>销量</span>
+        </div>
+        <div class="box">
+            <span>价格</span>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#iconsort"></use>
+            </svg>
+        </div>
+        <div class="box">
+            <span>筛选</span>
+            <i class="iconfont iconshaixuan"></i>
+        </div>
+    </div>
+    <!-- 下面是选项的列表 -->
+    <div class="option">
+        <div class="box">
+            <span>百联配送</span>
+        </div>
+        <div class="box">
+            <span>品牌</span>
+        </div>
+        <div class="box">
+            <span>自提</span>
+        </div>
+        <div class="box">
+            <span>促销</span>
+        </div>
+    </div>
+    <div class="wrap">
 
     </div>
     <script src="../../js/rem.js"></script>
+    <script src="../../js/zepto-master/src/zepto.js"></script>
+    <script src="../../js/zepto-master/src/touch.js"></script>
+    <script src="../../js/zepto-master/src/event.js"></script>
+    <script>
+        // 下面是调整分类
+        var classify = true;
+        $('.search_box .icon').tap(function () {
+            if (classify) {
+                $(this).find('use').attr({
+                    'xlink:href': '#iconfenlei2'
+                });
+                classify = false;
+            } else {
+                $(this).find('use').attr({
+                    'xlink:href': '#iconfenlei-copy'
+                });
+                classify = true;
+            }
+
+        });
+        // 下面是滚动效果
+    </script>
 </body>
 
 </html>

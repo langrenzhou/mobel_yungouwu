@@ -2,7 +2,98 @@
     width: 100vw;
     height: 0.88rem;
     padding: 0 0.2rem;
-    background-color: pink;
+    // background-color: pink;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    &>.iconfont {
+        font-size: 0.4rem;
+        color: #666;
+    }
+
+    &>.input_box {
+        width: 5.45rem;
+        height: 0.64rem;
+        background-color: #f6f6f6;
+        border-radius: 0.08rem;
+        padding: 0 0.18rem;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+
+        &>.iconfont {
+            font-size: 0.28rem;
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        & input {
+            width: 4.2rem;
+            color: #999;
+            font-size: 0.24rem;
+            background-color: #f6f6f6;
+            outline: none;
+            border: none;
+        }
+
+    }
+
+    & .icon {
+        font-size: 0.38rem;
+        color: #999;
+    }
+
+}
+
+// 下面是排序的模块
+.rank {
+    width: 100vw;
+    height: 0.88rem;
+    border-top: 0.01rem solid #ddd;
+    border-bottom: 0.01rem solid #ddd;
+    display: flex;
+
+    &>.box {
+        width: 25vw;
+        height: 0.88rem;
+        // background-color: pink;
+        // border-right: 0.01rem solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &>span {
+            font-size: 0.28rem;
+            padding-right: 0.05rem;
+            color: #777;
+        }
+
+        & .iconfont {
+            color: #777;
+        }
+
+        & .icon {
+            font-size: 0.23rem;
+        }
+    }
+}
+
+.option {
+    width: 100vw;
+    height: 0.75rem;
+    border-bottom: 0.01rem solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &>.box {
+        width: 1.62rem;
+        height: 0.48rem;
+        background-color: #F6F6F6;
+        border-radius: 0.08rem;
+        font-size: 0.25rem;
+        color: #777;
+        text-align: center;
+        line-height: 0.48rem;
+    }
 }
