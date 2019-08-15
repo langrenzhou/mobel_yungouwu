@@ -165,7 +165,6 @@
         & .reserved {
             height: 0.36rem;
             margin-bottom: 0.3rem;
-            background-color: pink;
         }
 
         & .discounts {
@@ -178,13 +177,48 @@
 
         & .bottom {
             height: 0.44rem;
-            background-color: pink;
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 0.2rem;
 
-            &>.price {
+            & .price {
                 font-size: 0.32rem;
                 margin-right: 0.7rem;
                 color: #FF6F6F;
+            }
+
+            & .iconfont {
+                font-size: 0.2rem;
+                color: #666;
+                margin-right: 0.1rem;
+            }
+
+            & .reply {
+                font-size: 0.15rem;
+                color: #999;
+                margin-right: 0.25rem;
+            }
+
+            & .centage {
+                font-size: 0.15rem;
+                color: #999;
+                margin-right: 0.25rem;
+            }
+
+            & .addCar {
+                width: 0.5rem;
+                height: 0.5rem;
+                display: flex;
+                align-items: center;
+                border-radius: 50%;
+                justify-content: center;
+                border: 0.01rem solid #999;
+
+                & .iconfont {
+                    font-size: 0.3rem;
+                    color: #FF4A4A;
+                }
             }
         }
     }

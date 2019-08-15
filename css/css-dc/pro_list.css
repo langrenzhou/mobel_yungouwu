@@ -120,8 +120,7 @@
       border-radius: 0.04rem; }
     .wrapper .oneList .reserved {
       height: 0.36rem;
-      margin-bottom: 0.3rem;
-      background-color: pink; }
+      margin-bottom: 0.3rem; }
     .wrapper .oneList .discounts {
       height: 0.33rem;
       font-size: 0.22rem;
@@ -130,12 +129,37 @@
       margin-bottom: 0.12rem; }
     .wrapper .oneList .bottom {
       height: 0.44rem;
-      background-color: pink;
-      display: flex; }
-      .wrapper .oneList .bottom > .price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 0.2rem; }
+      .wrapper .oneList .bottom .price {
         font-size: 0.32rem;
         margin-right: 0.7rem;
         color: #FF6F6F; }
+      .wrapper .oneList .bottom .iconfont {
+        font-size: 0.2rem;
+        color: #666;
+        margin-right: 0.1rem; }
+      .wrapper .oneList .bottom .reply {
+        font-size: 0.15rem;
+        color: #999;
+        margin-right: 0.25rem; }
+      .wrapper .oneList .bottom .centage {
+        font-size: 0.15rem;
+        color: #999;
+        margin-right: 0.25rem; }
+      .wrapper .oneList .bottom .addCar {
+        width: 0.5rem;
+        height: 0.5rem;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        justify-content: center;
+        border: 0.01rem solid #999; }
+        .wrapper .oneList .bottom .addCar .iconfont {
+          font-size: 0.3rem;
+          color: #FF4A4A; }
   .wrapper .twoList {
     width: 46vw;
     height: 6.78rem;
