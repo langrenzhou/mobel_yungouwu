@@ -22,59 +22,93 @@
 </head>
 
 <body>
-    <div class="search_box">
-        <i class="iconfont iconico_leftarrow"></i>
-        <div class="input_box">
-            <i class="iconfont iconsousuo"></i>
-            <input type="text" placeholder="查找你喜欢的商品"></input>
-            <i class="iconfont iconguanbi1"></i>
+    <div id="wrap">
+        <div class="wrap">
+            <div class="search_box">
+                <i class="iconfont iconico_leftarrow"></i>
+                <div class="input_box">
+                    <i class="iconfont iconsousuo"></i>
+                    <input type="text" placeholder="查找你喜欢的商品"></input>
+                    <i class="iconfont iconguanbi1"></i>
+                </div>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#iconfenlei-copy"></use>
+                </svg>
+            </div>
+            <!-- 下面是排序选择 -->
+            <div class="rank">
+                <div class="box">
+                    <span>综合</span>
+                    <i class="iconfont iconrl-xiala"></i>
+                </div>
+                <div class="box">
+                    <span>销量</span>
+                </div>
+                <div class="box">
+                    <span>价格</span>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#iconsort"></use>
+                    </svg>
+                </div>
+                <div class="box">
+                    <span>筛选</span>
+                    <i class="iconfont iconshaixuan"></i>
+                </div>
+            </div>
+            <!-- 下面是选项的列表 -->
+            <div class="option">
+                <div class="box">
+                    <span>百联配送</span>
+                </div>
+                <div class="box">
+                    <span>品牌</span>
+                </div>
+                <div class="box">
+                    <span>自提</span>
+                </div>
+                <div class="box">
+                    <span>促销</span>
+                </div>
+            </div>
         </div>
-        <svg class="icon" aria-hidden="true">
-            <use xlink:href="#iconfenlei-copy"></use>
-        </svg>
-    </div>
-    <!-- 下面是排序选择 -->
-    <div class="rank">
-        <div class="box">
-            <span>综合</span>
-            <i class="iconfont iconrl-xiala"></i>
-        </div>
-        <div class="box">
-            <span>销量</span>
-        </div>
-        <div class="box">
-            <span>价格</span>
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#iconsort"></use>
-            </svg>
-        </div>
-        <div class="box">
-            <span>筛选</span>
-            <i class="iconfont iconshaixuan"></i>
-        </div>
-    </div>
-    <!-- 下面是选项的列表 -->
-    <div class="option">
-        <div class="box">
-            <span>百联配送</span>
-        </div>
-        <div class="box">
-            <span>品牌</span>
-        </div>
-        <div class="box">
-            <span>自提</span>
-        </div>
-        <div class="box">
-            <span>促销</span>
-        </div>
-    </div>
-    <div class="wrap">
 
+        <!-- 下面是滚动加载 -->
+        <div class="wrapper">
+            <ul class="content clearfix">
+                <li class="oneList">
+                    <div class="img_box">
+                        <img src="../../images/images-dc/1150495629_200x200.jpg" alt="">
+                    </div>
+                    <div class="content_pro">
+                        <div class="title">
+                            <em>跨境</em>
+                            <span>SISLEY 希思黎 全能乳液 125ml</span>
+                        </div>
+                        <div class="reserved"></div>
+                        <div class="discounts">[拼团]</div>
+                        <div class="bottom">
+                            <span class="price">￥730</span>
+                            <i class="iconfont "></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="oneList">2</li>
+                <li class="oneList">3</li>
+                <li class="oneList">4</li>
+                <li class="oneList">5</li>
+                <li class="oneList">6</li>
+                <li class="oneList">7</li>
+                <li class="oneList">8</li>
+                <li class="oneList">9</li>
+            </ul>
+        </div>
+        <!-- 这里可以放一些其它的 DOM，但不会影响滚动 -->
     </div>
     <script src="../../js/rem.js"></script>
     <script src="../../js/zepto-master/src/zepto.js"></script>
     <script src="../../js/zepto-master/src/touch.js"></script>
     <script src="../../js/zepto-master/src/event.js"></script>
+    <script src="../../js/bscroll.min.js"></script>
     <script>
         // 下面是调整分类
         var classify = true;
@@ -83,16 +117,28 @@
                 $(this).find('use').attr({
                     'xlink:href': '#iconfenlei2'
                 });
+                $('.wrapper').find('li').addClass('twoList');
                 classify = false;
             } else {
                 $(this).find('use').attr({
                     'xlink:href': '#iconfenlei-copy'
                 });
+                $('.wrapper').find('li').removeClass('twoList')
                 classify = true;
             }
 
         });
         // 下面是滚动效果
+        var bs = new BScroll('.wrapper', {
+            scrollY: true,
+            probeType: 2,
+            bounce: {
+                top: false,
+                bottom: true,
+                left: true,
+                right: true
+            }
+        })
     </script>
 </body>
 

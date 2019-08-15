@@ -1,3 +1,10 @@
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .search_box {
     width: 100vw;
     height: 0.88rem;
@@ -53,6 +60,8 @@
     border-top: 0.01rem solid #ddd;
     border-bottom: 0.01rem solid #ddd;
     display: flex;
+    position: relative;
+    z-index: 10;
 
     &>.box {
         width: 25vw;
@@ -86,6 +95,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     &>.box {
         width: 1.62rem;
         height: 0.48rem;
@@ -96,4 +106,109 @@
         text-align: center;
         line-height: 0.48rem;
     }
+}
+
+// 下面是上拉加载更多的滚动效果
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f8f8;
+    overflow: hidden;
+
+    &>.content {
+        width: 100vw;
+    }
+
+    // 商品一列显示的样式
+    & .oneList {
+        float: left;
+        width: 100vw;
+        border-top: 0.01rem solid #ddd;
+        padding: 0.4rem 0.2rem 0.2rem 0.36rem;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+
+        &>.img_box {
+            width: 2.3rem;
+            height: 2.3rem;
+        }
+
+        &>.content_pro {
+            width: 4.44rem;
+        }
+
+        & .title {
+            text-overflow: ellipsis;
+            word-break: break-all;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            font-size: 0.28rem;
+            color: #333333;
+            margin-bottom: 0.3rem;
+        }
+
+        & em {
+            font-style: normal;
+            color: #FF4A4A;
+            padding: 0 0.06rem;
+            height: 0.28rem;
+            font-size: 0.2rem;
+            color: #FF4A4A;
+            text-align: center;
+            border: 1px solid #FFBDBD;
+            border-radius: 0.04rem;
+        }
+
+        & .reserved {
+            height: 0.36rem;
+            margin-bottom: 0.3rem;
+            background-color: pink;
+        }
+
+        & .discounts {
+            height: 0.33rem;
+            font-size: 0.22rem;
+            color: #FF6F6F;
+            padding: 0.01rem 0.04rem;
+            margin-bottom: 0.12rem;
+        }
+
+        & .bottom {
+            height: 0.44rem;
+            background-color: pink;
+            display: flex;
+
+            &>.price {
+                font-size: 0.32rem;
+                margin-right: 0.7rem;
+                color: #FF6F6F;
+            }
+        }
+    }
+
+    // 点击切换为两列显示的样式
+    & .twoList {
+        width: 46vw;
+        height: 6.78rem;
+        margin-left: 0.2rem;
+        margin-top: 0.15rem;
+        border-radius: 0.1rem;
+        padding: 0.1rem;
+        border: none;
+        text-align: center;
+
+        &>.img_box {
+            width: 100vw;
+            height: 3.31rem;
+        }
+
+    }
+}
+
+.load {
+    width: 0.5rem;
+    height: 0.5rem;
 }
