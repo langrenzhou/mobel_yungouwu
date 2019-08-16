@@ -1,41 +1,143 @@
-/*
-Error: Invalid CSS after "    .vip": expected "{", was "}"
-        on line 105 of E:\lyH5\WWW\mobile-project\mobileBL\src\css\css-lz\personalCenter.scss
+.disp_f, .header, .vip, .vip .vip_info, .vip .vip_grow, .vip .grow_info, .me ul, .item_list ul, .me ul li, .item_list ul li {
+  display: flex;
+}
 
-100:         width: 0.95rem;
-101:         height: 0.95rem;
-102:         border-radius: 50%;
-103:     }
-104:     .vip
-105: }
+.js_ct_bt, .header {
+  justify-content: space-between;
+}
 
-Backtrace:
-E:\lyH5\WWW\mobile-project\mobileBL\src\css\css-lz\personalCenter.scss:105
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
-C:/Program Files (x86)/Koala/bin/sass:22:in `load'
-C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"    .vip\": expected \"{\", was \"}\"\A         on line 105 of E:\lyH5\WWW\mobile-project\mobileBL\src\css\css-lz\personalCenter.scss\A \A 100:         width: 0.95rem;\A 101:         height: 0.95rem;\A 102:         border-radius: 50%;\A 103:     }\A 104:     .vip\A 105: }"; }
+.js_ct_ar, .me ul, .item_list ul {
+  justify-content: space-around;
+}
+
+.js_ct_c, .me ul li, .item_list ul li {
+  justify-content: center;
+}
+
+.client_w, .header, .person, .set, .vip, .me, .item_list {
+  width: 100vw;
+}
+
+.box_siz_b, .header, .person, .set, .vip {
+  box-sizing: border-box;
+}
+
+.text_align_r, .set {
+  text-align: right;
+}
+
+.text_align_c, .me ul li, .item_list ul li {
+  text-align: center;
+}
+
+body {
+  font-size: .2rem;
+  background-color: #f5f5f5;
+}
+
+.header {
+  height: .65rem;
+  line-height: .65rem;
+  font-size: .26rem;
+  padding: 0 .15rem;
+  background-color: #f5f5f5;
+}
+.header i {
+  font-size: .3rem;
+}
+
+.person {
+  height: 2.7rem;
+  background: linear-gradient(90deg, #e83448, #de4040);
+  padding: .08rem 0 .18rem;
+}
+.person .person_data_wrap {
+  height: .65rem;
+  overflow: hidden;
+}
+.person .person_data_wrap .person_data {
+  background: url("../../images/image_lz/per_bg.png") 0 -0.28rem no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 1.17rem;
+  margin: 0 auto;
+}
+
+.person_data > i:first-child {
+  width: .24rem;
+  height: .24rem;
+  left: .4rem;
+  top: .2rem;
+}
+
+.person_data > i:last-child {
+  right: .4rem;
+  width: .1rem;
+  height: .14rem;
+  top: .2rem;
+}
+
+.person_data > span {
+  font-size: .12rem;
+  top: .2rem;
+  left: .6rem;
+}
+
+.set {
+  height: .55rem;
+}
+.set img {
+  top: -.1rem;
+  right: .6rem;
+  width: .45rem;
+  height: .45rem;
+}
+
+.vip {
+  height: 1.2rem;
+  font-size: .26rem;
+  padding: 0 0 .48rem .4rem;
+}
+.vip .logo {
+  background-color: #fff;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
+}
+.vip .vip_info, .vip .vip_grow, .vip .grow_info {
+  flex-direction: column;
+}
+
+.me, .item_list {
+  height: 1.36rem;
+  background-color: #fff;
+  margin-bottom: .14rem;
+}
+.me ul li, .item_list ul li {
+  height: 1.36rem;
+  flex-direction: column;
+  align-items: center;
+}
+.me ul li i, .item_list ul li i {
+  font-size: .33rem;
+  margin-bottom: .1rem;
+}
+.me ul li span, .item_list ul li span {
+  font-size: .17rem;
+}
+
+.me span:first-of-type {
+  color: #333;
+}
+
+.me span:last-of-type {
+  color: #999;
+}
+
+.item_list span:first-child {
+  width: 0.33rem;
+  height: 0.33rem;
+  margin-bottom: .1rem;
+}
+
+/*# sourceMappingURL=personalCenter.css.map */

@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$themeColor".
-        on line 64 of E:\lyH5\WWW\mobile-project\mobileBL\src\js\swiper-4.5.0\src\components\pagination\pagination.scss
+        on line 64 of G:\H5\WWW\mobl\mobileBL\src\js\swiper-4.5.0\src\components\pagination\pagination.scss
 
 59:     cursor: pointer;
 60:   }
@@ -15,7 +15,7 @@ Error: Undefined variable: "$themeColor".
 69:     right: 10px;
 
 Backtrace:
-E:\lyH5\WWW\mobile-project\mobileBL\src\js\swiper-4.5.0\src\components\pagination\pagination.scss:64
+G:\H5\WWW\mobl\mobileBL\src\js\swiper-4.5.0\src\components\pagination\pagination.scss:64
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -62,4 +62,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$themeColor\".\A         on line 64 of E:\lyH5\WWW\mobile-project\mobileBL\src\js\swiper-4.5.0\src\components\pagination\pagination.scss\A \A 59:     cursor: pointer;\A 60:   }\A 61: }\A 62: .swiper-pagination-bullet-active {\A 63:   opacity: 1;\A 64:   background: $themeColor;\A 65: }\A 66: \A 67: .swiper-container-vertical {\A 68:   > .swiper-pagination-bullets {\A 69:     right: 10px;"; }
+  content: "Error: Undefined variable: \"$themeColor\".\A         on line 64 of G:\H5\WWW\mobl\mobileBL\src\js\swiper-4.5.0\src\components\pagination\pagination.scss\A \A 59:     cursor: pointer;\A 60:   }\A 61: }\A 62: .swiper-pagination-bullet-active {\A 63:   opacity: 1;\A 64:   background: $themeColor;\A 65: }\A 66: \A 67: .swiper-container-vertical {\A 68:   > .swiper-pagination-bullets {\A 69:     right: 10px;"; }

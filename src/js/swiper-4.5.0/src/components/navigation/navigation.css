@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$themeColor".
-        on line 19 of E:\lyH5\WWW\mobile-project\mobileBL\src\js\swiper-4.5.0\src\components\navigation\navigation.scss
+        on line 19 of G:\H5\WWW\mobl\mobileBL\src\js\swiper-4.5.0\src\components\navigation\navigation.scss
 
 14:     cursor: auto;
 15:     pointer-events: none;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$themeColor".
 24:   background-image: swiper-svg-uri("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'><path d='M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z' fill='#{$themeColor}'/></svg>");
 
 Backtrace:
-E:\lyH5\WWW\mobile-project\mobileBL\src\js\swiper-4.5.0\src\components\navigation\navigation.scss:19
+G:\H5\WWW\mobl\mobileBL\src\js\swiper-4.5.0\src\components\navigation\navigation.scss:19
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/string_interpolation.rb:93:in `_perform'
@@ -72,4 +72,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$themeColor\".\A         on line 19 of E:\lyH5\WWW\mobile-project\mobileBL\src\js\swiper-4.5.0\src\components\navigation\navigation.scss\A \A 14:     cursor: auto;\A 15:     pointer-events: none;\A 16:   }\A 17: }\A 18: .swiper-button-prev, .swiper-container-rtl .swiper-button-next {\A 19:   background-image: swiper-svg-uri(\"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'><path d='M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22L0,22L0,22z' fill='#{$themeColor}'/></svg>\");\A 20:   left: 10px;\A 21:   right: auto;\A 22: }\A 23: .swiper-button-next, .swiper-container-rtl .swiper-button-prev {\A 24:   background-image: swiper-svg-uri(\"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'><path d='M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z' fill='#{$themeColor}'/></svg>\");"; }
+  content: "Error: Undefined variable: \"$themeColor\".\A         on line 19 of G:\H5\WWW\mobl\mobileBL\src\js\swiper-4.5.0\src\components\navigation\navigation.scss\A \A 14:     cursor: auto;\A 15:     pointer-events: none;\A 16:   }\A 17: }\A 18: .swiper-button-prev, .swiper-container-rtl .swiper-button-next {\A 19:   background-image: swiper-svg-uri(\"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'><path d='M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22L0,22L0,22z' fill='#{$themeColor}'/></svg>\");\A 20:   left: 10px;\A 21:   right: auto;\A 22: }\A 23: .swiper-button-next, .swiper-container-rtl .swiper-button-prev {\A 24:   background-image: swiper-svg-uri(\"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'><path d='M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z' fill='#{$themeColor}'/></svg>\");"; }
