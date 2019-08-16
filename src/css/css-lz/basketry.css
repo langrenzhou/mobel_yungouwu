@@ -1,0 +1,325 @@
+@charset "UTF-8";
+body {
+  font-size: 0.28rem;
+}
+
+.disp_n, nav, .share_cover {
+  display: none;
+}
+
+.box_siz_border, .swiper_wrap {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.disp_flex, nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex_wrap, nav ul {
+  flex-wrap: nowrap;
+}
+
+.justify_content_center, nav ul li {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.justify_content_btw {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.justify_content_ar, nav ul {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.text_align_center, nav ul .icon_blk {
+  text-align: center;
+}
+
+.align_item_center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.fullpage, .page, .share_cover {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.active {
+  color: green;
+}
+
+.bar {
+  width: 0.42rem;
+  height: 0.06rem;
+  border-radius: 1px;
+  background: green;
+  margin: 0.1rem auto;
+  display: none;
+}
+
+.padding_lr {
+  padding: 0 .2rem;
+}
+
+.page {
+  width: 100%;
+  background: url(../../images/image_lz/bg.png) no-repeat 0 0;
+  background-size: 100%;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  z-index: 1;
+}
+.header a {
+  color: #fff;
+}
+.header .close {
+  color: #fe8477;
+}
+
+.page_title {
+  height: .88rem;
+  line-height: .88rem;
+}
+
+.page_title i {
+  font-size: .4rem;
+}
+
+h2 {
+  width: 75%;
+  font-size: .36rem;
+}
+
+.header_nav {
+  font-size: .3rem;
+  height: 1rem;
+}
+
+.header_nav > ul {
+  padding-top: .2rem;
+}
+
+nav {
+  top: 0;
+  left: 0;
+}
+nav ul {
+  z-index: 2;
+  width: 100vw;
+  height: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: .24rem;
+  border-bottom: .04rem solid #fe8477;
+}
+nav ul li {
+  padding-top: .15rem;
+}
+nav ul .icon_blk i {
+  font-size: .4rem;
+}
+
+/*  */
+.container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1.92rem;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.cont {
+  min-height: 9rem;
+}
+
+.padding_lr_all, .swiper_wrap {
+  padding: 0 .3rem;
+}
+
+.border_radius, .swiper_wrap .swiper_header, .pro_area li,
+.reduce_area li,
+.full_minus_area li,
+.discount_area li,
+.brand_choice_area li, .pro_area img,
+.reduce_area img,
+.full_minus_area img,
+.discount_area img,
+.brand_choice_area img {
+  border-radius: .2rem;
+}
+
+.swiper_wrap .swiper_header {
+  height: 1.67rem;
+}
+.swiper_wrap .swiper_header_box {
+  width: 100%;
+  height: 100%;
+}
+.swiper_wrap .swiper_header_box img {
+  width: 100%;
+  height: 100%;
+}
+.swiper_wrap .swiper-pagination {
+  text-align: right;
+}
+
+.my-bullet {
+  display: inline-block;
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: .1rem;
+}
+
+.my-bullet:last-child {
+  margin-right: .5rem;
+}
+
+.my-bullet-active {
+  background: #fff;
+}
+
+/*  */
+.bgc_fff {
+  background-color: #fff;
+}
+
+.newpro {
+  width: 100%;
+  height: 5.43rem;
+  margin: .3rem 0;
+}
+
+.newpro > .name,
+.hot_basket > .name {
+  height: .98rem;
+  line-height: .98rem;
+}
+
+.newpro_wrap {
+  width: 100%;
+  padding: 0 .3rem .3rem .3rem;
+}
+.newpro_wrap ul {
+  width: 10.2rem;
+}
+.newpro_wrap li {
+  width: 2.4rem;
+  height: 4.12rem;
+  margin-right: .2rem;
+}
+.newpro_wrap li .newname1,
+.newpro_wrap li .newname2 {
+  margin-top: .1rem;
+  display: block;
+  width: 100%;
+  font-size: .25rem;
+}
+.newpro_wrap img {
+  width: 100%;
+  height: 3.1rem;
+}
+
+/*  */
+.pro_area li,
+.reduce_area li,
+.full_minus_area li,
+.discount_area li,
+.brand_choice_area li {
+  margin: 0 .3rem .2rem .3rem;
+  height: 3.2rem;
+}
+.pro_area img,
+.reduce_area img,
+.full_minus_area img,
+.discount_area img,
+.brand_choice_area img {
+  width: 100%;
+  height: 100%;
+}
+.pro_area .cover-box,
+.reduce_area .cover-box,
+.full_minus_area .cover-box,
+.discount_area .cover-box,
+.brand_choice_area .cover-box {
+  width: 3.4rem;
+  height: 2rem;
+  top: .3rem;
+  left: .3rem;
+  background: rgba(0, 0, 0, 0.4) url(../../images/image_lz/cover_bg.png) no-repeat;
+  background-size: 100%;
+  border-radius: 0.1rem;
+}
+.pro_area .cover-box .title,
+.reduce_area .cover-box .title,
+.full_minus_area .cover-box .title,
+.discount_area .cover-box .title,
+.brand_choice_area .cover-box .title {
+  font-size: .22rem;
+  color: #666;
+  margin-top: .3rem;
+}
+.pro_area .cover-box .intro,
+.reduce_area .cover-box .intro,
+.full_minus_area .cover-box .intro,
+.discount_area .cover-box .intro,
+.brand_choice_area .cover-box .intro {
+  height: 0.5rem;
+  font-size: .3rem;
+  font-weight: 800;
+  color: #000;
+  margin-top: .1rem;
+  overflow: hidden;
+}
+.pro_area .cover-box .sport_time,
+.reduce_area .cover-box .sport_time,
+.full_minus_area .cover-box .sport_time,
+.discount_area .cover-box .sport_time,
+.brand_choice_area .cover-box .sport_time {
+  font-size: .24rem;
+  color: #fff;
+  left: .53rem;
+  bottom: .36rem;
+}
+
+.share_cover {
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+.share_cover .text_area {
+  top: .8rem;
+  right: 2rem;
+  margin: .6rem .1rem .3rem 1.4rem;
+  z-index: 3;
+}
+.share_cover .text_area a {
+  color: #fff;
+  font-family: "微软雅黑";
+  font-size: .34rem;
+}
+.share_cover .curve_row {
+  top: .6rem;
+  right: 1rem;
+  z-index: 3;
+}
+
+/*# sourceMappingURL=basketry.css.map */
