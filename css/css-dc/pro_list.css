@@ -84,7 +84,8 @@
   background-color: #f8f8f8;
   overflow: hidden; }
   .wrapper > .content {
-    width: 100vw; }
+    width: 100vw;
+    overflow: hidden; }
   .wrapper .oneList {
     float: left;
     width: 100vw;
@@ -135,17 +136,22 @@
       padding-right: 0.2rem; }
       .wrapper .oneList .bottom .price {
         font-size: 0.32rem;
-        margin-right: 0.7rem;
         color: #FF6F6F; }
+      .wrapper .oneList .bottom > .interact {
+        width: 2rem;
+        height: 0.44rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
       .wrapper .oneList .bottom .iconfont {
         font-size: 0.2rem;
         color: #666;
         margin-right: 0.1rem; }
-      .wrapper .oneList .bottom .reply {
+      .wrapper .oneList .bottom .interact .reply {
         font-size: 0.15rem;
         color: #999;
         margin-right: 0.25rem; }
-      .wrapper .oneList .bottom .centage {
+      .wrapper .oneList .bottom .interact .centage {
         font-size: 0.15rem;
         color: #999;
         margin-right: 0.25rem; }
@@ -159,22 +165,106 @@
         border: 0.01rem solid #999; }
         .wrapper .oneList .bottom .addCar .iconfont {
           font-size: 0.3rem;
-          color: #FF4A4A; }
+          color: #FF4A4A;
+          margin-left: 0.08rem; }
   .wrapper .twoList {
+    float: left;
     width: 46vw;
     height: 6.78rem;
     margin-left: 0.2rem;
     margin-top: 0.15rem;
     border-radius: 0.1rem;
+    background-color: #fff;
     padding: 0.1rem;
-    border: none;
-    text-align: center; }
+    border: none; }
     .wrapper .twoList > .img_box {
-      width: 100vw;
+      width: 3.31rem;
       height: 3.31rem; }
+    .wrapper .twoList > .content_pro {
+      width: 0.3 0.31rem;
+      height: 2.37rem;
+      position: relative; }
+      .wrapper .twoList > .content_pro span {
+        font-size: 0.28rem;
+        color: #333;
+        margin-bottom: 0.3rem;
+        position: absolute;
+        top: 0;
+        left: 0; }
+      .wrapper .twoList > .content_pro em {
+        font-style: normal;
+        color: #FF4A4A;
+        padding: 0.01rem 0.06rem;
+        height: 0.28rem;
+        font-size: 0.2rem;
+        color: #FF4A4A;
+        text-align: center;
+        border: 1px solid #FFBDBD;
+        border-radius: 0.04rem;
+        position: absolute;
+        top: 1.5rem;
+        left: 0; }
+      .wrapper .twoList > .content_pro > .discounts {
+        font-size: 0.22rem;
+        color: #FF6F6F;
+        position: absolute;
+        left: 0.8rem;
+        top: 1.5rem; }
+      .wrapper .twoList > .content_pro > .bottom {
+        width: 3.31rem;
+        height: 0.5rem;
+        position: absolute;
+        bottom: -0.4rem;
+        left: 0;
+        display: flex;
+        justify-content: space-between; }
+        .wrapper .twoList > .content_pro > .bottom .price {
+          font-size: 0.32rem;
+          color: #FF6F6F; }
+        .wrapper .twoList > .content_pro > .bottom > .interact {
+          height: 0.5rem;
+          display: flex;
+          justify-content: space-around;
+          align-items: center; }
+        .wrapper .twoList > .content_pro > .bottom .interact .iconfont {
+          font-size: 0.2rem;
+          color: #666;
+          margin-right: 0.1rem; }
+        .wrapper .twoList > .content_pro > .bottom .interact .reply {
+          font-size: 0.15rem;
+          color: #999;
+          margin-right: 0.25rem; }
+        .wrapper .twoList > .content_pro > .bottom .interact .centage {
+          font-size: 0.15rem;
+          color: #999; }
+        .wrapper .twoList > .content_pro > .bottom .addCar {
+          width: 0.5rem;
+          height: 0.5rem;
+          display: flex;
+          align-items: center;
+          border-radius: 50%;
+          justify-content: center;
+          align-items: center;
+          border: 0.01rem solid #999; }
+          .wrapper .twoList > .content_pro > .bottom .addCar .iconfont {
+            font-size: 0.3rem;
+            color: #FF4A4A;
+            margin-left: 0.03rem; }
 
 .load {
   width: 0.5rem;
   height: 0.5rem; }
+
+.shade {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex; }
+  .shade > .filtrate {
+    width: 80vw; }
 
 /*# sourceMappingURL=pro_list.css.map */

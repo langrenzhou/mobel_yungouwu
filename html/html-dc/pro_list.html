@@ -88,16 +88,13 @@
                         <div class="discounts">[拼团]</div>
                         <div class="bottom">
                             <p class="price">￥730</p>
+                            <div class="interact">
+                                <i class="iconfont iconduanxin"></i>
+                                <div class="reply">108</div>
 
-                            <i class="iconfont iconduanxin"></i>
-                            <div class="reply">108</div>
-
-
-
-                            <i class="iconfont iconzan"></i>
-                            <span class="centage">100%</span>
-
-
+                                <i class="iconfont iconzan"></i>
+                                <div class="centage">100%</div>
+                            </div>
                             <div class="addCar">
                                 <i class="iconfont icongouwuche"></i>
                             </div>
@@ -116,6 +113,12 @@
         </div>
         <!-- 这里可以放一些其它的 DOM，但不会影响滚动 -->
     </div>
+    <div class="shade">
+        <div class="leave_box"></div>
+        <div class="filtrate">
+
+        </div>
+    </div>
     <script src="../../js/rem.js"></script>
     <script src="../../js/zepto-master/src/zepto.js"></script>
     <script src="../../js/zepto-master/src/touch.js"></script>
@@ -129,13 +132,13 @@
                 $(this).find('use').attr({
                     'xlink:href': '#iconfenlei2'
                 });
-                $('.wrapper').find('li').addClass('twoList');
+                $('.wrapper').find('li').removeClass('oneList').addClass('twoList');
                 classify = false;
             } else {
                 $(this).find('use').attr({
                     'xlink:href': '#iconfenlei-copy'
                 });
-                $('.wrapper').find('li').removeClass('twoList')
+                $('.wrapper').find('li').removeClass('twoList').addClass('oneList');
                 classify = true;
             }
 
