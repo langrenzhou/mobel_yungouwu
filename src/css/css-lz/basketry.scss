@@ -1,0 +1,304 @@
+$z:z-index;
+$f:#fff;
+
+.active {
+    color: green;
+}
+
+.bar {
+    width: 0.42rem;
+    height: 0.06rem;
+    border-radius: 1px;
+    background: green;
+    margin: 0.1rem auto;
+    // display: block;
+    display: none;
+}
+
+
+.padding_lr {
+    padding: 0 .2rem;
+}
+
+.page {
+    width: 100%;
+    @extend .fullpage;
+    background: url(../../images/image_lz/bg.png) no-repeat 0 0;
+    background-size: 100%;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    color: $f;
+    width: 100%;
+    #{$z}: 1;
+
+    a {
+        color: $f;
+    }
+
+    .close {
+        color: #fe8477;
+    }
+}
+
+.page_title {
+    height: .88rem;
+    line-height: .88rem;
+}
+
+.page_title i {
+    font-size: .4rem;
+}
+
+h2 {
+    width: 75%;
+    font-size: .36rem;
+
+}
+
+.header_nav {
+    font-size: .3rem;
+    height: 1rem;
+}
+
+.header_nav>ul {
+    padding-top: .2rem;
+}
+
+// 
+
+nav {
+    top: 0;
+    left: 0;
+    @extend .disp_n;
+
+    ul {
+
+        @extend .disp_flex;
+        @extend .justify_content_ar;
+        @extend .flex_wrap;
+        #{$z}: 2;
+        width: 100vw;
+        height: 1rem;
+        background-color: rgba(0, 0, 0, .8);
+        color: $f;
+        font-size: .24rem;
+        border-bottom: .04rem solid #fe8477;
+
+        li {
+            padding-top: .15rem;
+            @extend .justify_content_center;
+        }
+
+        .icon_blk {
+            @extend .text_align_center;
+
+            i {
+                font-size: .4rem;
+            }
+        }
+
+    }
+
+}
+
+/*  */
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1.92rem;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.cont {
+    min-height: 9rem;
+}
+
+.padding_lr_all {
+    padding: 0 .3rem;
+}
+
+.border_radius {
+    border-radius: .2rem;
+}
+
+.swiper_wrap {
+    @extend .padding_lr_all;
+    @extend .box_siz_border;
+
+    .swiper_header {
+        @extend .border_radius;
+        height: 1.67rem;
+    }
+
+    .swiper_header_box {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .swiper-pagination {
+        text-align: right;
+    }
+}
+
+.my-bullet {
+    display: inline-block;
+    width: 0.15rem;
+    height: 0.15rem;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: .1rem;
+}
+
+.my-bullet:last-child {
+    margin-right: .5rem;
+}
+
+.my-bullet-active {
+    background: $f;
+}
+
+/*  */
+.bgc_fff {
+    background-color: $f;
+}
+
+.newpro {
+    width: 100%;
+    height: 5.43rem;
+    margin: .3rem 0;
+}
+
+.newpro>.name,
+.hot_basket>.name {
+    height: .98rem;
+    line-height: .98rem;
+}
+
+.newpro_wrap {
+    width: 100%;
+    padding: 0 .3rem .3rem .3rem;
+
+    ul {
+        width: 10.2rem;
+    }
+
+    li {
+        width: 2.4rem;
+        height: 4.12rem;
+        margin-right: .2rem;
+
+        .newname1,
+        .newname2 {
+            margin-top: .1rem;
+            display: block;
+            width: 100%;
+            font-size: .25rem;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 3.1rem;
+    }
+}
+
+/*  */
+
+.pro_area,
+.reduce_area,
+.full_minus_area,
+.discount_area,
+.brand_choice_area {
+    li {
+        @extend .border_radius;
+        margin: 0 .3rem .2rem .3rem;
+        height: 3.2rem;
+    }
+
+    img {
+        @extend .border_radius;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cover-box {
+        width: 3.4rem;
+        height: 2rem;
+        top: .3rem;
+        left: .3rem;
+        background: rgba(0, 0, 0, 0.4) url(../../images/image_lz/cover_bg.png) no-repeat;
+        background-size: 100%;
+        border-radius: 0.1rem;
+
+        .title {
+            font-size: .22rem;
+            color: #666;
+            margin-top: .3rem;
+        }
+
+        .intro {
+            height: 0.5rem;
+            font-size: .3rem;
+            font-weight: 800;
+            color: #000;
+            margin-top: .1rem;
+            overflow: hidden;
+        }
+
+        .sport_time {
+            font-size: .24rem;
+            color: $f;
+            left: .53rem;
+            bottom: .36rem;
+        }
+    }
+}
+
+@mixin ani($n1, $n2) {
+    animate-delay: $n1;
+    animate-duration: $n2;
+}
+
+.share_cover {
+    // @include ani(0s, 2s);
+    @extend .disp_n;
+    @extend .fullpage;
+    background-color: rgba(0, 0, 0, 0.6);
+    #{$z}: 2;
+
+    .text_area {
+        // @include ani(2s, 2s);
+        top: .8rem;
+        right: 2rem;
+        margin: .6rem .1rem .3rem 1.4rem;
+
+        a {
+            color: $f;
+
+            font: {
+                family: "微软雅黑";
+                size: .34rem;
+            }
+        }
+
+        #{$z}: 3;
+    }
+
+    .curve_row {
+        // @include ani(4s, 2s);
+        top: .6rem;
+        right: 1rem;
+        #{$z}: 3;
+    }
+}
