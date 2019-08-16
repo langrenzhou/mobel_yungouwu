@@ -255,6 +255,9 @@
   width: 0.5rem;
   height: 0.5rem; }
 
+.shade_box {
+  display: none; }
+
 .shade {
   width: 100vw;
   height: 100vh;

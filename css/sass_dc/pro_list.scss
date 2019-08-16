@@ -66,8 +66,6 @@
     &>.box {
         width: 25vw;
         height: 0.88rem;
-        // background-color: pink;
-        // border-right: 0.01rem solid red;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -354,6 +352,10 @@
 }
 
 // 下面是点击筛选的遮罩层
+.shade_box {
+    display: none;
+}
+
 .shade {
     width: 100vw;
     height: 100vh;
