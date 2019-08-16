@@ -264,7 +264,82 @@
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex; }
+  .shade > .leave_box {
+    width: 20vw; }
   .shade > .filtrate {
-    width: 80vw; }
+    width: 80vw;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column; }
+
+.filtrate > .warpper2 {
+  width: 80vw;
+  height: 100vh;
+  background-color: #fff;
+  padding: 0 0.25rem;
+  overflow: hidden; }
+  .filtrate > .warpper2 .item {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f3f2f2; }
+  .filtrate > .warpper2 .title {
+    font-size: 0.3rem;
+    color: #333; }
+  .filtrate > .warpper2 .btn {
+    float: left;
+    width: 1.62rem;
+    height: 0.62rem;
+    background-color: #f2f2f2;
+    border-radius: 0.15rem;
+    font-size: 0.24rem;
+    color: #333;
+    text-align: center;
+    line-height: 0.62rem;
+    margin-top: 0.2rem;
+    margin-right: 0.2rem; }
+  .filtrate > .warpper2 .item:nth-child(2) {
+    font-size: 0; }
+    .filtrate > .warpper2 .item:nth-child(2) input {
+      width: 2.64rem;
+      height: 0.65rem;
+      background-color: #f2f2f2;
+      text-align: center;
+      color: #999;
+      font-size: 0.24rem;
+      border: none;
+      outline: none;
+      margin-top: 0.2rem;
+      border-radius: 0.15rem; }
+    .filtrate > .warpper2 .item:nth-child(2) .line {
+      font-size: 0.3rem;
+      margin: 0 0.04rem; }
+  .filtrate > .warpper2 .item::nth-child(3) {
+    width: 0.3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: red; }
+    .filtrate > .warpper2 .item::nth-child(3) .more {
+      font-size: 0.26rem;
+      color: #666; }
+    .filtrate > .warpper2 .item::nth-child(3) .iconfont {
+      color: #666;
+      font-size: 0.4rem; }
+.filtrate > .btn_box {
+  width: 80vw;
+  height: 0.88rem;
+  background-color: red;
+  display: flex; }
+  .filtrate > .btn_box input {
+    width: 40vw;
+    height: 0.88rem;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    font-size: 0.32rem; }
+  .filtrate > .btn_box [type="reset"] {
+    color: #333; }
+  .filtrate > .btn_box [type="button"] {
+    background-color: red;
+    color: #F6F6F6; }
 
 /*# sourceMappingURL=pro_list.css.map */

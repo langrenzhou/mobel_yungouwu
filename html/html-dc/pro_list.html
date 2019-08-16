@@ -116,7 +116,45 @@
     <div class="shade">
         <div class="leave_box"></div>
         <div class="filtrate">
+            <div class="warpper2">
+                <div class="content">
+                    <div class="item">
+                        <p class="title">百联服务</p>
+                        <ul class="service clearfix">
+                            <li class="btn">百联配送</li>
+                            <li class="btn">自提</li>
+                            <li class="btn">促销</li>
+                            <li class="btn">全球购</li>
+                            <li class="btn">仅看有货</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <p class="title">价格区间(元)</p>
+                        <input type="text" placeholder="最低价">
+                        <span class="line">-</span>
+                        <input type="text" placeholder="最高价">
+                    </div>
+                    <div class="item">
+                        <p class="title">相关分类</p>
+                        <div class="more_btn">
+                            <span class="more">全部</span><i class="iconfont iconxiaoyuha"></i>
+                        </div>
 
+                    </div>
+                    <div class="item">5</div>
+                    <div class="item">5</div>
+                    <div class="item">5</div>
+                    <div class="item">5</div>
+                    <div class="item">5</div>
+                    <div class="item">5</div>
+                    <div class="item">5</div>
+
+                </div>
+            </div>
+            <div class="btn_box">
+                <input type="reset" value="重置">
+                <input type="button" value="确定">
+            </div>
         </div>
     </div>
     <script src="../../js/rem.js"></script>
@@ -145,6 +183,17 @@
         });
         // 下面是滚动效果
         var bs = new BScroll('.wrapper', {
+            scrollY: true,
+            probeType: 2,
+            bounce: {
+                top: false,
+                bottom: true,
+                left: true,
+                right: true
+            }
+        })
+        // 下面是筛选里面的滚动效果
+        var bs2 = new BScroll('.warpper2', {
             scrollY: true,
             probeType: 2,
             bounce: {
