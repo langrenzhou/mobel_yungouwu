@@ -373,7 +373,6 @@
                 });
                 flag = true;
             };
-            console.log(flag)
         })
         // 下面是筛选里面的滚动效果
         var bs2 = new BScroll('.warpper2', {
@@ -396,8 +395,9 @@
             $(this).parent().next().toggleClass('list_box_active');
         })
         // 下面是点击选择，并且替换全部的字样
+        var arr;
         $('.list_box').find('.btn').tap(function () {
-            var more = $(this).parent().prev().find('span').html().split('全部')[0];
+            // 下面是点击的样式变化和点击的个数限制
             $(this).toggleClass('activeBtn');
             var num = $(this).parent().find(".activeBtn").length
             if (num > 5) {
@@ -410,37 +410,31 @@
                 });
                 $(this).removeClass('activeBtn')
             };
-            more += $(this).html() + ' ';
+
+            var text = $(this).parent().prev().find('.more').html();
+            if (text == '全部') {
+                arr = [];
+            }
+            var str = $(this).html() + ','
+            arr.push(str);
+            console.log(arr)
+
             if ($(this).hasClass('activeBtn')) {
 
-                $(this).parent().prev().find('span').html(more).css({
+                $(this).parent().prev().find('span').html(arr).css({
                     color: '#FF4A4A'
                 });
             } else {
-                var more_ = $(this).html()
-                var _more = more.split(more_).join().split(',');
+                var index = arr.indexOf(str);
+                arr.splice(index,1);
+                console.log(arr)
+                // arr.removeByValue($(this).html());
+                // $(this).parent().prev().find('span').html(arr).css({
+                //     color: '#FF4A4A'
+                // });
+            }
 
-                // for (var i = 0; i < _more.length; i++) {
-                //     if (_more[i] == more_) {
-                //         _more[i] = '';
-                //     }
-
-                // }
-
-                console.log(_more)
-                $(this).parent().prev().find('span').html(_more.slice(0,-2)).css({
-                    color: '#FF4A4A'
-                });
-
-                if (more.split(more_)[0] == '') {
-                    $(this).parent().prev().find('span').html('全部').css({
-                        color: '#707070'
-                    });
-                }
-            };
-
-
-            var value = $(this).parent().prev().find('span').html();
+            // var value = $(this).parent().prev().find('span').html();
         });
 
         // 下面是筛选后隐藏筛选模块
