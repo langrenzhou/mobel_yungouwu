@@ -1,7 +1,7 @@
 .disp_f, .header_wrap .header, .vip, .vip .vip_info,
 .vip .grow_info, .vip .vip_grow_wrap, .vip .vip_grow, .me ul,
 .item_list ul, .me ul li,
-.item_list ul li, .vip_activity_wrap .vip_activity, .vip_activity_wrap .vip_activity p, .recommend .rec_list ul, .header_nav ul,
+.item_list ul li, .line_trigle, .vip_activity_wrap .vip_activity, .vip_activity_wrap .vip_activity p, .recommend .rec_list ul, .header_nav ul,
 .bottom_nav ul, .header_nav ul li,
 .bottom_nav ul li {
   display: flex;
@@ -41,7 +41,7 @@
   box-sizing: border-box;
 }
 
-.text_align_r, .set, .vip .grow_info span {
+.text_align_r, .set, .vip .grow_info span, .vip_activity_wrap .vip_activity p label {
   text-align: right;
 }
 
@@ -149,12 +149,17 @@ body {
 }
 .vip .vip_info {
   height: 100%;
+  margin-left: -2.5rem;
 }
 .vip .vip_info > span:first-child {
   font-size: .26rem;
 }
 .vip .vip_info > span:last-child {
   font-size: .12rem;
+}
+.vip .vip_info > span:last-child i {
+  font-size: .2rem;
+  vertical-align: -0.05rem;
 }
 .vip .vip_grow_wrap {
   height: 100%;
@@ -237,24 +242,29 @@ body {
   margin-bottom: .1rem;
 }
 
-.item_list li:last-child {
-  background: -webkit-linear-gradient(left, #ddd 50%, transparent 0);
-  background-position: 0 .4rem;
-  background-size: 2px 1.3rem;
-  background-repeat: no-repeat;
+.line_trigle {
+  flex-direction: column;
+  top: .35rem;
+  left: -.5rem;
+}
+.line_trigle .line {
+  width: 0.5px;
+  height: 0.3rem;
+  background-color: #ddd;
+}
+.line_trigle .trigle i {
+  font-size: .1rem;
+  color: #ddd;
+  display: inline-block;
+  margin-left: -.025rem;
 }
 
-.line_trigle {
-  position: absolute;
-  top: 1rem;
-  left: -.05rem;
-  transform: rotate(45deg);
-  width: .1rem;
-  height: .1rem;
-  background: linear-gradient(270deg, #ddd 50%, transparent 0) 100%, linear-gradient(180deg, #ddd 50%, transparent 0) top;
-  background-size: 2px 100%, 100% 2px;
-  background-color: #fff;
-  background-repeat: no-repeat;
+.line_trigle > .line:first-child {
+  margin-bottom: -.12rem;
+}
+
+.line_trigle > .line:last-child {
+  margin-top: -.12rem;
 }
 
 .vip_activity_wrap {
@@ -294,6 +304,10 @@ body {
 .activity_list li:nth-child(2) .vip_activity_wrap,
 .serve .vip_activity_wrap:first-child {
   margin-bottom: .04rem;
+}
+
+.vip_activity_wrap span i {
+  vertical-align: -.03rem;
 }
 
 .recommend {
