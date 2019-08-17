@@ -44,4 +44,24 @@ $(function () {
         sql += `insert into t_basket (img_src,name,intro,time) values ('${datas[i].d_src}','${datas[i].d_name}','${datas[i].d_intro}','${datas[i].d_time}');`;
     }
     console.log(sql);
+
+    var datas = [];
+    $(".goodsList>li").each(function () {
+        var _src = $(this).find("img").attr("src");
+        // var _text = $(this).find("flex-c").text();
+        var _text = $(this).find("flex-c").html();
+        // var _price = $(this).find(".money>span").text();
+        var _price = $(this).find(".money>span").html();
+        var data = {};
+        data.d_src = _src;
+        data.d_text = _text;
+        data.d_price = _price;
+        datas.push(data);
+    })
+    console.log(datas);
+    var sql = "";
+    for (var i = 0; i < datas.length; i++) {
+        sql += `insert into t_rec (src,text,price) values ('${datas[i].d_src}','${datas[i].d_text}','${datas[i].d_price}');`;
+    }
+    console.log(sql);
 })
