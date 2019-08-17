@@ -37,38 +37,14 @@ $('.header_nav li').tap(function () {
     var el = $('.hot_basket').eq($(this).index()).get(0);
     mybs.scrollToElement(el);
 })
-// var flag = true;
 
-// $(".page_title>i").addClass("ellipsis");
-// $(".ellipsis").tap(function () {
-//     $(this).removeClass("iconshenglve ellipsis").addClass("iconclose close");
-//     $("nav").show();
-//     $(".close").tap(function () {
-//         $(this).removeClass("iconclose close").addClass("iconshenglve ellipsis");
-//         $("nav").hide();
-//     })
-// })
-
-$(".page_title>i").tap(function () {
-// if (flag) {
-//     $(this).removeClass("iconshenglve").addClass("iconclose close");
-//     $("nav").show("normal", function () {
-//         flag = false;
-//     });
-// } else {
-//     $("close").tap(function () {
-//         $(this).removeClass("iconclose close").addClass("iconshenglve");
-//         $("nav").hide("normal", function () {
-//             flag = true;
-//         });
-//     })
-// }
-    $(this).removeClass("iconshenglve").addClass("iconclose close");
-    $("nav").show();
-    $(".close").tap(function () {
-        $(this).removeClass("iconclose close").addClass("iconshenglve");
-        $("nav").hide();
-    })
+$(".sign .iconshenglve").tap(function () {
+    $(this).hide().next().show();
+    $(".header_nav nav").show();
+})
+$(".sign .iconclose").tap(function () {
+    $(this).hide().prev().show();
+    $(".header_nav nav").hide();
 })
 
 var swiper_header = new Swiper('.swiper_header', {

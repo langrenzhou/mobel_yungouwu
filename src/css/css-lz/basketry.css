@@ -3,7 +3,7 @@ body {
   font-size: 0.28rem;
 }
 
-.disp_n, nav, .share_cover {
+.disp_n, .header .sign .iconclose, nav, .share_cover {
   display: none;
 }
 
@@ -89,7 +89,13 @@ body {
 .header a {
   color: #fff;
 }
-.header .close {
+.header .sign {
+  width: 0.81rem;
+  height: 100%;
+}
+.header .sign .iconclose {
+  top: 0;
+  left: 0;
   color: #fe8477;
 }
 
@@ -119,6 +125,7 @@ h2 {
 nav {
   top: 0;
   left: 0;
+  height: 0;
 }
 nav ul {
   z-index: 2;
