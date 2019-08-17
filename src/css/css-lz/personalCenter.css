@@ -45,7 +45,7 @@
   text-align: right;
 }
 
-.text_align_c, .card_level, .me ul li,
+.text_align_c, .pull_down_tip, .card_level, .me ul li,
 .item_list ul li, .recommend .rec_title, .load, .header_nav ul li,
 .bottom_nav ul li {
   text-align: center;
@@ -59,6 +59,14 @@ body {
 .bs_cont {
   min-height: 10rem;
   padding-top: .65rem;
+}
+
+.pull_down_tip {
+  width: 100vw;
+  height: 1rem;
+  background-color: #fff;
+  line-height: 1rem;
+  display: none;
 }
 
 .header_wrap {

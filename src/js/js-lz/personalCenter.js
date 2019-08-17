@@ -1,5 +1,19 @@
 var bs_all = new BScroll('.bs_wrap', {
-    // probeType: 3,
+    probeType: 3,
+    bounce: true,
+    momentum:true,
+    pullDownRefresh:true, 
+    pullDownRefresh: {
+        threshold:50,
+        stop:-100,
+    },
+    pullUpLoad:true,
+})
+
+bs_all.on('pullingDown',function(){
+    $(".pull_down_tip").show();
+    bs_all.finishPullDown();
+    bs_all.refresh();
 })
 
     ; (function () {
@@ -21,11 +35,11 @@ var bs_all = new BScroll('.bs_wrap', {
         $(".rec_list>ul").append(_html);
     })()
 
-$(".sign .iconshenglve").tap(function(){
+$(".sign .iconshenglve").tap(function () {
     $(this).hide().next().show();
     $(".header_nav").show();
 })
-$(".sign .iconclose").tap(function(){
+$(".sign .iconclose").tap(function () {
     $(this).hide().prev().show();
     $(".header_nav").hide();
 })

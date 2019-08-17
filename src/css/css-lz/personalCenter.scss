@@ -63,6 +63,13 @@ body {
     padding-top: .65rem;
 }
 
+.pull_down_tip{
+    @include fun(100vw,1rem);
+    #{$bkg}-color:#fff;
+    line-height: 1rem;
+    @extend .text_align_c;
+    display: none;
+}
 .header_wrap {
     z-index: 1;
 
