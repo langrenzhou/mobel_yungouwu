@@ -1,21 +1,25 @@
-.disp_f, .header, .vip, .vip .vip_info,
+.disp_f, .header_wrap .header, .vip, .vip .vip_info,
 .vip .grow_info, .vip .vip_grow_wrap, .vip .vip_grow, .me ul,
 .item_list ul, .me ul li,
-.item_list ul li, .vip_activity_wrap .vip_activity, .vip_activity_wrap .vip_activity p, .recommend .rec_list ul, .bottom_nav ul, .bottom_nav ul li {
+.item_list ul li, .vip_activity_wrap .vip_activity, .vip_activity_wrap .vip_activity p, .recommend .rec_list ul, .header_nav ul,
+.bottom_nav ul, .header_nav ul li,
+.bottom_nav ul li {
   display: flex;
 }
 
-.js_ct_bt, .header, .vip, .vip_activity_wrap .vip_activity {
+.js_ct_bt, .header_wrap .header, .vip, .vip_activity_wrap .vip_activity {
   justify-content: space-between;
 }
 
 .js_ct_ar, .vip .vip_info, .me ul,
-.item_list ul, .bottom_nav ul {
+.item_list ul, .header_nav ul,
+.bottom_nav ul {
   justify-content: space-around;
 }
 
 .js_ct_c, .vip .grow_info, .vip .vip_grow_wrap, .me ul li,
-.item_list ul li, .bottom_nav ul li {
+.item_list ul li, .header_nav ul li,
+.bottom_nav ul li {
   justify-content: center;
 }
 
@@ -23,8 +27,9 @@
   justify-content: flex-end;
 }
 
-.client_w, .bs_wrap, .header, .person, .set, .vip, .card_level, .me,
-.item_list, .vip_activity_wrap, .recommend .rec_title, .recommend .rec_list ul, .bottom_nav ul {
+.client_w, .bs_wrap, .header_wrap .header, .person, .set, .vip, .card_level, .me,
+.item_list, .vip_activity_wrap, .recommend .rec_title, .recommend .rec_list ul, .load, .header_nav ul,
+.bottom_nav ul {
   width: 100vw;
 }
 
@@ -32,7 +37,7 @@
   height: 100vh;
 }
 
-.box_siz_b, .header, .person, .set, .vip, .vip_activity_wrap, .recommend .rec_list .text, .recommend .rec_list .price {
+.box_siz_b, .header_wrap .header, .person, .set, .vip, .vip_activity_wrap, .recommend .rec_list .text, .recommend .rec_list .price {
   box-sizing: border-box;
 }
 
@@ -41,7 +46,8 @@
 }
 
 .text_align_c, .card_level, .me ul li,
-.item_list ul li, .recommend .rec_title, .bottom_nav ul li {
+.item_list ul li, .recommend .rec_title, .load, .header_nav ul li,
+.bottom_nav ul li {
   text-align: center;
 }
 
@@ -55,16 +61,24 @@ body {
   padding-top: .65rem;
 }
 
-.header {
+.header_wrap {
   z-index: 1;
+}
+.header_wrap .header {
   height: .65rem;
   line-height: .65rem;
   font-size: .26rem;
   padding: 0 .15rem;
   background-color: #f5f5f5;
 }
-.header i {
+.header_wrap .header i {
   font-size: .3rem;
+}
+.header_wrap .header .sign > i:last-child {
+  top: 0;
+  left: -.3rem;
+  color: #fe8477;
+  display: none;
 }
 
 .person {
@@ -323,24 +337,48 @@ body {
   color: #151515;
 }
 
+.load {
+  padding: .28rem 0 .7rem;
+}
+
 .bottom_nav {
   bottom: 0;
   left: 0;
 }
+
+.header_nav ul,
 .bottom_nav ul {
   height: 1rem;
-  background-color: #666;
+  background-color: #fff;
 }
+.header_nav ul li,
 .bottom_nav ul li {
   height: 100%;
-  color: #fff;
+  color: #333;
   flex-direction: column;
 }
+.header_nav ul li i,
 .bottom_nav ul li i {
-  font-size: .4rem;
+  font-size: .3rem;
 }
+.header_nav ul li span,
 .bottom_nav ul li span {
-  font-size: .25rem;
+  font-size: .158rem;
+}
+
+.header_nav {
+  display: none;
+}
+.header_nav ul {
+  background-color: #000;
+  border-bottom: .05rem solid #fe8477;
+}
+.header_nav ul li {
+  color: #fff;
+}
+.header_nav ul li span {
+  font-size: .17rem;
+  padding-top: .1rem;
 }
 
 /*# sourceMappingURL=personalCenter.css.map */

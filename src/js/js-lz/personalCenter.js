@@ -20,3 +20,12 @@ var bs_all = new BScroll('.bs_wrap', {
         }
         $(".rec_list>ul").append(_html);
     })()
+
+$(".sign .iconshenglve").tap(function(){
+    $(this).hide().next().show();
+    $(".header_nav").show();
+})
+$(".sign .iconclose").tap(function(){
+    $(this).hide().prev().show();
+    $(".header_nav").hide();
+})
