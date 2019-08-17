@@ -365,6 +365,24 @@
     z-index: 100;
     background-color: rgba($color: #000000, $alpha: 0.5);
     display: flex;
+    // position: relative;
+
+    .hint {
+        width: 3rem;
+        height: 0.4rem;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        color: #fff;
+        font-size: 0.25rem;
+        text-align: center;
+        line-height: 0.4rem;
+        border-radius: 0.2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -1rem;
+        z-index: 10;
+        display: none;
+    }
 
     &>.leave_box {
         width: 20vw;
@@ -412,6 +430,17 @@
             margin-right: 0.2rem;
         }
 
+        .active {
+            background-color: #e6143b;
+            color: #fff;
+        }
+
+        .activeBtn {
+            border: 0.01rem solid #e6133c;
+            background-color: #fff;
+            color: #e6133c;
+        }
+
         & .item:nth-child(2) {
             font-size: 0;
 
@@ -450,11 +479,16 @@
                 justify-content: space-between;
                 align-items: center;
             }
-
+           
             .more {
+                width: 3rem;
+                text-align: right;
                 font-size: 0.26rem;
                 color: #666;
-                margin-right: 0.2rem
+                margin-right: 0.2rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
 
             .iconfont {
@@ -465,6 +499,9 @@
             .list_box {
                 height: 0.8rem;
                 overflow: hidden;
+            }
+            .list_box_active {
+                height: auto;
             }
         }
     }

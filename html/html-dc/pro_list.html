@@ -115,6 +115,7 @@
     </div>
     <div class="shade_box">
         <div class="shade">
+            <div class="hint">最多只能选择5个哦~</div>
             <div class="leave_box"></div>
             <div class="filtrate">
                 <div class="warpper2">
@@ -289,6 +290,7 @@
     <script src="../../js/zepto-master/src/touch.js"></script>
     <script src="../../js/zepto-master/src/event.js"></script>
     <script src="../../js/bscroll.min.js"></script>
+    <script src="../../js/zepto-master/src/fx.js"></script>
     <script>
         // 下面是调整分类
         var classify = true;
@@ -323,7 +325,7 @@
         var flag = true;
 
         $('.rank .box').tap(function () {
-           
+
             // 这里可以通过下标来请求数据；
             var index = $(this).index();
             if (index != 2) {
@@ -335,7 +337,7 @@
                 flag = true;
                 $(this).siblings().find('use').attr({
                     'xlink:href': '#iconsort'
-                })
+                });
             }
             if (index == 2) {
                 if (flag) {
@@ -344,6 +346,11 @@
                     }).next().find('use').attr({
                         'xlink:href': '#iconicon-jiagepaixushengxu'
                     });
+                    $('.rank .box').find('span').css({
+                        color: '#777'
+                    }).next().css({
+                        color: '#777'
+                    });
                     flag = false;
                 } else {
                     $(this).find('span').css({
@@ -351,8 +358,13 @@
                     }).next().find('use').attr({
                         'xlink:href': '#iconicon-jiagepaixujiangxu'
                     });
+                    $('.rank .box').find('span').css({
+                        color: '#777'
+                    }).next().css({
+                        color: '#777'
+                    });
                     flag = true;
-                }
+                };
 
             }
             if (index == 3) {
@@ -374,6 +386,63 @@
                 right: true
             }
         });
+        // 下面是点击选择模块
+        $('.service').find('.btn').tap(function () {
+            $(this).toggleClass('active');
+        });
+        // 下面是点击全部展开的代码模块、
+        $('.itemsame .more_btn').tap(function () {
+            $(this).find('i').toggleClass('icondown')
+            $(this).parent().next().toggleClass('list_box_active');
+        })
+        // 下面是点击选择，并且替换全部的字样
+        $('.list_box').find('.btn').tap(function () {
+            var more = $(this).parent().prev().find('span').html().split('全部')[0];
+            $(this).toggleClass('activeBtn');
+            var num = $(this).parent().find(".activeBtn").length
+            if (num > 5) {
+                $('.hint').animate({
+                    display: 'block'
+                }, 1000, function () {
+                    $(this).animate({
+                        display: 'none'
+                    }, 3000)
+                });
+                $(this).removeClass('activeBtn')
+            };
+            more += $(this).html() + ' ';
+            if ($(this).hasClass('activeBtn')) {
+
+                $(this).parent().prev().find('span').html(more).css({
+                    color: '#FF4A4A'
+                });
+            } else {
+                var more_ = $(this).html()
+                var _more = more.split(more_).join().split(',');
+
+                // for (var i = 0; i < _more.length; i++) {
+                //     if (_more[i] == more_) {
+                //         _more[i] = '';
+                //     }
+
+                // }
+
+                console.log(_more)
+                $(this).parent().prev().find('span').html(_more.slice(0,-2)).css({
+                    color: '#FF4A4A'
+                });
+
+                if (more.split(more_)[0] == '') {
+                    $(this).parent().prev().find('span').html('全部').css({
+                        color: '#707070'
+                    });
+                }
+            };
+
+
+            var value = $(this).parent().prev().find('span').html();
+        });
+
         // 下面是筛选后隐藏筛选模块
         $('.shade_box .leave_box,.shade_box [type="button"]').tap(function () {
             $('.shade_box').css({
