@@ -1,7 +1,9 @@
 .disp_f {
     display: flex;
 }
-
+.disp_n{
+    display: none;
+}
 .js_ct_bt {
     justify-content: space-between;
 }
@@ -63,13 +65,17 @@ body {
     padding-top: .65rem;
 }
 
-.pull_down_tip{
+.pull_down_tip,
+.pull_up_tip,
+.alert{
     @include fun(100vw,1rem);
     #{$bkg}-color:#fff;
     line-height: 1rem;
     @extend .text_align_c;
-    display: none;
+   @extend .disp_n;
 }
+
+
 .header_wrap {
     z-index: 1;
 
@@ -87,9 +93,12 @@ body {
         i {
             #{$fs}: .3rem;
         }
+        .sign{
+            @include fun(.307rem,100% );
+        }
         .sign>i:last-child{
             top: 0;
-            left: -.3rem;
+            left: 0;
             color: #fe8477;
             display: none;
         }
