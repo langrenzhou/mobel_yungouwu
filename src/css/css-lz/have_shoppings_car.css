@@ -1,4 +1,4 @@
-.disp_f, .header_wrap .header, .header_nav ul, .header_nav ul li, .product_box .products {
+.disp_f, .header_wrap .header, .header_nav ul, .header_nav ul li, .product_box .products, .product_box .product_pic .inventory, .product_box .product_info .sports_item, .product_box .product_info .rush_purchase, .product_box .product_info .reserve, .product_box .product_info .reserve i, .product_box .product_info .sprice_num, .product_box .product_info .sprice_num div, .account_box, .account_box .total_discounts, .account_box .total_discounts .total, .account_box .total_discounts .discounts {
   display: flex;
 }
 
@@ -6,15 +6,15 @@
   display: none;
 }
 
-.js_ct_bt, .header_wrap .header, .product_box .products {
+.js_ct_bt, .header_wrap .header, .product_box .products, .product_box .product_info .sprice_num, .account_box, .account_box .total_discounts .total, .account_box .total_discounts .discounts {
   justify-content: space-between;
 }
 
-.js_ct_ar, .header_nav ul {
+.js_ct_ar, .header_nav ul, .account_box .total_discounts {
   justify-content: space-around;
 }
 
-.js_ct_c, .header_nav ul li {
+.js_ct_c, .header_nav ul li, .product_box .product_pic .inventory, .product_box .product_info .rush_purchase, .product_box .product_info .reserve {
   justify-content: center;
 }
 
@@ -26,8 +26,20 @@
   justify-content: flex-end;
 }
 
-.align_it_c {
+.align_it_c, .product_box .product_info .reserve i, .account_box {
   align-items: center;
+}
+
+.align_it_end, .product_box .product_info .sprice_num {
+  align-items: flex-end;
+}
+
+.align_ct_ar {
+  align-content: space-around;
+}
+
+.align_sf_c, .bs_cont input, .account_box input {
+  align-self: center;
 }
 
 .client_w, .header_wrap .header, .header_nav ul, .product_box {
@@ -38,7 +50,7 @@
   height: 100vh;
 }
 
-.box_siz_b, .header_wrap .header, .classify_title, .product_box .products {
+.box_siz_b, .header_wrap .header, .classify_title, .product_box .products, .account_box {
   box-sizing: border-box;
 }
 
@@ -46,7 +58,7 @@
   text-align: right;
 }
 
-.text_align_c, .header_nav ul li {
+.text_align_c, .header_nav ul li, .product_box .product_pic .inventory, .product_box .product_info .rush_purchase, .product_box .product_info .reserve, .product_box .product_info .sprice_num .minus, .product_box .product_info .sprice_num .num, .product_box .product_info .sprice_num .plus {
   text-align: center;
 }
 
@@ -113,11 +125,7 @@
   height: 100vh;
 }
 
-.bs_cont {
-  min-height: 10rem;
-  padding-top: .65rem;
-}
-.bs_cont input {
+.bs_cont input, .account_box input {
   display: inline-block;
   width: 0.32rem;
   height: 0.32rem;
@@ -125,6 +133,11 @@
   background-color: #e6133c;
   color: #fff;
   vertical-align: -.06rem;
+}
+
+.bs_cont {
+  min-height: 10rem;
+  padding-top: .65rem;
 }
 
 .classify_title {
@@ -156,10 +169,116 @@
 .product_box .product_pic {
   width: 1.5rem;
   height: 1.5rem;
+  border: .5px solid #ccc;
+  border-radius: 0.04rem;
 }
 .product_box .product_pic img {
   width: 100%;
   height: 100%;
+}
+.product_box .product_pic .inventory {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.product_box .product_info {
+  width: 5.12rem;
+}
+.product_box .product_info .title {
+  width: 100%;
+  height: 0.34rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: .24rem;
+  color: #333;
+}
+.product_box .product_info .sports_item {
+  padding-top: .32rem;
+}
+.product_box .product_info .rush_purchase, .product_box .product_info .reserve {
+  width: 0.72rem;
+  height: 0.34rem;
+  border: 1px solid #eb5572;
+  font-size: .24rem;
+  color: #eb5572;
+  border-radius: 0.04rem;
+  background: #fff;
+  margin-right: .08rem;
+}
+.product_box .product_info .reserve {
+  width: 0.8rem;
+  height: 0.34rem;
+}
+.product_box .product_info .reserve i {
+  height: 100%;
+  font-size: .24rem;
+}
+.product_box .product_info .sprice_num {
+  width: 100%;
+  height: 0.52rem;
+}
+.product_box .product_info .sprice_num .price {
+  font-size: 0.28rem;
+  color: #e6133c;
+}
+.product_box .product_info .sprice_num .minus, .product_box .product_info .sprice_num .num, .product_box .product_info .sprice_num .plus {
+  display: inline-block;
+  width: 0.44rem;
+  height: 0.44rem;
+  cursor: pointer;
+  border: .5px solid #757575;
+  line-height: .44rem;
+}
+.product_box .product_info .sprice_num .num {
+  border-left: none;
+  border-right: none;
+}
+
+.account_box {
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 1rem;
+  padding-left: .2rem;
+  font-size: 0.24rem;
+  border-top: .5px solid #e6e6e6;
+}
+.account_box .total_discounts {
+  width: 3.98rem;
+  height: 100%;
+  flex-direction: column;
+}
+.account_box .total_discounts .total {
+  margin-top: .1rem;
+  font-size: 0.28rem;
+  color: #333;
+}
+.account_box .total_discounts .total .price {
+  font-size: 0.36rem;
+  color: #e6133c;
+}
+.account_box .total_discounts .discounts {
+  color: #999;
+}
+
+.account_box > span {
+  font-size: 0.28rem;
+  color: #333;
+  margin-left: -.1rem;
+}
+
+.close_account {
+  width: 2rem;
+  height: 100%;
+  background: #e6133c;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #fff;
 }
 
 /*# sourceMappingURL=have_shoppings_car.css.map */
