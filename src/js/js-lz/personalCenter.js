@@ -1,4 +1,8 @@
 
+$("a").tap(function(){
+    $(this).css("textDecoration", "none");
+})
+
 $(".sign .iconshenglve").tap(function () {
     $(this).hide().next().show();
     $(".header_nav").show();
@@ -14,7 +18,7 @@ var bs_all = new BScroll('.bs_wrap', {
 
     pullDownRefresh: true,
     pullDownRefresh: {
-        threshold: 50,  //当下拉长度距离盒子顶部的高度超过50px的时候,就派发一个下拉刷新的事件
+        // threshold: 50,  //当下拉长度距离盒子顶部的高度超过50px的时候,就派发一个下拉刷新的事件
         // stop:200,
     },
 
