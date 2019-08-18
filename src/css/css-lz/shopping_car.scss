@@ -1,0 +1,199 @@
+.disp_f {
+    display: flex;
+}
+
+.disp_n {
+    display: none;
+}
+
+.js_ct_bt {
+    justify-content: space-between;
+}
+
+.js_ct_ar {
+    justify-content: space-around;
+}
+
+.js_ct_c {
+    justify-content: center;
+}
+
+.js_ct_st {
+    justify-content: flex-start;
+}
+
+.js_ct_end {
+    justify-content: flex-end;
+}
+
+.align_it_c{
+    align-items: center;
+}
+.client_w {
+    width: 100vw;
+}
+
+.client_h {
+    height: 100vh;
+}
+
+.box_siz_b {
+    box-sizing: border-box;
+}
+
+.text_align_r {
+    text-align: right;
+}
+
+.text_align_c {
+    text-align: center;
+}
+
+$fs:font-size;
+$h:height;
+$lh:line-height;
+$bkg:background;
+
+@mixin fun($n1, $n2) {
+    width: $n1;
+    height: $n2;
+
+}
+.header_wrap {
+    .header {
+        #{$h}: .65rem;
+        #{$lh}: .65rem;
+        @extend .disp_f;
+        #{$fs}: .26rem;
+        @extend .js_ct_bt;
+        @extend .client_w;
+        @extend .box_siz_b;
+        padding: 0 .15rem;
+        #{$bkg}-color: #f5f5f5;
+
+        a {
+            color: #000;
+        }
+
+        i {
+            #{$fs}: .3rem;
+        }
+
+        .sign {
+            @include fun(.307rem, 100%);
+        }
+
+        .sign>i:last-child {
+            top: 0;
+            left: 0;
+            color: #fe8477;
+            display: none;
+        }
+    }
+}
+.header_nav{
+    ul {
+        @extend .client_w;
+        height: 1rem;
+        @extend .disp_f;
+        @extend .js_ct_ar;
+
+        li {
+            height: 100%;
+            @extend .disp_f;
+            @extend .js_ct_c;
+            @extend .text_align_c;
+            flex-direction: column;
+
+            i {
+                #{$fs}: .3rem;
+            }
+        }
+    }
+
+}
+
+.header_nav {
+    display: none;
+
+    ul {
+        #{$bkg}-color: #000;
+        border-bottom: .05rem solid #fe8477;
+
+        li {
+            color: #fff;
+
+            span {
+                #{$fs}: .17rem;
+                padding-top: .1rem;
+            }
+        }
+    }
+
+}
+
+
+.tip_login{
+    border-bottom: 1px solid #eeeeee;
+    @include fun(100vw,.8rem );
+    @extend .box_siz_b;
+    @extend .disp_f;
+    @extend .js_ct_bt;    
+    padding: 0 .2rem;
+    #{$lh}:.8rem;
+    #{$fs}:.24rem;
+    color: #333;
+    span{
+        color: #e6163f;
+        padding-right: .1rem;
+    }
+    a{
+        color: #333;
+    }
+    i{
+        #{$fs}:.24rem;
+    }
+}
+.shopping_sign,.tip_shopping,.tip_go_shopping{  
+    @extend .disp_f;
+    @extend .js_ct_c; 
+    @extend .align_it_c;  
+}
+
+.shopping_sign{
+    @extend .box_siz_b;
+    @include fun(100vw,1.6rem );
+    margin-top: .44rem;
+    i{
+        #{$fs}:1.6rem;
+        color: #999;
+    }    
+}
+
+.tip_shopping,.tip_go_shopping{
+    #{$fs}:.24rem;
+    color: #666;
+}
+.tip_shopping{
+    @extend .box_siz_b;
+    @include fun(100vw,.4rem );      
+    margin-top: .2rem;
+}
+.tip_go_shopping{  
+    @include fun(100vw,.8rem );  
+}
+
+.go_shopping{  
+    @extend .disp_f;
+    @extend .js_ct_c; 
+    a{
+        display: block;
+        @include fun(3.24rem,.68rem);
+        background: #e6133c;
+        #{$fs}:.28rem;
+        color: #fff;
+        @extend .text_align_c;
+        #{$lh}:.68rem;
+        border-radius: 0.08rem;
+    }
+}

@@ -1,0 +1,160 @@
+.disp_f, .header_wrap .header, .header_nav ul, .header_nav ul li, .tip_login, .shopping_sign, .tip_shopping, .tip_go_shopping, .go_shopping {
+  display: flex;
+}
+
+.disp_n {
+  display: none;
+}
+
+.js_ct_bt, .header_wrap .header, .tip_login {
+  justify-content: space-between;
+}
+
+.js_ct_ar, .header_nav ul {
+  justify-content: space-around;
+}
+
+.js_ct_c, .header_nav ul li, .shopping_sign, .tip_shopping, .tip_go_shopping, .go_shopping {
+  justify-content: center;
+}
+
+.js_ct_st {
+  justify-content: flex-start;
+}
+
+.js_ct_end {
+  justify-content: flex-end;
+}
+
+.align_it_c, .shopping_sign, .tip_shopping, .tip_go_shopping {
+  align-items: center;
+}
+
+.client_w, .header_wrap .header, .header_nav ul {
+  width: 100vw;
+}
+
+.client_h {
+  height: 100vh;
+}
+
+.box_siz_b, .header_wrap .header, .tip_login, .shopping_sign, .tip_shopping {
+  box-sizing: border-box;
+}
+
+.text_align_r {
+  text-align: right;
+}
+
+.text_align_c, .header_nav ul li, .go_shopping a {
+  text-align: center;
+}
+
+.header_wrap .header {
+  height: .65rem;
+  line-height: .65rem;
+  font-size: .26rem;
+  padding: 0 .15rem;
+  background-color: #f5f5f5;
+}
+.header_wrap .header a {
+  color: #000;
+}
+.header_wrap .header i {
+  font-size: .3rem;
+}
+.header_wrap .header .sign {
+  width: 0.307rem;
+  height: 100%;
+}
+.header_wrap .header .sign > i:last-child {
+  top: 0;
+  left: 0;
+  color: #fe8477;
+  display: none;
+}
+
+.header_nav ul {
+  height: 1rem;
+}
+.header_nav ul li {
+  height: 100%;
+  flex-direction: column;
+}
+.header_nav ul li i {
+  font-size: .3rem;
+}
+
+.header_nav {
+  display: none;
+}
+.header_nav ul {
+  background-color: #000;
+  border-bottom: .05rem solid #fe8477;
+}
+.header_nav ul li {
+  color: #fff;
+}
+.header_nav ul li span {
+  font-size: .17rem;
+  padding-top: .1rem;
+}
+
+.tip_login {
+  border-bottom: 1px solid #eeeeee;
+  width: 100vw;
+  height: 0.8rem;
+  padding: 0 .2rem;
+  line-height: .8rem;
+  font-size: .24rem;
+  color: #333;
+}
+.tip_login span {
+  color: #e6163f;
+  padding-right: .1rem;
+}
+.tip_login a {
+  color: #333;
+}
+.tip_login i {
+  font-size: .24rem;
+}
+
+.shopping_sign {
+  width: 100vw;
+  height: 1.6rem;
+  margin-top: .44rem;
+}
+.shopping_sign i {
+  font-size: 1.6rem;
+  color: #999;
+}
+
+.tip_shopping, .tip_go_shopping {
+  font-size: .24rem;
+  color: #666;
+}
+
+.tip_shopping {
+  width: 100vw;
+  height: 0.4rem;
+  margin-top: .2rem;
+}
+
+.tip_go_shopping {
+  width: 100vw;
+  height: 0.8rem;
+}
+
+.go_shopping a {
+  display: block;
+  width: 3.24rem;
+  height: 0.68rem;
+  background: #e6133c;
+  font-size: .28rem;
+  color: #fff;
+  line-height: .68rem;
+  border-radius: 0.08rem;
+}
+
+/*# sourceMappingURL=shopping_car.css.map */
