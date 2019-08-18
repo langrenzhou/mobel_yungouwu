@@ -7,8 +7,16 @@
     display: flex;
 }
 
+.disp_n {
+    display: none;
+}
+
 .box_siz_b {
     box-sizing: border-box;
+}
+
+.js_ct_bt {
+    justify-content: space-between;
 }
 
 .align_s_c {
@@ -47,7 +55,8 @@ $fs:font-size;
     }
 }
 
-.login_box {
+.login_box,
+.verify_code_box {
     width: 100%;
     padding: .5rem .7rem;
     @extend .box_siz_b;
@@ -118,14 +127,53 @@ $fs:font-size;
     }
 }
 
+.verify_code_box {
+    @extend .disp_n;
+    .send_tip {
+        @include fun(100%, 1.34rem);
+        padding-top: .5rem;
+        @extend .box_siz_b;
+        #{$fs}: .28rem;
+        color: #999;
+    }
+
+    .user_input {
+        @include fun(100%, 1rem);
+        border-bottom: .05rem solid red;
+        #{$fs}: .28rem;
+        @extend .disp_f;
+        @extend .js_ct_bt;
+        color: #333;
+
+        #u_input {
+            @extend .box_siz_b;
+            @include fun(3rem, 100%);
+        }
+
+        #u_input:-webkit-input-placeholder {
+            font-size: .4rem;
+        }
+    }
+
+    .tip_info{
+       text-align: right;
+       padding-top: .2rem;
+       span{
+           color: red;
+       }
+    }
+
+}
+
 .go_next {
     right: 0;
     bottom: 0;
     @include fun(2.1rem, 2.1rem);
     line-height: 2.1rem;
     text-align: center;
-    i{
-        #{$fs}: 1.5rem; 
-        color: #999;  
+
+    i {
+        #{$fs}: 1.5rem;
+        color: #999;
     }
 }
