@@ -19,6 +19,10 @@
     justify-content: space-between;
 }
 
+.js_ct_c {
+    justify-content: center;
+}
+
 .align_s_c {
     align-self: center;
 }
@@ -129,6 +133,7 @@ $fs:font-size;
 
 .verify_code_box {
     @extend .disp_n;
+
     .send_tip {
         @include fun(100%, 1.34rem);
         padding-top: .5rem;
@@ -155,12 +160,13 @@ $fs:font-size;
         }
     }
 
-    .tip_info{
-       text-align: right;
-       padding-top: .2rem;
-       span{
-           color: red;
-       }
+    .tip_info {
+        text-align: right;
+        padding-top: .2rem;
+
+        span {
+            color: red;
+        }
     }
 
 }
@@ -175,5 +181,75 @@ $fs:font-size;
     i {
         #{$fs}: 1.5rem;
         color: #999;
+    }
+}
+
+.cover_slide_verify {
+    @extend .disp_n;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    @extend .disp_f;
+    @extend .js_ct_c;
+    @extend .align_it_c;
+
+    .slide_verify {
+        @include fun(3.5rem, 3rem);
+        border: .5px solid #e4e7eb;
+
+        background-color: #fff;
+        @extend .box_siz_b;
+
+        .title {
+            @include fun(100%, .5rem);
+            padding: 0 .15rem;
+            @extend .box_siz_b;
+            border-bottom: .5px solid #e4e7eb;
+            #{$fs}: .16rem;
+            color: #45494c;
+            @extend .disp_f;
+            @extend .js_ct_bt;
+            @extend .align_it_c;
+        }
+
+        .slide_box {
+            padding: .15rem;
+
+            .slide_pic {
+                @include fun(100%, 1.6rem);
+                margin-bottom: .15rem;
+
+                img {
+                    @include fun(100%, 100%);
+                }
+            }
+
+            .slide {
+                @include fun(100%, .4rem);
+                #{$fs}: .14rem;
+                color: #45494c;
+                @extend .box_siz_b;
+                border: .5px solid #e4e7eb;
+                background-color: #ccc;
+                @extend .disp_f;
+                @extend .js_ct_c;
+                @extend .align_it_c;
+            }
+
+            .slide_small,
+            .slide_bg {
+                top: 0;
+                left: 0;
+            }
+            .slide_small{
+                @include fun(.4rem,100%);
+                border: .5px solid #333;
+                @extend .disp_f;
+                @extend .js_ct_c;
+                @extend .align_it_c;
+            }
+        }
     }
 }
