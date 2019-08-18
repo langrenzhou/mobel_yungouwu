@@ -1,4 +1,4 @@
-$("header a").tap(function () {
+$("a").tap(function () {
     $(this).css("textDecoration", "none");
 })
 
