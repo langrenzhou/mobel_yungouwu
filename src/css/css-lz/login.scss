@@ -1,0 +1,131 @@
+@mixin fun($n1, $n2) {
+    width: $n1;
+    height: $n2;
+}
+
+.disp_f {
+    display: flex;
+}
+
+.box_siz_b {
+    box-sizing: border-box;
+}
+
+.align_s_c {
+    align-self: center;
+}
+
+.align_it_end {
+    align-items: flex-end;
+}
+
+.align_it_c {
+    align-items: center;
+}
+
+$fs:font-size;
+
+.wrap {
+    @include fun(100vw, 100vh);
+    padding: .3rem;
+    @extend .box_siz_b;
+}
+
+.go_back {
+    height: 0.6rem;
+    @extend .disp_f;
+
+    a {
+        color: #000;
+        @extend .align_s_c;
+    }
+
+    a,
+    i {
+        #{$fs}: .4rem;
+        font-weight: bold;
+    }
+}
+
+.login_box {
+    width: 100%;
+    padding: .5rem .7rem;
+    @extend .box_siz_b;
+
+    .tip {
+        #{$fs}: .5rem;
+        color: #333;
+        font-weight: 100;
+    }
+
+    .sign_phone {
+        @include fun(100%, 1.44rem);
+        @extend .disp_f;
+        @extend .align_it_end;
+        color: #999;
+
+        i {
+            #{$fs}: .4rem;
+            margin-bottom: -.05rem;
+        }
+
+        span {
+            #{$fs}: .24rem;
+        }
+    }
+
+    .user_input {
+        @include fun(100%, 1rem);
+        border-bottom: .05rem solid red;
+        #{$fs}: .4rem;
+        @extend .disp_f;
+        @extend .align_it_c;
+
+        label {
+            color: #333;
+        }
+
+        #u_input {
+            color: #999;
+            outline: none;
+            border: none;
+            padding: 0 .5rem;
+        }
+    }
+
+    .tip_info,
+    .protocol {
+        @include fun(100%, .86rem);
+        padding-top: .5rem;
+        @extend .box_siz_b;
+        #{$fs}: .24rem;
+        color: #999;
+    }
+
+    .protocol {
+        @include fun(100%, 1.22rem);
+
+        .duihao {
+            display: inline-block;
+            @include fun(.3rem, .3rem);
+            margin-right: .15rem;
+            border: .01rem solid #999;
+            #{$fs}: .2rem;
+            color: red;
+            line-height: .3rem;
+            text-align: center;
+        }
+    }
+}
+
+.go_next {
+    right: 0;
+    bottom: 0;
+    @include fun(2.1rem, 2.1rem);
+    line-height: 2.1rem;
+    text-align: center;
+    i{
+        #{$fs}: 1.5rem; 
+        color: #999;  
+    }
+}
