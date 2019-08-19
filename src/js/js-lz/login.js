@@ -3,15 +3,18 @@ $("a").tap(function () {
 })
 
 // 验证用户输入手机号
+var suc=false;
 $("#u_input").focus(function(){
    var val= $(this).val();
    console.log(val);
    var reg=/[1][3-9][\d]{9}/;
    if(reg.test(val)){
-       $(".go_next i").addClass("go_next_color")
-   }else{
-       $(".error_tips").show();
+       $(".go_next i").addClass("go_next_color");
+       suc=true;
    }
+//     else{
+//        $(".error_tips").show();
+//    }
 })
 
 
