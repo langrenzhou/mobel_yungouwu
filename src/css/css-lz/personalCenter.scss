@@ -74,6 +74,7 @@ body {
 
 .pull_down_tip,
 .pull_up_tip,
+.no_datas,
 .alert {
     @include fun(100vw, 1rem);
     #{$bkg}-color: #fff;
@@ -81,7 +82,9 @@ body {
     @extend .text_align_c;
     @extend .disp_n;
 }
-
+.pull_up_tip{
+    display: block;
+}
 
 .header_wrap {
     z-index: 1;
@@ -487,6 +490,9 @@ body {
             @extend .box_siz_b;
             #{$fs}: .17rem;
             color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .price {

@@ -8,6 +8,7 @@
 
 .disp_n, .pull_down_tip,
 .pull_up_tip,
+.no_datas,
 .alert, .person {
   display: none; }
 
@@ -48,6 +49,7 @@
 
 .text_align_c, .pull_down_tip,
 .pull_up_tip,
+.no_datas,
 .alert, .card_level, .me ul li,
 .item_list ul li, .recommend .rec_title, .load, .header_nav ul li,
 .bottom_nav ul li {
@@ -63,11 +65,15 @@ body {
 
 .pull_down_tip,
 .pull_up_tip,
+.no_datas,
 .alert {
   width: 100vw;
   height: 1rem;
   background-color: #fff;
   line-height: 1rem; }
+
+.pull_up_tip {
+  display: block; }
 
 .header_wrap {
   z-index: 1; }
@@ -311,7 +317,10 @@ body {
     height: 0.6rem;
     padding: .072rem .072rem .043rem;
     font-size: .17rem;
-    color: #666; }
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .recommend .rec_list .price {
     width: 3.7rem;
     height: 0.3rem;
