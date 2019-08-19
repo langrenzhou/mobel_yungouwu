@@ -170,7 +170,9 @@ $fs:font-size;
     }
 
 }
-
+.go_next_color{
+    color: red;
+}
 .go_next {
     right: 0;
     bottom: 0;
@@ -183,7 +185,18 @@ $fs:font-size;
         color: #999;
     }
 }
-
+.error_tips{
+    @include fun(3rem,.5rem);
+    right: 2.5rem;
+    bottom: 4.95rem;
+    background-color: lightgreen;
+    color: #000;
+    #{$fs}: .24rem;
+    line-height:.5rem;
+    text-align: center;
+    border-radius: .05rem;
+    @extend .disp_n;
+}
 .cover_slide_verify {
     @extend .disp_n;
     top: 0;

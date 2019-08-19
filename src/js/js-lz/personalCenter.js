@@ -15,6 +15,7 @@ $(".sign .iconclose").tap(function () {
 // bs初始化
 var bs_all = new BScroll('.bs_wrap', {
     probeType: 3,
+    click:true,
     pullDownRefresh: {
         threshold: 80,  //当下拉长度距离盒子顶部的高度超过80px的时候,就派发一个下拉刷新的事件
     },

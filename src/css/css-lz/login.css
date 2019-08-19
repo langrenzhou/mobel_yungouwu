@@ -3,7 +3,7 @@
 .verify_code_box .user_input, .cover_slide_verify, .cover_slide_verify .slide_verify .title, .cover_slide_verify .slide_verify .slide_box .slide, .cover_slide_verify .slide_verify .slide_box .slide_small {
   display: flex; }
 
-.disp_n, .verify_code_box, .cover_slide_verify {
+.disp_n, .verify_code_box, .error_tips, .cover_slide_verify {
   display: none; }
 
 .box_siz_b, .wrap, .login_box,
@@ -128,6 +128,9 @@
   .verify_code_box .tip_info span {
     color: red; }
 
+.go_next_color {
+  color: red; }
+
 .go_next {
   right: 0;
   bottom: 0;
@@ -138,6 +141,18 @@
   .go_next i {
     font-size: 1.5rem;
     color: #999; }
+
+.error_tips {
+  width: 3rem;
+  height: 0.5rem;
+  right: 2.5rem;
+  bottom: 4.95rem;
+  background-color: lightgreen;
+  color: #000;
+  font-size: .24rem;
+  line-height: .5rem;
+  text-align: center;
+  border-radius: .05rem; }
 
 .cover_slide_verify {
   top: 0;

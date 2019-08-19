@@ -165,16 +165,16 @@ body {
 }
 
 .set {
-    @extend .client_w;
-    #{$h}: .55rem;
+    @include fun(100vw, .55rem);
     @extend .box_siz_b;
     @extend .text_align_r;
-
+    a{
+        @include fun(.45rem, .45rem);
+        top: 0;
+        right: .2rem;
+    }
     img {
-        top: -.1rem;
-        right: .6rem;
-        width: .45rem;
-        #{$h}: .45rem;
+        @include fun(100%, 100%)
     }
 }
 
@@ -197,6 +197,10 @@ body {
         width: 0.935rem;
         height: 0.935rem;
         border-radius: 50%;
+        img{
+            border-radius: 50%;
+            @include fun(100%,100%);
+        }
     }
 
     .vip_info,
