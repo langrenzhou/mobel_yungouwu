@@ -172,7 +172,7 @@ $fs:font-size;
     }
 
 }
-.go_next_color{
+.go_next .go_next_color{
     color: red;
 }
 .go_next {
@@ -185,6 +185,7 @@ $fs:font-size;
     i {
         #{$fs}: 1.5rem;
         color: #999;
+        // color: red;
     }
 }
 .error_tips{
@@ -197,7 +198,6 @@ $fs:font-size;
     line-height:.5rem;
     text-align: center;
     border-radius: .05rem;
-    @extend .disp_n;
 }
 .cover_slide_verify {
     @extend .disp_n;
