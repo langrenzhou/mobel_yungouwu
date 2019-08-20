@@ -63,4 +63,29 @@ $(function () {
         sql += `insert into t_rec (text,price) values ('${datas[i].d_text}','${datas[i].d_price}');`;
     }
     console.log(sql);
+
+    // 同一页面
+    // if (suc) {
+    //     $(".go_next").tap(function () {
+    //         $(".go_next i").removeClass("go_next_color");
+    //         $(".send_tip span").text(val);
+    //         $(".login_box").addClass("disp_n");
+    //         $(".verify_code_box").removeClass("disp_n");
+    //         let cd;
+    //         // setTimeout(function () {
+    //             cd = random_code();
+    //             // alert(cd);
+    //             console.log(cd);
+    //             console.log( $("#u_input"));
+
+    //             $("#u_input").blur(function () {
+    //                 console.log(1);
+    //                 console.log(cd);
+    //                 if ($("#u_input").val() == cd) {
+    //                     $(".go_next i").addClass("go_next_color");
+    //                 }
+    //             })
+    //         // }, 1000)
+    //     })
+    // }
 })
