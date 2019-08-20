@@ -134,7 +134,6 @@ $fs:font-size;
 }
 
 .verify_code_box {
-    @extend .disp_n;
 
     .send_tip {
         @include fun(100%, 1.34rem);

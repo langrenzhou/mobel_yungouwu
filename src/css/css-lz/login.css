@@ -8,7 +8,7 @@
   display: block;
 }
 
-.disp_n, .verify_code_box, .cover_slide_verify {
+.disp_n, .cover_slide_verify {
   display: none;
 }
 
