@@ -50,6 +50,7 @@ function slide_verify() {
 }
 
 const pos_left = [166, 200, 160];
+console.log(pos_left);
 let random_n = Math.floor(Math.random() * 3 + 1);
 // let random_html;
 function random_slide_pic() {
@@ -67,7 +68,6 @@ function move_slide() {
             top: _top
         })
     })
-
 }
 
 function verify_code() {
