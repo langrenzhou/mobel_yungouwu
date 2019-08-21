@@ -9,7 +9,7 @@
 .disp_n, .pull_down_tip,
 .pull_up_tip,
 .no_datas,
-.alert, .person {
+.alert {
   display: none; }
 
 .js_ct_bt, .header_wrap .header, .vip, .vip_activity_wrap .vip_activity {

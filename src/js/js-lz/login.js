@@ -33,7 +33,7 @@ $("#u_input").keyup(function () {
     // 新页面
     if (suc) {
         $(".go_next").tap(function () {
-            window.location.href="./verify_code.html?pho_num="+;
+            window.location.href="./verify_code.html?pho_num="+val;
         })
     }
 })

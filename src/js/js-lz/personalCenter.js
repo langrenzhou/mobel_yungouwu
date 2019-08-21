@@ -1,4 +1,15 @@
+// 
+let phone_num=location.search.split("=")[1];
+if(phone_num){
+    $(".no_login_person").addClass("disp_n");
+    $(".person .vip_info>.phone_num").text(phone_num);
+    $(".person").removeClass("disp_n");
+}else{
+    $(".no_login_person").removeClass("disp_n");
+    $(".person").addClass("disp_n");
+}
 
+// 
 $("a").tap(function () {
     $(this).css("textDecoration", "none");
 })
@@ -82,6 +93,8 @@ function request_datas() {
         }
     })
 }
+
+
 
 
 
