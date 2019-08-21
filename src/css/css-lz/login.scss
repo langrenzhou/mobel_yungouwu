@@ -6,9 +6,11 @@
 .disp_f {
     display: flex;
 }
-.disp_b{
+
+.disp_b {
     display: block;
 }
+
 .disp_n {
     display: none;
 }
@@ -171,9 +173,11 @@ $fs:font-size;
     }
 
 }
-.go_next .go_next_color{
+
+.go_next .go_next_color {
     color: red;
 }
+
 .go_next {
     right: 0;
     bottom: 0;
@@ -187,19 +191,21 @@ $fs:font-size;
         // color: red;
     }
 }
-.error_tips{
-    @include fun(3rem,.5rem);
+
+.error_tips {
+    @include fun(3rem, .5rem);
     right: 2.5rem;
     bottom: 4.95rem;
     background-color: lightgreen;
     color: #000;
     #{$fs}: .24rem;
-    line-height:.5rem;
+    line-height: .5rem;
     text-align: center;
     border-radius: .05rem;
 }
+
 .cover_slide_verify {
-    @extend .disp_n;
+    // @extend .disp_n;
     top: 0;
     left: 0;
     right: 0;
@@ -235,8 +241,14 @@ $fs:font-size;
                 @include fun(100%, 1.6rem);
                 margin-bottom: .15rem;
 
-                img {
+                .bg_pic {
                     @include fun(100%, 100%);
+                }
+
+                .small_pic {
+                    @include fun(0.61rem, 100%);
+                    top: 0;
+                    left: 0;
                 }
             }
 
@@ -257,8 +269,9 @@ $fs:font-size;
                 top: 0;
                 left: 0;
             }
-            .slide_small{
-                @include fun(.4rem,100%);
+
+            .slide_small {
+                @include fun(.4rem, 100%);
                 border: .5px solid #333;
                 @extend .disp_f;
                 @extend .js_ct_c;
