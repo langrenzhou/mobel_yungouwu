@@ -1,0 +1,60 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, 
+blockquote, dl, dt, dd, ul, ol, li, 
+pre, form, fieldset, legend, button,
+input, textarea, th, td ,div
+{ 
+     margin:0; padding:0;
+     box-sizing: border-box;
+}
+
+
+address, cite,
+dfn, em, var 
+{ 
+    font-style:normal; 
+}
+
+code, kbd, pre, samp 
+{ 
+    font-family:couriernew, courier, monospace; 
+}
+
+ul, ol 
+{ 
+    list-style:none; 
+}
+
+a 
+{ 
+    text-decoration:none; 
+    display: block;
+}
+
+a:hover 
+{ 
+    text-decoration:underline; 
+}
+a:active{
+    text-decoration:underline;
+}
+sup 
+{ 
+    vertical-align:text-top; 
+}
+
+sub
+{ 
+    vertical-align:text-bottom; 
+}
+
+legend 
+{ 
+    color:#000; 
+}
+
+/* 可以解决IE下 a标签包裹下的图片出现蓝色边框 */
+fieldset, img 
+{ 
+    border:0;   
+}
+

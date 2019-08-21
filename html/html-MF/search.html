@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/css-MF/search.css">
+    <link rel="stylesheet" href="../../css/css-MF/initializ.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+</head>
+
+<body>
+    <div class="search-wrap">
+        <div class="searchInput">
+            <div class="inputContainer">
+                <div class="search-logo">
+                    <img src="../../images/image-MF/search-logo.png" alt="">
+                </div>
+                <input type="text" placeholder="第一医药" class="searchKeyWords">
+            </div>
+            <div class="cancelSearch">
+                <a href="../../index.html">
+                <span>取消</span>
+                </a>
+            </div>
+        </div>
+        <div class="allsearch">
+            <div class="recentlySearch">
+                <div class="search-title">
+                    <div class="search-title-left">
+                        <i class="iconfont iconlishi iconsearch"></i>
+                        <span>最近搜素</span>
+                    </div>
+                    <div class="deleteSearch">
+                        <i class="iconfont iconshanchu1 iconsearch"></i>
+                    </div>
+                </div>
+                <ul class="recentlyConter">
+                    <!-- <li>可乐</li> -->
+                </ul>
+                <div class="searchNone"><span>无搜索历史</span></div>
+            </div>
+            <div class="hotSearch">
+                <div class="search-title">
+                    <div>
+                        <i class="iconfont iconxingxing iconsearch"></i>
+                        <span>热门搜素</span>
+                    </div>
+                </div>
+                <div class="hotContainer">
+                    <ul class="hotConter">
+                        <!-- <li>金龙鱼</li>
+                        <li>酸奶</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="searchContent">
+            <ul class="searchContent-list">
+                <!-- <li>
+                    <div class="searchKinds">
+                        <span class="searchName">咖啡</span>
+                    </div>
+                    <div class="searchResult">
+                        <span>共有</span>
+                        <span class="searchNum">13</span>
+                        <span>个结果</span>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/zepto-master/src/zepto.js"></script>
+    <script src="../../js/zepto-master/src/event.js"></script>
+    <script src="../../js/zepto-master/src/ajax.js"></script>
+    <script src="../../js/zepto-master/src/touch.js"></script>
+    <script src="../../js/js-MF/search.js"></script>
+    <script>
+        function jsonp_91463692(str) {
+            var data = str.result;
+            console.log(data);
+            var search_list = "";
+            for (var i = 0; i < data.length; i++) {
+                search_list += `
+                <li>
+                    <div class="searchKinds">
+                        <span class="searchName">${data[i][0]}</span>
+                    </div>
+                    <div class="searchResult">
+                        <span>共有</span>
+                        <span class="searchNum">${data[i][1]}</span>
+                        <span>个结果</span>
+                    </div>
+                </li>
+                `;
+            }
+            $(".searchContent-list").html(search_list);
+            // $(".searchContent-list").on("tap", "li", function () {
+            $(".searchContent-list li").tap(function () {
+                $(".searchNone").css("display", "none");
+                var text = $(this).children().children(".searchName").text();
+                $(".searchKeyWords").val(text);
+                $(".recentlyConter").append("<li>" + text + "</li>")
+            })
+        }
+        $(".searchKeyWords").focus(function () {
+            $(this).val("");
+        })
+        $(".searchKeyWords").keyup(function () {
+            $(".searchContent").css("display", "block");
+            var creatScript = document.createElement("script");
+            var value = $(this).val();
+            creatScript.src = "https://suggest.taobao.com/sug?area=b2c&code=utf-8&k=1&src=tmall_h5&q=" + value + "&callback=jsonp_91463692";
+            document.body.appendChild(creatScript);
+            document.body.removeChild(creatScript);
+        })
+
+    </script>
+</body>
+
+</html>
