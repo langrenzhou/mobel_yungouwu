@@ -200,7 +200,7 @@
 }
 .cover_slide_verify .slide_verify {
   width: 3.5rem;
-  height: 3rem;
+  height: 0;
   border: .5px solid #e4e7eb;
   background-color: #fff;
 }

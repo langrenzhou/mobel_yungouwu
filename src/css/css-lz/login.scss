@@ -205,7 +205,6 @@ $fs:font-size;
 }
 
 .cover_slide_verify {
-    // @extend .disp_n;
     top: 0;
     left: 0;
     right: 0;
@@ -216,7 +215,9 @@ $fs:font-size;
     @extend .align_it_c;
 
     .slide_verify {
-        @include fun(3.5rem, 3rem);
+        // @include fun(3.5rem, 3rem);
+        width: 3.5rem;
+        height: 0;
         border: .5px solid #e4e7eb;
 
         background-color: #fff;

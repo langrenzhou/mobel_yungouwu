@@ -5,9 +5,9 @@ $("a").tap(function () {
 // 验证用户输入手机号
 let suc = false;
 let n = 0;
+let val;
 $("#u_input").keyup(function () {
     n++;
-    let val;
     if (n == 11) {
         val = $(this).val();
         let reg = /[1][3-9][\d]{9}/;
@@ -28,52 +28,43 @@ $("#u_input").keyup(function () {
         $(".error_tips").addClass("disp_n");
         $(".go_next i").removeClass("go_next_color");
     }
-
     // 验证通过
-
     if (suc) {
         // 滑块验证
         slide_verify();
-        // 点击跳到验证码页面
-        if ($(".small_pic").css("left") == pos_left[random_n]) {
-            $(".cover_slide_verify").addClass("disp_n");
-            verify_code();
-        }
-
     }
 })
 
 function slide_verify() {
-    random_slide_pic();
-    $(".cover_slide_verify").removeClass("disp_n");
-    move_slide();
-}
+    const pos_left = [140, 175, 135];
+    let random_n = Math.floor(Math.random() * 3 + 1);
+    function random_slide_pic() {
+        let random_html = `<img class="bg_pic" src="../../images/image_lz/slide_bg_${random_n}.jpg">
+        <img class="small_pic pa" src="../../images/image_lz/slide_small_${random_n}.png">`
+        $(".slide_pic").html(random_html);
+    }
 
-const pos_left = [166, 200, 160];
-console.log(pos_left);
-let random_n = Math.floor(Math.random() * 3 + 1);
-// let random_html;
-function random_slide_pic() {
-    let random_html = `<img class="bg_pic" src="../../images/image_lz/slide_bg_${random_n}.jpg">
-    <img class="small_pic pa" src="../../images/image_lz/slide_small_${random_n}.png">`
-    $(".slide_pic").html(random_html);
-}
-
-function move_slide() {
-    $(".cover_slide_verify").on("mousemove", function (e) {
-        let _left = e.clienX - $(".small_pic").width() / 2;
-        let _top = e.clienY - $(".small_pic").height() / 2;
-        $(".small_pic").css({
-            left: _left,
-            top: _top
+    function move_slide() {
+        $(".slide_pic").on("touchmove", function (e) {
+            let _left = e.touches[0].clientX - $(".bg_pic").offset().left - $(".small_pic").width() / 2;
+            let _top = e.touches[0].clientY - $(".bg_pic").offset().top - $(".small_pic").height() / 2;
+            $(".small_pic").css({
+                left: _left,
+                top: _top
+            })
         })
-    })
-}
-
-function verify_code() {
-    $(".go_next").tap(function () {
-        window.location.href = "./verify_code.html?pho_num=" + val;
-    })
+        $(".slide_pic").on("touchend", function (e) {
+            if (parseInt($(".small_pic").css("left")) >= pos_left[random_n - 1] - 20 || parseInt($(".small_pic").css("left")) <= pos_left[random_n - 1] + 20) {
+                $(".cover_slide_verify").addClass("disp_n");
+                // 点击跳到验证码页面
+                window.location.href = "./verify_code.html?pho_num=" + val;
+            }
+        })
+    }
+    random_slide_pic();
+    $(".cover_slide_verify").removeClass("disp_n").children().animate({
+        height: "3rem"
+    }, move_slide());
 }
 
 // 
