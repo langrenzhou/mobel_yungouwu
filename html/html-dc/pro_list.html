@@ -101,14 +101,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="oneList">2</li>
-                <li class="oneList">3</li>
-                <li class="oneList">4</li>
-                <li class="oneList">5</li>
-                <li class="oneList">6</li>
-                <li class="oneList">7</li>
-                <li class="oneList">8</li>
-                <li class="oneList">9</li>
+
             </ul>
         </div>
         <!-- 这里可以放一些其它的 DOM，但不会影响滚动 -->
@@ -291,6 +284,7 @@
     <script src="../../js/zepto-master/src/event.js"></script>
     <script src="../../js/bscroll.min.js"></script>
     <script src="../../js/zepto-master/src/fx.js"></script>
+    <script src="../../js/zepto-master/src/ajax.js"></script>
     <script>
         // 下面是调整分类
         var classify = true;
@@ -323,11 +317,15 @@
         });
         // 下面是选择的时候字体变红并且重新加载数据
         var flag = true;
-
+        let index = 0;
+        if (index == 0) {
+            $('.rank .box').eq(index).find('span,.iconfont').css({
+                color: 'red'
+            })
+        }
         $('.rank .box').tap(function () {
-
             // 这里可以通过下标来请求数据；
-            var index = $(this).index();
+            index = $(this).index();
             if (index != 2) {
                 $(this).find('span,.iconfont').css({
                     color: 'red'
@@ -338,6 +336,9 @@
                 $(this).siblings().find('use').attr({
                     'xlink:href': '#iconsort'
                 });
+                fn({
+                    reply: index,
+                })
             }
             if (index == 2) {
                 if (flag) {
@@ -352,6 +353,11 @@
                         color: '#777'
                     });
                     flag = false;
+                    fn({
+                        num: 0,
+                        reply: 0,
+                        price: 1,
+                    })
                 } else {
                     $(this).find('span').css({
                         color: 'red'
@@ -364,6 +370,11 @@
                         color: '#777'
                     });
                     flag = true;
+                    fn({
+                        num: 0,
+                        reply: 0,
+                        price: 2,
+                    })
                 };
 
             }
@@ -373,7 +384,8 @@
                 });
                 flag = true;
             };
-        })
+            console.log(index)
+        });
         // 下面是筛选里面的滚动效果
         var bs2 = new BScroll('.warpper2', {
             scrollY: true,
@@ -382,7 +394,7 @@
                 top: false,
                 bottom: true,
                 left: true,
-                right: true
+                right: true,
             }
         });
         // 下面是点击选择模块
@@ -395,7 +407,6 @@
             $(this).parent().next().toggleClass('list_box_active');
         })
         // 下面是点击选择，并且替换全部的字样
-        var arr;
         $('.list_box').find('.btn').tap(function () {
             // 下面是点击的样式变化和点击的个数限制
             $(this).toggleClass('activeBtn');
@@ -411,30 +422,6 @@
                 $(this).removeClass('activeBtn')
             };
 
-            var text = $(this).parent().prev().find('.more').html();
-            if (text == '全部') {
-                arr = [];
-            }
-            var str = $(this).html() + ','
-            arr.push(str);
-            console.log(arr)
-
-            if ($(this).hasClass('activeBtn')) {
-
-                $(this).parent().prev().find('span').html(arr).css({
-                    color: '#FF4A4A'
-                });
-            } else {
-                var index = arr.indexOf(str);
-                arr.splice(index,1);
-                console.log(arr)
-                // arr.removeByValue($(this).html());
-                // $(this).parent().prev().find('span').html(arr).css({
-                //     color: '#FF4A4A'
-                // });
-            }
-
-            // var value = $(this).parent().prev().find('span').html();
         });
 
         // 下面是筛选后隐藏筛选模块
@@ -442,7 +429,65 @@
             $('.shade_box').css({
                 display: 'none'
             })
+        });
+        // 下面是ajax请求加载
+        fn({
+            num: 0,
+            reply: 0,
+            price: 0,
         })
+
+        function fn(data) {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    reply: data.reply,
+                    num: data.num,
+                    price: data.price,
+                    page: data.page,
+                },
+                url: '../../php/php-dc/pro_list.php',
+                error: function () {
+                    console.log(404)
+                },
+                success: function (res) {
+                    console.log(data);
+                    let str = '';
+                    res.forEach(element => {
+                        str += `
+                    <li class="oneList">
+                    <div class="img_box">
+                        <img src="${element.img_url}" alt="">
+                    </div>
+                    <div class="content_pro">
+                        <div class="title">
+                            <em>${element.category}</em>
+                            <span>${element.title}</span>
+                        </div>
+                        <div class="reserved"></div>
+                        <div class="discounts">${element.discount}</div>
+                        <div class="bottom">
+                            <p class="price">${element.price}</p>
+                            <div class="interact">
+                                <i class="iconfont iconduanxin"></i>
+                                <div class="reply">${element.reply}</div>
+
+                                <i class="iconfont iconzan"></i>
+                                <div class="centage">${element.praise}</div>
+                            </div>
+                            <div class="addCar">
+                                <i class="iconfont icongouwuche"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                    `;
+                    });
+                    $('.wrapper .content').html(str)
+                },
+            });
+        };
     </script>
 </body>
 
