@@ -101,8 +101,9 @@
                         </div>
                     </div>
                 </li>
-
+  <div class="load"><img src="../../images/images-dc/timg2.gif"></div>
             </ul>
+          
         </div>
         <!-- 这里可以放一些其它的 DOM，但不会影响滚动 -->
     </div>
@@ -306,15 +307,32 @@
         });
         // 下面是滚动效果
         var bs = new BScroll('.wrapper', {
+            pullUpLoad: true,
             scrollY: true,
             probeType: 2,
             bounce: {
                 top: false,
                 bottom: true,
                 left: true,
-                right: true
-            }
+                right: true,
+            },
+
+
         });
+        bs.on('pullingUp', function () {
+            $('.load').show();
+            console.log(1);
+            bs.finishPullUp()
+        })
+        // bs.on('beforeScrollStart', function () {
+        //     $('.load').show()
+        // })
+        // bs.on('scrollStart', function () {
+        //     $('.txt').css({
+        //         background: 'pink'
+        //     });
+        // })
+
         // 下面是选择的时候字体变红并且重新加载数据
         var flag = true;
         let index = 0;
@@ -484,7 +502,7 @@
                 </li>
                     `;
                     });
-                    $('.wrapper .content').html(str)
+                    $('.wrapper .content').prepend(str)
                 },
             });
         };
