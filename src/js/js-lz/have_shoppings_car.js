@@ -89,8 +89,6 @@ $(".bs_cont li").each(function () {
     let $product_select = $this_li.find(".product_select");
     let pro_sel_num = $product_select.length;
     // 
-
-    // 
     $classify_select.on("tap", function () {
         let classify_check_state = $(this).prop("checked");
         $product_select.prop("checked", classify_check_state);
@@ -121,6 +119,9 @@ let classify_check_num = $(".classify_select:checked").length;
 
 $(".product_select").on("tap", function () {
     let $product_box=$(this).parent().parent();
+    let $ul=$(this).parent().parent().parent().parent();
+    let cla_sel_num= $ul.find(".classify_select").length;
+    let cla_sel_ch_num= $ul.find(".classify_select:checked").length;
     let pro_sel_num= $product_box.find(".product_select").length;
     let pro_sel_check_num= $product_box.find(".product_select:checked").length;
     let $classify_select=$product_box.prev().find(".classify_select");    
@@ -130,7 +131,12 @@ $(".product_select").on("tap", function () {
     else {
        $classify_select.prop("checked", false);
     }
-    
+    if (cla_sel_num ==cla_sel_ch_num) {
+        $(".all_select").prop("checked", true);
+     }
+     else {
+        $(".all_select").prop("checked", false);
+     }    
 })
 
 $(".all_select").on("tap", function () {
