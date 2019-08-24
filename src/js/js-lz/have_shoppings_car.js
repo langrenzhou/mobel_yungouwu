@@ -1,3 +1,4 @@
+FastClick.attach(document.body);
 $("a").tap(function () {
     $(this).css("textDecoration", "none");
 })
@@ -39,13 +40,13 @@ $(".bs_cont li").each(function () {
             $(".total_price").text(last_sum.toFixed(2));
 
             sum_pro_num++;
-            $(".account_num").text("("+sum_pro_num+")");
+            $(".account_num").text("(" + sum_pro_num + ")");
         })
         $minus.on("tap", function () {
             if (pro_num == 1) {
                 last_sum = last_sum;
 
-                sum_pro_num=sum_pro_num;
+                sum_pro_num = sum_pro_num;
 
                 pro_num = pro_num;
             } else if (pro_num > 1) {
@@ -57,7 +58,7 @@ $(".bs_cont li").each(function () {
             }
             $num.text(pro_num);
             $(".total_price").text(last_sum.toFixed(2));
-            $(".account_num").text("("+sum_pro_num+")");
+            $(".account_num").text("(" + sum_pro_num + ")");
         })
     })
     // console.log(pros_total_arr);
@@ -79,7 +80,66 @@ all_pros_num_arr.join().split(",").forEach((num) => {
     sum_pro_num += Number(num);
 })
 // console.log(typeof sum_pro_num);
-$(".account_num").text("("+sum_pro_num+")");
+$(".account_num").text("(" + sum_pro_num + ")");
 
 // 选择按钮间的关系
+$(".bs_cont li").each(function () {
+    let $this_li = $(this);
+    let $classify_select = $this_li.find(".classify_select");
+    let $product_select = $this_li.find(".product_select");
+    let pro_sel_num = $product_select.length;
+    // 
 
+    // 
+    $classify_select.on("tap", function () {
+        let classify_check_state = $(this).prop("checked");
+        $product_select.prop("checked", classify_check_state);
+    })
+    // 
+    $product_select.on("tap", function () {
+        let checked_num = $this_li.find(".product_select:checked").length;
+        console.log(checked_num);
+        if (pro_sel_num == checked_num) {
+            $classify_select.prop("checked", true);
+        }
+        else {
+            $classify_select.prop("checked", false);
+        }
+    })
+})
+// 全选
+let classify_num = $(".classify_select").length;
+$(".classify_select").on("tap", function () {    
+let classify_check_num = $(".classify_select:checked").length;
+    if (classify_num == classify_check_num) {
+        $(".all_select").prop("checked", true);
+    }
+    else {
+        $(".all_select").prop("checked", false);
+    }
+})
+
+$(".product_select").on("tap", function () {
+    let $product_box=$(this).parent().parent();
+    let pro_sel_num= $product_box.find(".product_select").length;
+    let pro_sel_check_num= $product_box.find(".product_select:checked").length;
+    let $classify_select=$product_box.prev().find(".classify_select");    
+    if (pro_sel_num == pro_sel_check_num) {
+       $classify_select.prop("checked", true);
+    }
+    else {
+       $classify_select.prop("checked", false);
+    }
+    
+})
+
+$(".all_select").on("tap", function () {
+    let check_state = $(this).prop("checked");
+    $(".bs_cont li").each(function () {
+        let $classify_select = $(this).find(".classify_select");
+        let $product_select = $(this).find(".product_select");
+        $classify_select.prop("checked", check_state);
+        $product_select.prop("checked", check_state);
+    })
+
+})
