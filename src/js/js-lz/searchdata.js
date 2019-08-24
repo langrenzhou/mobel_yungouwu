@@ -88,4 +88,54 @@ $(function () {
     //         // }, 1000)
     //     })
     // }
+
+
+    // let tot_price;
+    // $(".bs_cont li").each(function () {
+    //     let num = $(".num").text();
+    //     let unit_price = $(".unit_price").text();
+
+    //     function account_total_price() {
+    //         tot_price = (num * unit_price).toFixed(2);
+    //         $(".total_price").text(tot_price);
+    //         $(".account_num").text("(" + num + ")");
+    //     }
+
+    //     account_total_price();
+
+    //     $(".plus").on("tap", function () {
+    //         num = $(".num").text();
+    //         num++;
+    //         $(".num").text(num);
+    //         account_total_price();
+    //     })
+    //     $(".minus").on("tap", function () {
+    //         num = $(".num").text();
+    //         num--;
+    //         num = num >= 1 ? num : 1;
+    //         $(".num").text(num);
+    //         account_total_price();
+    //     })
+
+    //     // 选择按钮
+    //     let $classify_select = $(this).find(".classify_select")
+    //     let $product_select = $(this).find(".product_select")
+    //     console.log($classify_select.prop("checked"));
+    //     console.log($product_select.prop("checked"));
+    //     $classify_select.on("tap", function () {
+    //         $product_select.prop("checked", $(this).prop("checked"));
+    //     })
+
+    // })
+
+    // $(".all_select").on("tap", function () {
+    //     // console.log($(this).prop("checked"));
+    //     if ($(this).prop("checked")) {
+    //         $(".bs_cont li").each(function () {
+    //             $(this).find(".classify_select").prop("checked", true);
+    //         })
+    //     }
+    // })
+
+
 })

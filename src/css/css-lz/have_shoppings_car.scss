@@ -26,18 +26,22 @@
     justify-content: flex-end;
 }
 
-.align_it_c{
+.align_it_c {
     align-items: center;
 }
-.align_it_end{
+
+.align_it_end {
     align-items: flex-end;
 }
-.align_ct_ar{
+
+.align_ct_ar {
     align-content: space-around;
 }
-.align_sf_c{
+
+.align_sf_c {
     align-self: center;
 }
+
 .client_w {
     width: 100vw;
 }
@@ -68,10 +72,12 @@ $bkg:background;
     height: $n2;
 
 }
+
 .header_wrap {
     z-index: 1;
     top: 0;
     left: 0;
+
     .header {
         #{$h}: .65rem;
         #{$lh}: .65rem;
@@ -103,7 +109,8 @@ $bkg:background;
         }
     }
 }
-.header_nav{
+
+.header_nav {
     ul {
         @extend .client_w;
         height: 1rem;
@@ -125,7 +132,7 @@ $bkg:background;
 
 }
 
-.header>span{
+.header>span {
     margin-right: -1.9rem;
 }
 
@@ -149,130 +156,153 @@ $bkg:background;
 }
 
 .bs_wrap {
-    @include fun(100vw,100vh);
+    @include fun(100vw, 100vh);
 }
 
-.bs_cont input,.account_box input{
-        @extend .align_sf_c;
-        display: inline-block;
-        @include fun(.32rem,.32rem);
-        border-radius: 50%;
-        background-color: #e6133c;
-        color: #fff;
-        vertical-align: -.06rem;
+.bs_cont input,
+.account_box input {
+    @extend .align_sf_c;
+    display: inline-block;
+    @include fun(.32rem, .32rem);
+    border-radius: 50%;
+    background-color: #e6133c;
+    color: #fff;
+    vertical-align: -.06rem;
 }
 
 .bs_cont {
     min-height: 10rem;
-    padding-top: .65rem;    
+    padding-top: .65rem;
 }
 
-.classify_title{
-    @include fun(100%,.72rem);
+.classify_title {
+    @include fun(100%, .72rem);
     @extend .box_siz_b;
     padding: 0 .2rem;
-    border-bottom: 1px solid #dedede;
     background: #fff;
-    #{$fs}:.28rem;
+    #{$fs}: .28rem;
     color: #333;
-    #{$lh}:.72rem;
-    
-    i{
-        #{$fs}:.28rem;
-        padding:0 .1rem;
+    #{$lh}: .72rem;
+
+    i {
+        #{$fs}: .28rem;
+        padding: 0 .1rem;
     }
-    span{
+
+    span {
         padding-left: .5rem;
-    }    
+    }
 }
 
-.product_box{
-    #{$fs}:.28rem;
+.product_box {
+    #{$fs}: .28rem;
     @extend .client_w;
-    padding-bottom: .3rem;
-    .products{
+
+    .products {
+        border: {
+            bottom: 1px solid #dedede;
+            top: 1px solid #dedede;
+        }
+
         width: 100%;
         @extend .box_siz_b;
-        padding: .2rem .2rem 0;
+        padding: .2rem;
         @extend .disp_f;
         @extend .js_ct_bt;
     }
-    .product_pic{
-        @include fun(1.5rem,1.5rem);
+
+    .product_pic {
+        @include fun(1.5rem, 1.5rem);
         border: .5px solid #ccc;
         border-radius: 0.04rem;
-        img{
-            @include fun(100%,100%);
+
+        img {
+            @include fun(100%, 100%);
         }
-        .inventory{
+
+        .inventory {
             left: 0;
             bottom: 0;
             @extend .disp_f;
             @extend .js_ct_c;
             @extend .text_align_c;
-            @include fun(100%,.4rem);
-            background-color: rgba(0,0,0,.5);
+            @include fun(100%, .4rem);
+            background-color: rgba(0, 0, 0, .5);
             color: #fff;
         }
     }
-    .product_info{
+
+    .product_info {
         width: 5.12rem;
-        .title{
-            @include fun(100%,.34rem);
+
+        .title {
+            @include fun(100%, .34rem);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            #{$fs}:.24rem;
+            #{$fs}: .24rem;
             color: #333;
         }
-        .sports_item{
+
+        .sports_item {
             @extend .disp_f;
             padding-top: .32rem;
         }
-        .rush_purchase,.reserve{
-            @include fun(.72rem,.34rem);
+
+        .rush_purchase,
+        .reserve {
+            @include fun(.72rem, .34rem);
             @extend .disp_f;
             @extend .js_ct_c;
             @extend .text_align_c;
             border: 1px solid #eb5572;
-            #{$fs}:.24rem;
+            #{$fs}: .24rem;
             color: #eb5572;
             border-radius: 0.04rem;
             background: #fff;
             margin-right: .08rem;
         }
-        .reserve{
-            @include fun(.8rem,.34rem);
-            i{
+
+        .reserve {
+            @include fun(.8rem, .34rem);
+
+            i {
                 height: 100%;
-                #{$fs}:.24rem; 
+                #{$fs}: .24rem;
                 @extend .disp_f;
                 @extend .align_it_c;
             }
         }
-        .sprice_num{
-            @include fun(100%,.52rem);
+
+        .sprice_num {
+            @include fun(100%, .52rem);
             @extend .disp_f;
             @extend .js_ct_bt;
             @extend .align_it_end;
-            div{
+
+            div {
                 @extend .disp_f;
             }
-            .unit_price{
+
+            .unit_price {
                 #{$fs}: 0.28rem;
                 color: #e6133c;
             }
-            .minus,.num,.plus {
+
+            .minus,
+            .num,
+            .plus {
                 display: inline-block;
-                @include fun(.44rem,.44rem);
+                @include fun(.44rem, .44rem);
                 cursor: pointer;
                 border: .5px solid #757575;
                 @extend .text_align_c;
-                #{$lh}:.44rem;
+                #{$lh}: .44rem;
             }
-            .num{
-                border:{
-                    left:none;
+
+            .num {
+                border: {
+                    left: none;
                     right: none;
                 }
             }
@@ -280,10 +310,10 @@ $bkg:background;
     }
 }
 
-.account_box{
-    left:0;
-    bottom:0;
-    @include fun(100vw,1rem);
+.account_box {
+    left: 0;
+    bottom: 0;
+    @include fun(100vw, 1rem);
     @extend .box_siz_b;
     padding-left: .2rem;
     @extend .disp_f;
@@ -291,40 +321,47 @@ $bkg:background;
     @extend .align_it_c;
     #{$fs}: 0.24rem;
     border-top: .5px solid #e6e6e6;
-    .total_discounts{
-        @include fun(3.98rem,100%); 
+
+    .total_discounts {
+        @include fun(3.98rem, 100%);
         @extend .disp_f;
         flex-direction: column;
         @extend .js_ct_ar;
-        .total,.discounts{
+
+        .total,
+        .discounts {
             @extend .disp_f;
             @extend .js_ct_bt;
         }
-        .total{
+
+        .total {
             margin-top: .1rem;
             #{$fs}: 0.28rem;
             color: #333;
-            .total_price{
+
+            .total_price {
                 #{$fs}: 0.36rem;
-                color: #e6133c;;
+                color: #e6133c;
+                ;
             }
         }
-        .discounts{
+
+        .discounts {
             color: #999;
         }
     }
 
 }
 
-.account_box>span{
+.account_box>span {
     #{$fs}: 0.28rem;
     color: #333;
     margin-left: -.1rem;
 }
 
-.close_account{
+.close_account {
     @extend .disp_f;
-    @include fun(2rem,100%); 
+    @include fun(2rem, 100%);
     background: #e6133c;
     @extend .js_ct_c;
     @extend .align_it_c;
