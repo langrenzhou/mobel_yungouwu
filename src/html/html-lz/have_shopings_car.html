@@ -72,7 +72,7 @@
                             <span class="reserve"><i class="iconfont iconicon-test1"></i>预定</span>
                         </div>
                         <div class="sprice_num">
-                            <span class="price">￥9.90</span>
+                            <p><span>￥</span><span class="unit_price">9.90</span></p>
                             <div>
                                 <span class="minus">-</span>
                                 <span class="num">1</span>
@@ -88,11 +88,23 @@
         <input type="checkbox">
         <span>全选</span>
         <div class="total_discounts">
-            <p class="total"><span>合计：</span><span class="price">￥2390.90</span></p>
-            <p class="discounts"><span>优惠：</span class="price"><span>￥390.00</span></p>
+            <div class="total">
+                <span>合计：</span>
+                <p>
+                    <span>￥</span>
+                    <span class="total_price">0.00</span>
+                </p>
+            </div>
+            <div class="discounts">
+                <span>优惠：</span>
+                <p>
+                    <span>￥</span>
+                    <span class="dis_price">0.00</span>
+                </p>
+            </div>
         </div>
         <div class="close_account">
-            去结算<span>（7）</span>
+            <span>去结算</span><span class="account_num">(0)</span>
         </div>
 
     </div>
@@ -101,6 +113,7 @@
 
 
     <script src="../../js/rem.js"></script>
+    <script src="../../js/bscroll.min.js"></script>
     <script src="../../js/zepto-master/src/zepto.js"></script>
     <script src="../../js/zepto-master/src/event.js"></script>
     <script src="../../js/zepto-master/src/touch.js"></script>

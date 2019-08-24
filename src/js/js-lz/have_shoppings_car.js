@@ -1,4 +1,4 @@
-$("a").tap(function(){
+$("a").tap(function () {
     $(this).css("textDecoration", "none");
 })
 
@@ -11,18 +11,35 @@ $(".sign .iconclose").tap(function () {
     $(".header_nav").hide();
 })
 var bs_all = new BScroll('.bs_wrap', {
-    // probeType: 3,
-
-    // pullDownRefresh: true,
-    // pullDownRefresh: {
-    //     // threshold: 50,  //当下拉长度距离盒子顶部的高度超过50px的时候,就派发一个下拉刷新的事件
-    //     // stop:200,
-    // },
-
-    // pullUpLoad: true,
-    // pullUpLoad: {
-    //     threshold: 100    //当上拉距离超过盒子高度的100px的时候,就派发一个上拉加载的事件
-    // },
-
-    // useTransition: false  // 防止iphone微信滑动卡顿
 })
+
+// shopping_car
+let num = $(".num").text(), tot_price;
+let unit_price = $(".unit_price").text();
+
+function account_total_price() {
+    tot_price = (num * unit_price).toFixed(2);
+    $(".total_price").text(tot_price);
+    $(".account_num").text("(" + num + ")");
+}
+
+account_total_price();
+
+$(".plus").on("tap", function () {
+    num = $(".num").text();
+    num++;
+    $(".num").text(num);
+    account_total_price();
+})
+$(".minus").on("tap", function () {
+    num = $(".num").text();
+    num--;
+    num = num >= 1 ? num : 1;
+    $(".num").text(num);
+    account_total_price();
+})
+
+// 选择按钮
+
+
+

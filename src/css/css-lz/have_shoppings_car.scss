@@ -69,6 +69,7 @@ $bkg:background;
 
 }
 .header_wrap {
+    z-index: 1;
     top: 0;
     left: 0;
     .header {
@@ -257,7 +258,7 @@ $bkg:background;
             div{
                 @extend .disp_f;
             }
-            .price{
+            .unit_price{
                 #{$fs}: 0.28rem;
                 color: #e6133c;
             }
@@ -303,7 +304,7 @@ $bkg:background;
             margin-top: .1rem;
             #{$fs}: 0.28rem;
             color: #333;
-            .price{
+            .total_price{
                 #{$fs}: 0.36rem;
                 color: #e6133c;;
             }
@@ -322,10 +323,11 @@ $bkg:background;
 }
 
 .close_account{
+    @extend .disp_f;
     @include fun(2rem,100%); 
     background: #e6133c;
-    line-height: 1rem;
-    text-align: center;
+    @extend .js_ct_c;
+    @extend .align_it_c;
     font-size: 0.36rem;
     color: #fff;
 }
