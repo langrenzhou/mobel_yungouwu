@@ -50,11 +50,8 @@ bs_all.on('pullingUp', function () {
     if (up_count < 4) {
         // ajax 获取为你推荐部分的数据
         request_datas();
-    } else {
-        // up_count = 0;
-        // $(".pull_down_tip").css("display", "none");
-        // $(".no_datas").css("display", "block");
-        $(".pull_down_tip").addClass("disp_n");
+    } else {       
+        $(".pull_up_tip").addClass("disp_n");
         setTimeout(function () {
             $(".no_datas").removeClass("disp_n");
         }, 500)
@@ -74,11 +71,13 @@ function request_datas() {
             up_count: up_count
         },
         beforeSend: function () {
+            $(".pull_up_tip").addClass("disp_n");
             $(".loading").removeClass("disp_n");
         },
         success: function (res) {
             console.log(res);
             $(".loading").addClass("disp_n");
+            $(".pull_up_tip").removeClass("disp_n");
             var _html = "";
             for (var i = 0; i < res.length; i++) {
                 _html += `<li>

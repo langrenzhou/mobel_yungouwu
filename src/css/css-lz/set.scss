@@ -1,0 +1,255 @@
+.disp_f {
+    display: flex;
+}
+
+.disp_n {
+    display: none;
+}
+
+.js_ct_bt {
+    justify-content: space-between;
+}
+
+.js_ct_ar {
+    justify-content: space-around;
+}
+
+.js_ct_c {
+    justify-content: center;
+}
+
+.js_ct_st {
+    justify-content: flex-start;
+}
+
+.js_ct_end {
+    justify-content: flex-end;
+}
+
+.al_it_ct {
+    align-items: center;
+}
+
+.client_w {
+    width: 100vw;
+}
+
+.client_h {
+    height: 100vh;
+}
+
+.box_siz_b {
+    box-sizing: border-box;
+}
+
+.text_align_r {
+    text-align: right;
+}
+
+.text_align_c {
+    text-align: center;
+}
+
+$fs:font-size;
+$h:height;
+$lh:line-height;
+$bkg:background;
+
+@mixin fun($n1, $n2) {
+    width: $n1;
+    height: $n2;
+}
+
+body {
+    #{$fs}: .2rem;
+    #{$bkg}-color: #f5f5f5;
+}
+
+.header_wrap {
+    z-index: 1;
+    border: .5px solid #ddd;
+    box-sizing: border-box;
+
+    .header {
+        #{$h}: .65rem;
+        #{$lh}: .65rem;
+        @extend .disp_f;
+        #{$fs}: .26rem;
+        @extend .js_ct_bt;
+        @extend .client_w;
+        @extend .box_siz_b;
+        padding: 0 .15rem;
+        #{$bkg}-color: #f5f5f5;
+
+        a {
+            color: #000;
+        }
+
+        i {
+            #{$fs}: .3rem;
+        }
+
+        .sign {
+            @include fun(.307rem, 100%);
+        }
+
+        .sign>i:last-child {
+            top: 0;
+            left: 0;
+            color: #fe8477;
+            display: none;
+        }
+    }
+}
+
+.header_nav {
+    ul {
+        @extend .client_w;
+        height: 1rem;
+        @extend .disp_f;
+        @extend .js_ct_ar;
+        #{$bkg}-color: #fff;
+
+        li {
+            height: 100%;
+            @extend .disp_f;
+            @extend .js_ct_c;
+            @extend .text_align_c;
+            color: #333;
+            flex-direction: column;
+
+            i {
+                #{$fs}: .3rem;
+            }
+
+            a {
+                color: #333;
+            }
+
+            span {
+                #{$fs}: .158rem;
+            }
+
+        }
+    }
+
+}
+
+.header_nav {
+    display: none;
+
+    ul {
+        #{$bkg}-color: #000;
+        border-bottom: .05rem solid #fe8477;
+
+        li {
+            color: #fff;
+
+            a {
+                padding-top: .07rem;
+                color: #fff;
+            }
+
+            span {
+                #{$fs}: .17rem;
+                padding-top: .1rem;
+            }
+        }
+    }
+}
+
+.item_list {
+    margin: .2rem 0;
+}
+
+.item {
+    padding: .2rem;
+    @extend .box_siz_b;
+    border-bottom: .5px solid #ddd;
+    #{$bkg}-color: #fff;
+    @extend .disp_f;
+    @extend .js_ct_bt;
+    @extend .al_it_ct;
+    #{$fs}: .2rem;
+    color: #333;
+
+    i {
+        padding-left: .1rem;
+        color: #333;
+    }
+
+    .info {
+        #{$fs}: .17rem;
+        color: #ff4a4a;
+    }
+
+    .potrait {
+        #{$fs}: .8rem;
+        color: #666;
+    }
+}
+
+.secede {
+    @include fun(100vw, .6rem);
+    @extend .box_siz_b;
+    padding: .2rem .2rem 0;
+
+    a {
+        @extend .disp_f;
+        height: 0.6rem;
+        #{$bkg}: #f13149;
+        #{$fs}: .2rem;
+        color: #fff;
+        @extend .js_ct_c;
+        @extend .al_it_ct;
+        border-radius: .08rem;
+    }
+}
+
+.verify_secede_wrap {
+    top: 0;
+    left: 0;
+    @include fun(100vw, 100vh);
+    #{$bkg}:rgba(0,0,0,0.3);
+    @extend .disp_f;
+    @extend .js_ct_c;
+    @extend .al_it_ct;
+    #{$fs}: .24rem;
+    color: #666;
+
+    .verify_secede {
+        @include fun(4rem, 2rem);
+        #{$bkg}: #fff;
+
+        .tips {
+            @extend .disp_f;
+            @extend .box_siz_b;
+            flex-direction: column;
+            height: 1.35rem;
+            @extend .js_ct_c;
+            @extend .al_it_ct;
+            border-bottom: .5px solid #ddd;
+            .verify{
+                #{$fs}: .22rem;
+            }
+        }
+
+        .cancel_verify {
+            @extend .disp_f;
+            height: .65rem;
+            span{
+                display: inline-block;
+                @include fun(50%, 100%);
+                @extend .text_align_c;
+                #{$lh}:.65rem;
+                color:#222;
+            }
+            .verify_style{
+                #{$bkg}: #f13149;
+                color: #fff;
+            }
+        }
+    }
+
+
+}

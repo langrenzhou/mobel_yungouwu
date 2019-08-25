@@ -70,9 +70,6 @@ body {
   line-height: 1rem;
   border: .5px solid #ddd; }
 
-.pull_up_tip {
-  display: block; }
-
 .header_wrap {
   z-index: 1;
   border: .5px solid #ddd; }
@@ -359,6 +356,9 @@ body {
     .header_nav ul li i,
     .bottom_nav ul li i {
       font-size: .3rem; }
+    .header_nav ul li a,
+    .bottom_nav ul li a {
+      color: #333; }
     .header_nav ul li span,
     .bottom_nav ul li span {
       font-size: .158rem; }
@@ -370,6 +370,9 @@ body {
     border-bottom: .05rem solid #fe8477; }
     .header_nav ul li {
       color: #fff; }
+      .header_nav ul li a {
+        padding-top: .07rem;
+        color: #fff; }
       .header_nav ul li span {
         font-size: .17rem;
         padding-top: .1rem; }

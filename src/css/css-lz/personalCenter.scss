@@ -81,11 +81,6 @@ body {
     line-height: 1rem;
     @extend .text_align_c;
     border: .5px solid #ddd;
-    // @extend .disp_n;
-}
-
-.pull_up_tip {
-    display: block;
 }
 
 .header_wrap {
@@ -549,10 +544,13 @@ body {
             i {
                 #{$fs}: .3rem;
             }
-
+            a{
+                color: #333; 
+            }
             span {
                 #{$fs}: .158rem;
             }
+
         }
     }
 
@@ -567,7 +565,10 @@ body {
 
         li {
             color: #fff;
-
+            a{
+                padding-top: .07rem;
+                color: #fff;   
+            }
             span {
                 #{$fs}: .17rem;
                 padding-top: .1rem;

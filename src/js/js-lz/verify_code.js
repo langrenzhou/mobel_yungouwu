@@ -51,7 +51,7 @@ if (phone_num) {
         // // 新页面
         if (suc) {
             $(".go_next").tap(function () {
-                window.location.href = "./personalCenter.html?phone_num=" + phone_num;
+                location.href = "./personalCenter.html?phone_num=" + phone_num;
             })
         }
     })
