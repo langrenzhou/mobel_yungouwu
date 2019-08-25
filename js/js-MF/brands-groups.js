@@ -47,9 +47,9 @@ $(function () {
                 `;
             }
             $(".header-container").html(html);
-            for(var j=0;j<res.length;j++){
-                let titleli=res[j].title;
-                groupList(j+1,titleli)
+            for (var j = 0; j < res.length; j++) {
+                let titleli = res[j].title;
+                groupList(j + 1, titleli)
             }
         }
     })
@@ -61,7 +61,7 @@ $(function () {
     });
     // groupList(1)
     //获取列表数据
-    function groupList(listId,titleli) {
+    function groupList(listId, titleli) {
         $.ajax({
             url: "../../php/php-MF/brands-groups.php",
             type: "get",
@@ -74,7 +74,7 @@ $(function () {
             },
             success: function (res) {
                 console.log(res);
-                htmllist+= `
+                htmllist += `
                 <div class="group-brands">
                 <div class="brands-title">
                     <div class="name"><span>${titleli}</span></div>
