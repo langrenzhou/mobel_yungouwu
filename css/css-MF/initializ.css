@@ -57,4 +57,11 @@ fieldset, img
 { 
     border:0;   
 }
+.clearfix::after{
+    content: ".";
+    clear: both;
+    height: 0;
+    display: block;
+    visibility: hidden;
+}
 

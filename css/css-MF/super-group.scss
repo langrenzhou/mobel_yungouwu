@@ -1,5 +1,6 @@
 $width:100%;
-.header{
+
+.header {
     width: $width;
     height: 0.88rem;
     font-size: 0.36rem;
@@ -9,22 +10,26 @@ $width:100%;
     align-items: center;
     border: 1px solid #ddd;
     background: #f5f5f5;
-    i{
+
+    i {
         padding: 0 0.2rem;
         color: #888888;
         font-size: 0.38rem;
     }
 }
-.super-nav{
+
+.super-nav {
     width: $width;
     height: 0.88rem;
     display: flex;
     position: relative;
-    ul{
+
+    ul {
         width: $width;
         display: flex;
     }
-    li{
+
+    li {
         min-width: 25%;
         font-size: 0.28rem;
         text-align: center;
@@ -33,88 +38,103 @@ $width:100%;
         display: inline-block;
         color: #999999;
     }
-    span{
+
+    span {
         padding: 0.1rem 0.05rem;
     }
 }
-.nav-active{
+
+.nav-active {
     color: #333333;
     border-bottom: 3px solid #333333;
     font-weight: bold;
 }
 
 // 列表
-.com{
+.com {
     width: $width;
     height: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.super-brands{
+
+.super-brands {
     position: relative;
     @extend .com;
 }
-.hot-brands{
+
+.hot-brands {
     @extend .com;
 }
-.discount-brands{
+
+.discount-brands {
     @extend .com;
 }
-.brands-title{
+
+.brands-title {
     color: #333333;
     font-size: 0.4rem;
     text-align: center;
     margin: 0 auto;
-    .name{
-        margin-bottom:0.05rem;
+
+    .name {
+        margin-bottom: 0.05rem;
     }
 }
-.line{
+
+.line {
     width: 0.5rem;
     background: #d8d8d8;
     height: 1px;
-    margin:0 auto;
+    margin: 0 auto;
 }
-.lookMore{
+
+.lookMore {
     position: absolute;
     display: flex;
     top: 50%;
     right: 0.2rem;
     margin-top: -0.1rem;
-    span{
-    font-size: 0.18rem;
-    color: #999999;
+
+    span {
+        font-size: 0.18rem;
+        color: #999999;
     }
-    i{
+
+    i {
         color: #999999;
         font-size: 0.18rem;
         padding-top: 0.03rem;
         padding-left: 0.03rem;
     }
 }
-.super-wrap{
+
+.super-wrap {
     width: 100%;
-    height: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
+
 // 列表详细内容
-.brands-list-wraps{
+.brands-list-wraps {
     width: $width;
     overflow: hidden;
-    .brands-list-container{
+
+    .brands-list-container {
         height: 2.25rem;
         width: 20rem;
     }
-    li{
+
+    li {
         width: 3.75rem;
         height: 2.25rem;
         margin-right: 0.22rem;
-        border: 1px solid red;
         float: left;
         position: relative;
     }
-    .shadow{
+
+    .shadow {
         position: absolute;
         width: 100%;
         height: 0.6rem;
@@ -125,92 +145,119 @@ $width:100%;
         font-size: 0.32rem;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.6);
-        img{
+
+        img {
             width: 0.8rem;
             height: 0.4rem;
         }
+
+        span {
+            display: block;
+            min-width: 2.6rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 }
-.smallImg{
+
+.smallImg {
     display: flex;
     align-items: center;
     margin-right: 0.2rem;
 }
-.brands-image>img{
+
+.brands-image>img {
     width: 100%;
     height: 100%;
 }
+
 //今日爆款
-.hot-brands-goods{
+.hot-brands-goods {
     width: $width;
 }
-.hot-brands-container{
+
+.hot-brands-container {
     width: $width;
     display: flex;
     flex-direction: column;
-    li{
+
+    li {
         width: $width;
         padding: 0.2rem 0 0 0.2rem;
         box-sizing: border-box;
-       display: flex;
+        display: flex;
     }
-    .leftImg{
+
+    .leftImg {
         width: 2.3rem;
     }
-    img{
+
+    img {
         width: $width;
     }
 }
-.over-com{
+
+.over-com {
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
 }
-.rightcontent{
+
+.rightcontent {
     width: 4.6rem;
     margin-left: 0.3rem;
-    .title{
+
+    .title {
         color: #333333;
         font-size: 0.3rem;
         @extend .over-com;
     }
-    .address-time{
+
+    .address-time {
         font-size: 0.24rem;
         color: #999999;
         line-height: 0.36rem;
         @extend .over-com;
     }
-    .comprice{
+
+    .comprice {
         font-size: 0.24rem;
         color: #bbbbbb;
         line-height: 0.43rem;
     }
 }
-.condition{
+
+.condition {
     display: flex;
     align-items: center;
-    .nowPrice{
+
+    .nowPrice {
         color: #ff6f6f;
         font-size: 0.32rem;
     }
-    .line{
+
+    .line {
         width: 0.04rem;
         height: 0.23rem;
         background-color: #ff6f6f;
         display: inline-block;
         margin: 0 0.1rem 0 0.15rem;
     }
-    .limit-buy{
+
+    .limit-buy {
         font-size: 0.24rem;
         color: #999999;
     }
-    .limit-num{
+
+    .limit-num {
         color: #ff6f6f;
         font-style: inherit;
     }
-    .buy{
+
+    .buy {
         width: 1.5rem;
         border: 1px solid #ff6f6f;
         background-color: #ff6f6f;
@@ -221,4 +268,185 @@ $width:100%;
         font-size: 0.28rem;
         margin-left: 0.2rem;
     }
+}
+
+.temai-wrap {
+    width: 100%;
+    height: 0.88rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    li {
+        height: 0.88rem;
+        color: #999999;
+        ;
+        font-size: 0.28rem;
+        float: left;
+        line-height: 0.88rem;
+        width: 2.35rem;
+        margin: 0 0.1rem;
+        text-align: center;
+    }
+
+    span {
+        padding: 0.1rem 0.05rem;
+    }
+
+    .temai-container {
+        width: 40.8rem;
+        height: 0.88rem;
+    }
+}
+
+.temai-list-wrap {
+    width: $width;
+
+    li {
+        width: 50%;
+        padding-right: 0.22rem;
+        float: left;
+        margin-bottom: 0.2rem;
+        height: 5.4rem;
+        // border: 1px solid red;
+        height: 5.4rem;
+        position: relative;
+    }
+
+    .temai-img {
+        width: 3.24rem;
+        height: 3.24rem;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .temai-title {
+        font-size: 0.28rem;
+        height: 0.88rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: #333333;
+        margin-bottom: 0.2rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 0.4rem;
+    }
+
+    .temai-discount {
+        span {
+            display: inline-block;
+            height: 0.34rem;
+            line-height: 0.34rem;
+            color: #ff4a4a;
+            border: 1px solid #ff4a4a;
+            border-radius: 0.04rem;
+            padding: 0 0.08rem;
+        }
+
+        font-family: normal;
+        font-size: 0.24rem;
+    }
+
+    .temai-comPrice {
+        font-size: 0.24rem;
+        color: #bbbbbb;
+        height: 0.4rem;
+        line-height: 0.4rem;
+    }
+
+    .temai-buy {
+        color: #ff6f6f;
+        font-size: 0.28rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .temai-line {
+        width: 0.04rem;
+        height: 0.23rem;
+        background-color: #ff6f6f;
+        margin: 0 0.1rem 0 0.15rem;
+    }
+
+    .limit-buy {
+        font-size: 0.24rem;
+        color: #999999;
+
+        .limit-num {
+            color: #ff6f6f;
+        }
+    }
+}
+.temai-cart{
+    width: 0.54rem;
+    height: 0.54rem;
+    border-radius: 100%;
+    background-color: #ff4a4a;
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .iconcart{
+        color: white;
+        font-size: 0.26rem;
+    }
+}
+.temai-header-wrap{
+    position: fixed;
+    top: 0.88rem;
+    left: 0;
+    z-index: 10;
+    display: none;
+    @extend .temai-wrap;
+}
+//顶部导航
+.top-nav{
+    width: $width;
+    height: 1.2rem;
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0.04rem solid #fe8477;
+    position: absolute;
+    top: 0.88rem;
+    left: 0;
+    z-index: 15;
+    display: none;
+}
+.top-nav::after{
+    content: "";
+    border: 0.06rem solid transparent;
+    position: absolute;
+    top: -0.12rem;
+    right: 0.3rem;
+    border-bottom: 0.06rem solid rgba(0,0,0,0.8);
+}
+.top-nav-list{
+    width: $width;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a{
+        color: #fff;
+        font-size: 0.24rem;
+    }
+    i{
+        color: #fff;
+        font-size: 0.36rem;
+    }
+    li{
+        text-align: center;
+    }
+}
+.header .close{
+    color:#fe5b4a;
+}
+// .icon-show{
+//     display: block;
+// }
+.icon-hidden{
+    display: none;
 }

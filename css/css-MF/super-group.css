@@ -100,7 +100,7 @@
 
 .super-wrap {
   width: 100%;
-  height: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -118,7 +118,6 @@
   width: 3.75rem;
   height: 2.25rem;
   margin-right: 0.22rem;
-  border: 1px solid red;
   float: left;
   position: relative;
 }
@@ -139,6 +138,14 @@
 .brands-list-wraps .shadow img {
   width: 0.8rem;
   height: 0.4rem;
+}
+
+.brands-list-wraps .shadow span {
+  display: block;
+  min-width: 2.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .smallImg {
@@ -245,4 +252,190 @@
   text-align: center;
   font-size: 0.28rem;
   margin-left: 0.2rem;
+}
+
+.temai-wrap, .temai-header-wrap {
+  width: 100%;
+  height: 0.88rem;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.temai-wrap li, .temai-header-wrap li {
+  height: 0.88rem;
+  color: #999999;
+  font-size: 0.28rem;
+  float: left;
+  line-height: 0.88rem;
+  width: 2.35rem;
+  margin: 0 0.1rem;
+  text-align: center;
+}
+
+.temai-wrap span, .temai-header-wrap span {
+  padding: 0.1rem 0.05rem;
+}
+
+.temai-wrap .temai-container, .temai-header-wrap .temai-container {
+  width: 40.8rem;
+  height: 0.88rem;
+}
+
+.temai-list-wrap {
+  width: 100%;
+}
+
+.temai-list-wrap li {
+  width: 50%;
+  padding-right: 0.22rem;
+  float: left;
+  margin-bottom: 0.2rem;
+  height: 5.4rem;
+  height: 5.4rem;
+  position: relative;
+}
+
+.temai-list-wrap .temai-img {
+  width: 3.24rem;
+  height: 3.24rem;
+  overflow: hidden;
+}
+
+.temai-list-wrap img {
+  width: 100%;
+}
+
+.temai-list-wrap .temai-title {
+  font-size: 0.28rem;
+  height: 0.88rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #333333;
+  margin-bottom: 0.2rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 0.4rem;
+}
+
+.temai-list-wrap .temai-discount {
+  font-family: normal;
+  font-size: 0.24rem;
+}
+
+.temai-list-wrap .temai-discount span {
+  display: inline-block;
+  height: 0.34rem;
+  line-height: 0.34rem;
+  color: #ff4a4a;
+  border: 1px solid #ff4a4a;
+  border-radius: 0.04rem;
+  padding: 0 0.08rem;
+}
+
+.temai-list-wrap .temai-comPrice {
+  font-size: 0.24rem;
+  color: #bbbbbb;
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+
+.temai-list-wrap .temai-buy {
+  color: #ff6f6f;
+  font-size: 0.28rem;
+  display: flex;
+  align-items: center;
+}
+
+.temai-list-wrap .temai-line {
+  width: 0.04rem;
+  height: 0.23rem;
+  background-color: #ff6f6f;
+  margin: 0 0.1rem 0 0.15rem;
+}
+
+.temai-list-wrap .limit-buy {
+  font-size: 0.24rem;
+  color: #999999;
+}
+
+.temai-list-wrap .limit-buy .limit-num {
+  color: #ff6f6f;
+}
+
+.temai-cart {
+  width: 0.54rem;
+  height: 0.54rem;
+  border-radius: 100%;
+  background-color: #ff4a4a;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.temai-cart .iconcart {
+  color: white;
+  font-size: 0.26rem;
+}
+
+.temai-header-wrap {
+  position: fixed;
+  top: 0.88rem;
+  left: 0;
+  z-index: 10;
+  display: none;
+}
+
+.top-nav {
+  width: 100%;
+  height: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 0.04rem solid #fe8477;
+  position: absolute;
+  top: 0.88rem;
+  left: 0;
+  z-index: 15;
+  display: none;
+}
+
+.top-nav::after {
+  content: "";
+  border: 0.06rem solid transparent;
+  position: absolute;
+  top: -0.12rem;
+  right: 0.3rem;
+  border-bottom: 0.06rem solid rgba(0, 0, 0, 0.8);
+}
+
+.top-nav-list {
+  width: 100%;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top-nav-list a {
+  color: #fff;
+  font-size: 0.24rem;
+}
+
+.top-nav-list i {
+  color: #fff;
+  font-size: 0.36rem;
+}
+
+.top-nav-list li {
+  text-align: center;
+}
+
+.header .close {
+  color: #fe5b4a;
+}
+
+.icon-hidden {
+  display: none;
 }
