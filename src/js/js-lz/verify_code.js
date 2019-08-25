@@ -12,11 +12,11 @@ function random_code() {
 
 // 获取phone_num
 console.log(location.search.split("=")[1]);
-let phone_num=location.search.split("=")[1];
+let phone_num = location.search.split("=")[1];
 $(".send_tip span").text(phone_num);
 
 // 生成验证码
-let code=random_code();
+let code = random_code();
 alert(code);
 
 // 验证
@@ -28,7 +28,7 @@ $("#u_input").keyup(function () {
     let code_val;
     if (n == 6) {
         code_val = $(this).val();
-        if (code_val==code) {
+        if (code_val == code) {
             suc = true;
             $(".go_next i").addClass("go_next_color");
             $(".error_tips").addClass("disp_n");
@@ -50,7 +50,13 @@ $("#u_input").keyup(function () {
     // // 新页面
     if (suc) {
         $(".go_next").tap(function () {
-            window.location.href="./personalCenter.html?phone_num="+phone_num;
+            window.location.href = "./personalCenter.html?phone_num=" + phone_num;
         })
     }
+})
+
+// 重新发送
+$(".resend").on("tap", function () {
+    code = random_code();
+    alert(code);
 })

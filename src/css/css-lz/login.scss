@@ -204,6 +204,7 @@ $fs:font-size;
     border-radius: .05rem;
 }
 
+
 .cover_slide_verify {
     top: 0;
     left: 0;
@@ -215,7 +216,6 @@ $fs:font-size;
     @extend .align_it_c;
 
     .slide_verify {
-        // @include fun(3.5rem, 3rem);
         width: 3.5rem;
         height: 0;
         border: .5px solid #e4e7eb;
@@ -269,6 +269,7 @@ $fs:font-size;
             .slide_bg {
                 top: 0;
                 left: 0;
+                height: 100%;
             }
 
             .slide_small {
@@ -277,6 +278,17 @@ $fs:font-size;
                 @extend .disp_f;
                 @extend .js_ct_c;
                 @extend .align_it_c;
+            }
+
+            .bg_blue {
+                background-color: rgb(49, 217, 223);
+                border: .5px solid rgb(73, 117, 236);
+            }
+
+            .move_style {
+                background-color:  rgb(73, 117, 236);
+                color: #fff;
+                border-color: rgb(73, 117, 236);
             }
         }
     }

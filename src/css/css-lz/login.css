@@ -199,10 +199,18 @@
       .cover_slide_verify .slide_verify .slide_box .slide_small,
       .cover_slide_verify .slide_verify .slide_box .slide_bg {
         top: 0;
-        left: 0; }
+        left: 0;
+        height: 100%; }
       .cover_slide_verify .slide_verify .slide_box .slide_small {
         width: 0.4rem;
         height: 100%;
         border: .5px solid #333; }
+      .cover_slide_verify .slide_verify .slide_box .bg_blue {
+        background-color: #31d9df;
+        border: 0.5px solid #4975ec; }
+      .cover_slide_verify .slide_verify .slide_box .move_style {
+        background-color: #4975ec;
+        color: #fff;
+        border-color: #4975ec; }
 
 /*# sourceMappingURL=login.css.map */

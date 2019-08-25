@@ -46,18 +46,26 @@ function slide_verify() {
 
     function move_slide() {
         $(".slide_pic").on("touchmove", function (e) {
+            e.preventDefault();
             let _left = e.touches[0].clientX - $(".bg_pic").offset().left - $(".small_pic").width() / 2;
             let _top = e.touches[0].clientY - $(".bg_pic").offset().top - $(".small_pic").height() / 2;
             $(".small_pic").css({
                 left: _left,
                 top: _top
             })
+            $(".text").text("");
+            $(".slide_small").css({
+                left: _left
+            }).addClass("move_style");
+            $(".slide_bg").css({
+                width: _left
+            }).addClass("bg_blue");
         })
         $(".slide_pic").on("touchend", function (e) {
             if (parseInt($(".small_pic").css("left")) >= pos_left[random_n - 1] - 20 || parseInt($(".small_pic").css("left")) <= pos_left[random_n - 1] + 20) {
                 $(".cover_slide_verify").addClass("disp_n");
-                // 点击跳到验证码页面
-                window.location.href = "./verify_code.html?pho_num=" + val;
+                // 跳到验证码页面
+                // window.location.href = "./verify_code.html?pho_num=" + val;
             }
         })
     }
@@ -68,13 +76,5 @@ function slide_verify() {
 }
 
 // 
-var mark = true;
-$(".protocol").tap(function () {
-    if (mark) {
-        $(this).children("i").removeClass("iconduihao");
-        mark = false;
-    }
-    $(this).children("i").addClass("iconduihao");
-    mark = true;
-})
+
 
