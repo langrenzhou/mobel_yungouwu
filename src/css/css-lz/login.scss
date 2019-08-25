@@ -277,9 +277,11 @@ $fs:font-size;
                 border: .5px solid #333;
                 @extend .disp_f;
                 @extend .js_ct_c;
-                @extend .align_it_c;
+                @extend .align_it_c;               
             }
-
+            .slide_small>i:last-child{
+                color: green;
+            }
             .bg_blue {
                 background-color: rgb(49, 217, 223);
                 border: .5px solid rgb(73, 117, 236);
@@ -290,6 +292,17 @@ $fs:font-size;
                 color: #fff;
                 border-color: rgb(73, 117, 236);
             }
+            .suc_bg_green {
+                background-color: rgb(158, 180, 164);
+                border: .5px solid rgb(64, 170, 73);
+            }
+
+            .suc_move_style {
+                background-color:  rgb(64, 170, 73);
+                color: #fff;
+                border-color: rgb(64, 170, 73);
+            }
+
         }
     }
 }

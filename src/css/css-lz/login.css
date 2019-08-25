@@ -205,6 +205,8 @@
         width: 0.4rem;
         height: 100%;
         border: .5px solid #333; }
+      .cover_slide_verify .slide_verify .slide_box .slide_small > i:last-child {
+        color: green; }
       .cover_slide_verify .slide_verify .slide_box .bg_blue {
         background-color: #31d9df;
         border: 0.5px solid #4975ec; }
@@ -212,5 +214,12 @@
         background-color: #4975ec;
         color: #fff;
         border-color: #4975ec; }
+      .cover_slide_verify .slide_verify .slide_box .suc_bg_green {
+        background-color: #9eb4a4;
+        border: 0.5px solid #40aa49; }
+      .cover_slide_verify .slide_verify .slide_box .suc_move_style {
+        background-color: #40aa49;
+        color: #fff;
+        border-color: #40aa49; }
 
 /*# sourceMappingURL=login.css.map */

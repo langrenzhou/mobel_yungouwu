@@ -38,6 +38,7 @@ $("#u_input").keyup(function () {
 function slide_verify() {
     const pos_left = [140, 175, 135];
     let random_n = Math.floor(Math.random() * 3 + 1);
+    
     function random_slide_pic() {
         let random_html = `<img class="bg_pic" src="../../images/image_lz/slide_bg_${random_n}.jpg">
         <img class="small_pic pa" src="../../images/image_lz/slide_small_${random_n}.png">`
@@ -63,9 +64,14 @@ function slide_verify() {
         })
         $(".slide_pic").on("touchend", function (e) {
             if (parseInt($(".small_pic").css("left")) >= pos_left[random_n - 1] - 20 || parseInt($(".small_pic").css("left")) <= pos_left[random_n - 1] + 20) {
-                $(".cover_slide_verify").addClass("disp_n");
-                // 跳到验证码页面
-                // window.location.href = "./verify_code.html?pho_num=" + val;
+                $(".slide_small").addClass("suc_move_style");
+                $(".slide_bg").addClass("suc_bg_green");
+                setTimeout(() => {
+                    $(".cover_slide_verify").addClass("disp_n");
+                    // 跳到验证码页面
+                    window.location.href = "./verify_code.html?pho_num=" + val;
+                    $("#u_input").val("");
+                }, 500);
             }
         })
     }
