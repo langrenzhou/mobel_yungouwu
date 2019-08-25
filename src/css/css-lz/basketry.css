@@ -259,8 +259,8 @@ nav {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 2; }
   .share_cover .text_area {
-    top: .8rem;
-    right: 2rem;
+    top: 2rem;
+    right: 2.5rem;
     margin: .6rem .1rem .3rem 1.4rem;
     z-index: 3; }
     .share_cover .text_area a {
@@ -268,7 +268,7 @@ nav {
       font-family: "微软雅黑";
       font-size: .34rem; }
   .share_cover .curve_row {
-    top: .6rem;
+    top: .8rem;
     right: 1rem;
     z-index: 3; }
 

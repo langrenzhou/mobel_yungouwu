@@ -80,14 +80,17 @@ body {
     #{$bkg}-color: #fff;
     line-height: 1rem;
     @extend .text_align_c;
-    @extend .disp_n;
+    border: .5px solid #ddd;
+    // @extend .disp_n;
 }
-.pull_up_tip{
+
+.pull_up_tip {
     display: block;
 }
 
 .header_wrap {
     z-index: 1;
+    border: .5px solid #ddd;
 
     .header {
         #{$h}: .65rem;
@@ -168,11 +171,13 @@ body {
     @include fun(100vw, .55rem);
     @extend .box_siz_b;
     @extend .text_align_r;
-    a{
+
+    a {
         @include fun(.45rem, .45rem);
         top: 0;
         right: .2rem;
     }
+
     img {
         @include fun(100%, 100%)
     }
@@ -197,9 +202,10 @@ body {
         width: 0.935rem;
         height: 0.935rem;
         border-radius: 50%;
-        img{
+
+        img {
             border-radius: 50%;
-            @include fun(100%,100%);
+            @include fun(100%, 100%);
         }
     }
 
@@ -306,9 +312,11 @@ body {
 
     .vip {
         @extend .js_ct_st;
-        .login_regist{
+
+        .login_regist {
             margin: .25rem 0 0 .25rem;
-            a{
+
+            a {
                 color: #fff;
             }
         }
@@ -468,6 +476,10 @@ body {
         }
     }
 
+    .load_img {
+        display: block;
+        @include fun(100%, 100%);
+    }
 
     .rec_list {
         ul {

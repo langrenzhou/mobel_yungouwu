@@ -1,10 +1,10 @@
 // 
-let phone_num=location.search.split("=")[1];
-if(phone_num){
+let phone_num = location.search.split("=")[1];
+if (phone_num) {
     $(".no_login_person").addClass("disp_n");
     $(".person .vip_info>.phone_num").text(phone_num);
     $(".person").removeClass("disp_n");
-}else{
+} else {
     $(".no_login_person").removeClass("disp_n");
     $(".person").addClass("disp_n");
 }
@@ -26,22 +26,18 @@ $(".sign .iconclose").tap(function () {
 // bs初始化
 var bs_all = new BScroll('.bs_wrap', {
     probeType: 3,
-    click:true,
+    click: true,
     pullDownRefresh: {
         threshold: 80,  //当下拉长度距离盒子顶部的高度超过80px的时候,就派发一个下拉刷新的事件
     },
     pullUpLoad: true,
-    pullUpLoad: {
-        // threshold: 100    //当上拉距离超过盒子高度的100px的时候,就派发一个上拉加载的事件
-    },
-    // useTransition: false  // 防止iphone微信滑动卡顿
 })
 
 // 下拉刷新
 bs_all.on('pullingDown', function () {
-    $(".pull_down_tip").css("display", "block");
+    $(".pull_down_tip").removeClass("disp_n");
     setTimeout(function () {
-        $(".pull_down_tip").css("display", "none");
+        $(".pull_down_tip").addClass("disp_n");
     }, 500)
     bs_all.finishPullDown();
 })
@@ -58,7 +54,10 @@ bs_all.on('pullingUp', function () {
         // up_count = 0;
         // $(".pull_down_tip").css("display", "none");
         // $(".no_datas").css("display", "block");
-        $(".pull_down_tip").text("暂无更多数据");
+        $(".pull_down_tip").addClass("disp_n");
+        setTimeout(function () {
+            $(".no_datas").removeClass("disp_n");
+        }, 500)
         bs_all.closePullUp();
     }
     bs_all.finishPullUp();
@@ -74,8 +73,12 @@ function request_datas() {
         data: {
             up_count: up_count
         },
+        beforeSend: function () {
+            $(".loading").removeClass("disp_n");
+        },
         success: function (res) {
             console.log(res);
+            $(".loading").addClass("disp_n");
             var _html = "";
             for (var i = 0; i < res.length; i++) {
                 _html += `<li>

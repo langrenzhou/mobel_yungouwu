@@ -6,10 +6,7 @@
 .bottom_nav ul li {
   display: flex; }
 
-.disp_n, .pull_down_tip,
-.pull_up_tip,
-.no_datas,
-.alert {
+.disp_n {
   display: none; }
 
 .js_ct_bt, .header_wrap .header, .vip, .vip_activity_wrap .vip_activity {
@@ -70,13 +67,15 @@ body {
   width: 100vw;
   height: 1rem;
   background-color: #fff;
-  line-height: 1rem; }
+  line-height: 1rem;
+  border: .5px solid #ddd; }
 
 .pull_up_tip {
   display: block; }
 
 .header_wrap {
-  z-index: 1; }
+  z-index: 1;
+  border: .5px solid #ddd; }
   .header_wrap .header {
     height: .65rem;
     line-height: .65rem;
@@ -312,6 +311,10 @@ body {
       height: .02rem;
       margin: -.2rem auto;
       background-color: #000; }
+  .recommend .load_img {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .recommend .rec_list ul {
     flex-wrap: wrap; }
   .recommend .rec_list .pic {

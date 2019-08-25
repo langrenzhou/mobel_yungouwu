@@ -74,6 +74,11 @@ function reg_data(st, ed, el) {
             " _start": st,
             "_end": ed
         },
+        beforeSend: function () {
+            var _html = "";
+            _html += `<img src="../../images/image_lz/loading.gif">`;
+            $(el).html(_html);
+        },
         success: function (res) {
             var _html = "";
             for (var i = 0; i < res.length; i++) {

@@ -343,8 +343,8 @@ nav {
 
     .text_area {
         // @include ani(2s, 2s);
-        top: .8rem;
-        right: 2rem;
+        top: 2rem;
+        right: 2.5rem;
         margin: .6rem .1rem .3rem 1.4rem;
 
         a {
@@ -361,7 +361,7 @@ nav {
 
     .curve_row {
         // @include ani(4s, 2s);
-        top: .6rem;
+        top: .8rem;
         right: 1rem;
         #{$z}: 3;
     }
