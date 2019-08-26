@@ -91,6 +91,8 @@ $fs:font-size;
         }
     }
 
+
+
     .user_input {
         @include fun(100%, 1rem);
         border-bottom: .05rem solid red;
@@ -121,9 +123,11 @@ $fs:font-size;
 
     .protocol {
         @include fun(100%, 1.22rem);
-        .tap_style{
-           vertical-align: middle;
+
+        .tap_style {
+            vertical-align: middle;
         }
+
         #duihao {
             display: inline-block;
             @include fun(.3rem, .3rem);
@@ -148,10 +152,6 @@ $fs:font-size;
     }
 
     .user_input {
-        @include fun(100%, 1rem);
-        border-bottom: .05rem solid red;
-        #{$fs}: .28rem;
-        @extend .disp_f;
         @extend .js_ct_bt;
         color: #333;
 
@@ -160,9 +160,17 @@ $fs:font-size;
             @include fun(3rem, 100%);
         }
 
-        #u_input:-webkit-input-placeholder {
-            font-size: .4rem;
-        }
+        // input::-webkit-input-placeholder {
+        //     font-size: .4rem;
+        // }
+
+        // input::-moz-placeholder {
+        //     font-size: .4rem;
+        // }
+
+        // input::-ms-input-placeholder {
+        //     font-size: .4rem;
+        // }
     }
 
     .tip_info {
@@ -279,28 +287,31 @@ $fs:font-size;
                 border: .5px solid #333;
                 @extend .disp_f;
                 @extend .js_ct_c;
-                @extend .align_it_c;               
+                @extend .align_it_c;
             }
-            .slide_small>i:last-child{
+
+            .slide_small>i:last-child {
                 color: green;
             }
+
             .bg_blue {
                 background-color: rgb(49, 217, 223);
                 border: .5px solid rgb(73, 117, 236);
             }
 
             .move_style {
-                background-color:  rgb(73, 117, 236);
+                background-color: rgb(73, 117, 236);
                 color: #fff;
                 border-color: rgb(73, 117, 236);
             }
+
             .suc_bg_green {
                 background-color: rgb(158, 180, 164);
                 border: .5px solid rgb(64, 170, 73);
             }
 
             .suc_move_style {
-                background-color:  rgb(64, 170, 73);
+                background-color: rgb(64, 170, 73);
                 color: #fff;
                 border-color: rgb(64, 170, 73);
             }
