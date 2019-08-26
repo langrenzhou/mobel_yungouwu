@@ -26,6 +26,14 @@ $(document).ready(function () {
         } else {
             $(".scroll-top-stick").css("display", "none");
         }
+        //懒加载初始化
+        echo.init({
+            offset: -100,
+            throttle: 200 //设置图片延迟加载的时间
+        })
+        // $('.lazy').lazyload({
+        //     threshold: 0
+        // });
     })
 
     //betterScroll初始化
@@ -44,7 +52,6 @@ $(document).ready(function () {
         },
         success: function (res) {
             console.log(res)
-
             var html = "";
             for (var i = 0; i < res.length; i++) {
                 html += `
@@ -107,14 +114,6 @@ $(document).ready(function () {
     })
     // 猜你喜欢
     //上拉加载
-    // var guessLikeScoll = new BScroll(".guess-container", {
-    //     // pullUpLoad: {
-    //     //     threshold: 20
-    //     // },
-    //     // probeType: 2,
-    //     scrollY: true
-    // })
-
     var guessLikeScoll = new BScroll(".scrollWrap", {
         pullUpLoad: {
             threshold: 50
@@ -127,24 +126,19 @@ $(document).ready(function () {
     var start = 0;
     var htmlArr = [];
     guessAjax(start);
-    // guessLikeScoll.on("pullingUp", function () {
-    //     console.log(1)
-    //     if (start < 70) {
-    //         start += 10;
-    //         guessAjax(start);
-    //         $(".guess-list").append(htmlscoll);
-    //         guessLikeScoll.finishPullUp();
-    //     } else {
-    //         $(".bottom-tip").append('<span>见底了</span>');
-    //     }
+    guessLikeScoll.on("pullingUp", function () {
+        console.log(1)
+        if (start < 70) {
+            start += 10;
+            guessAjax(start);
+            $(".guess-list").append(htmlscoll);
+            guessLikeScoll.finishPullUp();
+        } else {
+            $(".loading-tip").text("见底了");
+        }
 
-    // })
-    // guessLikeScoll.refresh();
-
-    // guessLikeScoll.on("scrollEnd", function () {
-    //     $(".loading-tip").css("display", "none");
-    // })
-
+    })
+    guessLikeScoll.refresh();
     function guessAjax(start) {
         $.ajax({
             url: "./php/php-MF/index_like.php",
@@ -152,30 +146,30 @@ $(document).ready(function () {
             dataType: "json",
             data: {
                 start: start,
-                listnum: 100,
+                listnum: 10,
             },
-            // beforesend:function(){
-            //     $(".loading-tip").css("display","block");
-            // },
+
+            beforesend:function(){
+                $(".guess-list").html('<img src="./images/image-MF/loading1.gif" alt="">')
+            },
             // complete:function(){
-            //     $(".loading-tip").css("display","none");
+            //     $(".guess-list").html('')
             // },
+
             // <img src="${res[i].img_url}" alt="">
+            // <img src="./images/image-MF/loading2.gif" alt="pic" data-echo="${res[i].img_url}">
+            //<img class="lazy" src='./images/image-MF/loading2.gif' alt="" data-original="${res[i].img_url}">
             error: function () {
                 console.log("数据请求失败！");
             },
             success: function (res) {
+
                 console.log(res)
-                //懒加载初始化
-                echo.init({
-                    offset: 0,
-                    throttle: 0 //设置图片延迟加载的时间
-                })
                 for (var i = 0; i < res.length; i++) {
                     htmlscoll += `
                     <li>
                     <div class="guess-img">
-                        <img src="./images/image-MF/loading2.gif" alt="pic" data-echo="${res[i].img_url}">
+                    <img src="./images/image-MF/loading2.gif" alt="pic" data-echo="${res[i].img_url}">
                     </div>
                     <div class="guess-text">
                         <p>${res[i].title}</p>

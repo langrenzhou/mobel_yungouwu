@@ -1,7 +1,7 @@
 $(function () {
-    $(".super-nav").on("tap", "li", function () {
-        $(this).children("span").addClass("nav-active").parent().siblings().children().removeClass("nav-active");
-    });
+    // $(".super-nav").on("tap", "li", function () {
+    //     $(this).children("span").addClass("nav-active").parent().siblings().children().removeClass("nav-active");
+    // });
     let superGrouds = new BScroll(".super-wrap", {
         scrollY: true,
         probeType: 2,
@@ -14,6 +14,20 @@ $(function () {
         } else {
             $(".temai-header-wrap").css("display", "none");
         }
+        $(".super-wrap-container>.sup-group").each(function (i) {
+            var oftTop = $(this).offset().top;
+            // console.log(oftTop)
+            if (oftTop<186) {
+                $(".super-nav li").eq(i).children("span").addClass("nav-active").parent().siblings().children("span").removeClass("nav-active")
+            }
+        })
+    })
+    $(".super-nav").on("tap","li",function(){
+        var index=$(this).index();
+        console.log(index)
+        var elemt=$(".super-wrap-container>.sup-group").eq(index).get(0);
+        superGrouds.scrollToElement(elemt,1000);
+        $(this).children("span").addClass("nav-active").parent().siblings().children().removeClass("nav-active");
     })
     let brandsList = new BScroll(".brands-list-wraps", {
         scrollX: true,
@@ -183,7 +197,7 @@ $(function () {
                         </div>
                         `;
                     }
-                    temailist+=`
+                    temailist += `
                     <div class="temai-comPrice">
                         <span>${res[i].comPrice}</span>
                     </div>
@@ -212,13 +226,13 @@ $(function () {
     }
 });
 //顶部导航显示和隐藏
-$(".shenglu").on("tap",function(){
+$(".shenglu").on("tap", function () {
     $(this).addClass("icon-hidden").siblings().removeClass("icon-hidden");
-    $(".top-nav").css("display","block");
+    $(".top-nav").css("display", "block");
     console.log("...")
 })
-$(".close").on("tap",function(){
+$(".close").on("tap", function () {
     $(this).addClass("icon-hidden").siblings().removeClass("icon-hidden")
     console.log("x");
-    $(".top-nav").css("display","none");
+    $(".top-nav").css("display", "none");
 })

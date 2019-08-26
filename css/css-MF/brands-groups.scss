@@ -74,6 +74,7 @@ $width:100%;
     width: $width;
     height: 100vh;
     overflow: hidden;
+    margin-top: 0.88rem;
 }
 
 //滑动导航
@@ -81,9 +82,12 @@ $width:100%;
     width: $width;
     height: 0.88rem;
     display: flex;
-    position: relative;
+    position: fixed;
     font-size: 0.28rem;
     background: #fafafa;
+    top: 0.88rem;
+    left: 0;
+    z-index: 8;
 
     .header-left {
         width: 1.81rem;

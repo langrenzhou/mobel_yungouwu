@@ -12,9 +12,35 @@ $(function () {
     })
     //垂直滚动
     let groups_wrap = new BScroll(".group-wrap", {
-        scrollY: true,
-        click: true
+        probeType: 3,
+        click: true,
+        bounce: false,
     })
+
+    groups_wrap.on("scroll", function (e) {
+        console.log(this.y)
+        // 懒加载初始化
+        echo.init({
+            offset: -100,
+            throttle: 200 //设置图片延迟加载的时间
+        })
+        $(".listcont>.group-brands").each(function(i){
+            var offseTop=$(this).offset().top;
+            // console.log(offseTop);
+            if(offseTop<263){
+                $(".header-container>li").eq(i).children("span").addClass("nav-active").parent().siblings().children("span").removeClass("nav-active");
+            }
+        })
+    })
+    $(".header-container").on("tap", "li", function () {
+        var index=$(this).index();
+        $(this).children("span").addClass("nav-active").parent().siblings().children("span").removeClass("nav-active");
+        var elemt=$(".listcont>.group-brands").eq(index).get(0);
+        groups_wrap.scrollToElement(elemt,1000)
+        console.log("1po");
+        var clickid = $(this).children(".hidden").val();
+        console.log(clickid);
+    });
     //水平滑动
     let header_right = new BScroll(".header-right", {
         scrollX: true,
@@ -53,12 +79,7 @@ $(function () {
             }
         }
     })
-    $(".header-container").on("tap", "li", function () {
-        $(this).children("span").addClass("nav-active").parent().siblings().children().removeClass("nav-active");
-        console.log("1po");
-        var clickid = $(this).children(".hidden").val();
-        console.log(clickid);
-    });
+
     // groupList(1)
     //获取列表数据
     function groupList(listId, titleli) {
@@ -89,11 +110,11 @@ $(function () {
                     htmllist += `
             <li>
             <div class="brands-image">
-                <img src="${res[i].bigimg_url}" alt="">
+                <img src="../../images/image-MF/loading2.gif" alt="pic" data-echo="${res[i].bigimg_url}">
             </div>
             <div class="shadow">
                 <div class="smallImg">
-                    <img src="${res[i].smallimg_url}" alt="">
+                <img src="${res[i].smallimg_url}" alt="">
                 </div>
                 <span>${res[i].title}</span>
             </div>
