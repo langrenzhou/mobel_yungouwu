@@ -2,6 +2,18 @@ $("a").tap(function () {
     $(this).css("textDecoration", "none");
 })
 
+// protocal
+let flag = 1;
+$(".protocol").on("tap", function () {
+    if (flag) {
+        $(this).children("i").removeClass("iconduihao").addClass("tap_style");
+        flag = 0;
+    } else {
+        $(this).children("i").addClass("iconduihao");
+        flag = 1;
+    }
+}) 
+
 // 验证用户输入手机号
 let suc = false;
 let n = 0;
@@ -38,7 +50,7 @@ $("#u_input").keyup(function () {
 function slide_verify() {
     const pos_left = [140, 175, 135];
     let random_n = Math.floor(Math.random() * 3 + 1);
-    
+
     function random_slide_pic() {
         let random_html = `<img class="bg_pic" src="../../images/image_lz/slide_bg_${random_n}.jpg">
         <img class="small_pic pa" src="../../images/image_lz/slide_small_${random_n}.png">`
@@ -80,7 +92,5 @@ function slide_verify() {
         height: "3rem"
     }, move_slide());
 }
-
-// 
 
 

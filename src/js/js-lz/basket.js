@@ -21,7 +21,7 @@ mybs.on('pullingUp', function () {
 
 mybs.on('scroll', function () {
     echo.init({
-        offset:-300,
+        offset:-100,
         // throttle:2000
     })
     $('.hot_basket').each(function (i) {
@@ -77,11 +77,6 @@ function reg_data(st, ed, el) {
         data: {
             " _start": st,
             "_end": ed
-        },
-        beforeSend: function () {
-            var _html = "";
-            _html += `<img src="../../images/image_lz/loading.gif">`;
-            $(el).html(_html);
         },
         success: function (res) {
             var _html = "";

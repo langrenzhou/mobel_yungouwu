@@ -121,8 +121,10 @@ $fs:font-size;
 
     .protocol {
         @include fun(100%, 1.22rem);
-
-        .duihao {
+        .tap_style{
+           vertical-align: middle;
+        }
+        #duihao {
             display: inline-block;
             @include fun(.3rem, .3rem);
             margin-right: .15rem;

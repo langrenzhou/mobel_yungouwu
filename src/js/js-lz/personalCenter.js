@@ -44,13 +44,21 @@ bs_all.on('pullingDown', function () {
 
 // 上拉加载
 var up_count = 0;
+bs_all.on("scroll", function () {
+    // 懒加载
+    echo.init({
+        offset: -200,
+        throttle:2000
+    })
+});
+
 bs_all.on('pullingUp', function () {
     up_count++;
     console.log(up_count);
     if (up_count < 4) {
         // ajax 获取为你推荐部分的数据
         request_datas();
-    } else {       
+    } else {
         $(".pull_up_tip").addClass("disp_n");
         setTimeout(function () {
             $(".no_datas").removeClass("disp_n");
@@ -82,7 +90,7 @@ function request_datas() {
             for (var i = 0; i < res.length; i++) {
                 _html += `<li>
                         <div class="pic">
-                            <img src="${res[i].img_src}">
+                            <img src="../../images/image_lz/loading.gif" data-echo="${res[i].img_src}">
                         </div>
                         <div class="text">${res[i].text}</div>
                         <div class="price">

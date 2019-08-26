@@ -31,13 +31,13 @@
             </div>
             <div class="user_input">
                 <label for="u_input">+86</label>
-                <input id="u_input" type="text" placeholder="请输入手机号">
+                <input id="u_input" type="text" autofocus placeholder="请输入手机号">
             </div>
             <div class="tip_info">
                 登录即创建帐户
             </div>
             <div class="protocol">
-                <i class="iconfont iconduihao duihao"></i>我已阅读并同意 百联通用户服务协议、安付宝用户服务协议、安付宝隐私权政策
+                <i class="iconfont iconduihao" id="duihao"></i><label for="duihao">我已阅读并同意 百联通用户服务协议、安付宝用户服务协议、安付宝隐私权政策</label>
             </div>
         </div>
         <!-- 输入手机收到的验证码 -->
@@ -60,10 +60,8 @@
             </div>
         </div> -->
         <!-- go_next -->
-        <div class="go_next pf">
-            <!-- <a href="../html-lz/personalCenter.html" target="_blank"> -->
+        <div class="go_next pf">         
                 <i class="iconfont iconnext"></i>
-            <!-- </a> -->
         </div>
     </div>
     <!-- 弹出错误提示信息 -->
