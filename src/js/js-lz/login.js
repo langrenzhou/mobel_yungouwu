@@ -12,7 +12,7 @@ $(".protocol").on("tap", function () {
         $(this).children("i").addClass("iconduihao");
         flag = 1;
     }
-}) 
+})
 
 // 验证用户输入手机号
 let suc = false;
@@ -58,6 +58,23 @@ function slide_verify() {
     }
 
     function move_slide() {
+        function touchend(el_p, el_s) {
+            $(el_p).on("touchend", function (e) {
+                let move_left = parseInt($(el_s).css("left"));
+                let _pos = pos_left[random_n - 1];
+                if (move_left >= _pos - 20 && move_left <= _pos + 20) {
+                    console.log("=");
+                    $(".slide_small").addClass("suc_move_style");
+                    $(".slide_bg").addClass("suc_bg_green");
+                    setTimeout(() => {
+                        $(".cover_slide_verify").addClass("disp_n");
+                        // 跳到验证码页面
+                        window.location.href = "./verify_code.html?pho_num=" + val;
+                        $("#u_input").val("");
+                    }, 500);
+                }
+            })
+        }
         $(".slide_pic").on("touchmove", function (e) {
             e.preventDefault();
             let _left = e.touches[0].clientX - $(".bg_pic").offset().left - $(".small_pic").width() / 2;
@@ -74,19 +91,25 @@ function slide_verify() {
                 width: _left
             }).addClass("bg_blue");
         })
-        $(".slide_pic").on("touchend", function (e) {
-            if (parseInt($(".small_pic").css("left")) >= pos_left[random_n - 1] - 20 || parseInt($(".small_pic").css("left")) <= pos_left[random_n - 1] + 20) {
-                $(".slide_small").addClass("suc_move_style");
-                $(".slide_bg").addClass("suc_bg_green");
-                setTimeout(() => {
-                    $(".cover_slide_verify").addClass("disp_n");
-                    // 跳到验证码页面
-                    window.location.href = "./verify_code.html?pho_num=" + val;
-                    $("#u_input").val("");
-                }, 500);
-            }
+        touchend(".slide_pic", ".small_pic");
+
+        $(".slide").on("touchmove", function (e) {
+            e.preventDefault();
+            let _left = e.touches[0].clientX - $(".slide").offset().left - $(".slide_small").width() / 2;
+            $(".text").text("");
+            $(".slide_small").css({
+                left: _left
+            }).addClass("move_style");
+            $(".slide_bg").css({
+                width: _left
+            }).addClass("bg_blue");
+            $(".small_pic").css({
+                left: _left
+            })
         })
+        touchend(".slide", ".slide_small");
     }
+
     random_slide_pic();
     $(".cover_slide_verify").removeClass("disp_n").children().animate({
         height: "3rem"
