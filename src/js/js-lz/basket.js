@@ -20,6 +20,10 @@ mybs.on('pullingUp', function () {
 })
 
 mybs.on('scroll', function () {
+    echo.init({
+        offset:-300,
+        // throttle:2000
+    })
     $('.hot_basket').each(function (i) {
         var oftop = $(this).offset().top;
         if (oftop <= 300) {
@@ -84,8 +88,8 @@ function reg_data(st, ed, el) {
             for (var i = 0; i < res.length; i++) {
                 _html += ` <li class="pr">
                         <a>
-                            <img data-src="${res[i].img_src}"
-                                src="${res[i].img_src}"
+                            <img data-echo="${res[i].img_src}"
+                                src="../../images/image_lz/loading.gif"
                                 lazy="loaded">
                             <div class="cover-box pa">
                                 <div class="title">${res[i].name}</div>
