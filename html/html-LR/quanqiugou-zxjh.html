@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全球甄选尖货</title>
+    <link rel="stylesheet" href="../../css/css-LR/quanqiugou-zxjh.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="head">
+        <a href="">
+            <img src="../../images/images_LR/quanqiugou-zxjh/00.webp" alt="">
+        </a>
+    </div>
+    <div class="header">
+        <a href="">
+            <img src="../../images//images_LR/quanqiugou-zxjh/01.jpg" alt="">
+        </a>
+    </div>
+    <div class="header-s">
+        <a href="">
+            <img src="../../images/images_LR/quanqiugou-zxjh/02.webp" alt="">
+        </a>
+    </div>
+    <!-- 全球人气美妆单品 -->
+    <div class="qqrqmzdp">
+        <a href="">
+            <img src="../../images/images_LR/quanqiugou-zxjh/03.webp" alt="">
+        </a>
+    </div>
+    <!-- 产品列表 -->
+    <div class="cp">
+        <ul class="cp-ul">
+        </ul>
+    </div>
+    <!-- 品质生活甄选尖货 -->
+    <div class="bzshzxjh">
+        <div class="">
+            <a href="">
+                <img src="../../images/images_LR/quanqiugou-zxjh/022.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="cp">
+        <ul class="cp-ul">
+        </ul>
+    </div>
+    <!-- 舌尖诱惑 -->
+    <div class="sjyh">
+        <div class="">
+            <a href="">
+                <img src="../../images/images_LR/quanqiugou-zxjh/03.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="cp">
+        <ul class="cp-ul">
+        </ul>
+    </div>
+    <!-- 更多 -->
+    <div class="gd">
+        <div class="">
+            <a href="">
+                <img src="../../images/images_LR/quanqiugou-zxjh/04.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="cp">
+        <ul class="cp-ul">
+        </ul>
+    </div>
+    <script src="../../js/js_LR/zyl.js"></script>
+    <script src="../../js/js_LR/zepto_LR.js"></script>
+    <script src="../../js/js_LR/event_LR.js"></script>
+    <script src="../../js/js_LR/touch_LR.js"></script>
+    <script src="../../js/js_LR/ajax_LR.js"></script>
+    <script>
+        var local = location.search
+        var type_id = parseInt(local.split('=')[1])
+        var html = ""
+        var html2 = ""
+        var html3 = ""
+        var html4 = ""
+        $.ajax({
+            url: "../../php/php_LR/quanqiugou-zxjh.php?type_id=" + type_id + "",
+            dataType: "json",
+            error: function () {
+                alert('404数据飞走了')
+            },
+            success: function (res) {
+                for (var i = 0; i < 15; i++) {
+                    if (res[i].old_price == "") {
+                        $('.cp-ul-li-area-old_price').html("")
+                    }
+                    html +=
+                        " <li class='cp-ul-li'><div class='cp-ul-li-area'><div class='cp-ul-li-area-Img'><a href=''><img src=" +
+                        res[i].img_url + " alt=''></a></div><div class='cp-ul-li-area-text'>" + res[i]
+                        .title + "</div><div class='cp-ul-li-area-title'>" + res[i].zhekou +
+                        "</div><div class='cp-ul-li-area-old_price'>4" + res[i].old_price.trim().slice(1) +
+                        "</div><div class='cp-ul-li-area-price'><p>" + res[i].price +
+                        "</p><p class='jiahao iconfont iconwei-'></p></div></div></li>"
+                }
+                $('.cp-ul').eq(0).html(html)
+                for (var i = 15; i < 30; i++) {
+                    if (res[i].old_price == "") {
+                        $('.cp-ul-li-area-old_price').html("")
+                    }
+                    html2 +=
+                        " <li class='cp-ul-li'><div class='cp-ul-li-area'><div class='cp-ul-li-area-Img'><a href=''><img src=" +
+                        res[i].img_url + " alt=''></a></div><div class='cp-ul-li-area-text'>" + res[i]
+                        .title + "</div><div class='cp-ul-li-area-title'>" + res[i].zhekou +
+                        "</div><div class='cp-ul-li-area-old_price'>￥" + res[i].old_price.trim().slice(1) +
+                        "</div><div class='cp-ul-li-area-price'><p>" + res[i].price +
+                        "</p><p class='jiahao iconfont iconwei-'></p></div></div></li>"
+                }
+                $('.cp-ul').eq(1).html(html2)
+                for (var i = 30; i < 45; i++) {
+                    if (res[i].old_price == "") {
+                        $('.cp-ul-li-area-old_price').html("")
+                    }
+                    html3 +=
+                        " <li class='cp-ul-li'><div class='cp-ul-li-area'><div class='cp-ul-li-area-Img'><a href=''><img src=" +
+                        res[i].img_url + " alt=''></a></div><div class='cp-ul-li-area-text'>" + res[i]
+                        .title + "</div><div class='cp-ul-li-area-title'>" + res[i].zhekou +
+                        "</div><div class='cp-ul-li-area-old_price'>￥" + res[i].old_price.trim().slice(1) +
+                        "</div><div class='cp-ul-li-area-price'><p>" + res[i].price +
+                        "</p><p class='jiahao iconfont iconwei-'></p></div></div></li>"
+                }
+                $('.cp-ul').eq(2).html(html3)
+                for (var i = 45; i < 60; i++) {
+                    if (res[i].old_price == "") {
+                        console.log('123')
+                        $('.cp-ul-li-area-old_price').eq(i).html("")
+                    }
+                    html4 +=
+                        " <li class='cp-ul-li'><div class='cp-ul-li-area'><div class='cp-ul-li-area-Img'><a href=''><img src=" +
+                        res[i].img_url + " alt=''></a></div><div class='cp-ul-li-area-text'>" + res[i]
+                        .title + "</div><div class='cp-ul-li-area-title'>" + res[i].zhekou +
+                        "</div><div class='cp-ul-li-area-old_price'>￥" + res[i].old_price.trim().slice(1) +
+                        "</div><div class='cp-ul-li-area-price'><p>" + res[i].price +
+                        "</p><p class='jiahao iconfont iconwei-'></p></div></div></li>"
+                }
+                $('.cp-ul').eq(3).html(html4)
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size:100px;
+}
+.header{
+    width: 7.5rem;
+    height:0.6236rem;
+    /* background-color: blueviolet; */
+    position: relative;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items:center;
+}
+.header_h1{
+    width: 100%;
+    /* height: 0.8rem; */
+    line-height: 0.6236rem;
+    text-align: center;
+    font-size: 0.27rem;
+    font-weight: 400;
+    /* margin: 0 auto; */
+    position: absolute;
+    /* display: inline-block; */
+}
+.header_div_left{
+    float: left;
+    padding: 0 .26667rem;
+    height:0.6236rem;
+    top: 0rem;
+    font-size: 0.5rem;
+    line-height:0.6236rem;
+    /* position: absolute;  */
+}
+.header_div{
+    display: flex; 
+    float: right;
+}
+.header_div_right{
+    float: right;
+    padding: 0 .26667rem;
+    height:0.6236rem;
+    top: 0rem;
+    font-size: 0.5rem;
+    line-height:0.6236rem;
+    /* position: absolute; */ 
+}
+/* 以上是头部 */
+.banner{
+    width:7.5rem;
+    height: 4rem;
+    background-color: green;
+}
+.giftcard_class{
+    background: #fff;
+    padding: .15rem 0;
+    display: flex;
+    justify-content: center; 
+    width: 7.5rem;
+    height: 1.2713rem;
+}
+.giftcard_c_div{
+    width: 3.75rem;
+    height: 0.9258rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.giftcard_c_div_img{
+    width: 0.648rem;
+}
+.giftcard_c_div_p{
+    font-size: .17rem;
+    color: #666;   
+}
+/* 以上是百联卡图标 */
+.Hotsellercard{
+    height: 0.7919rem;
+    background-color: #fff;
+    padding: 0 0.216rem;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+}
+.Hotsellercard_div{
+   font-size: 0.244798rem;
+   color: #333;
+   font-weight: 700; 
+}
+.Hotsellercard_div1{
+    font-size: 0.1728rem;
+    color: #999; 
+}
+/* 以上是查看更多 */
+/* .scroll-list{
+    overflow: hidden;
+    overflow-x: scroll;
+    background-color: #fff;
+    height: 6.32rem;
+    margin-bottom: .26667rem;
+    -webkit-overflow-scrolling: touch;
+} */
+.banner1{
+    width:7.5rem;
+    height: 3.2rem;
+    margin-bottom: .14400rem;
+    /* background-color: green; */
+    overflow: hidden;
+
+} 
+.banner1-div{
+    width:100vw;
+    height: 3.2rem;
+    /* display: flex; */
+    /* flex-direction: row-reverse; */
+    /* justify-content: center; */
+     /* align-items: center;  */
+}
+.banner1-div1{
+    margin-left: .2rem;
+    width: 2.16rem !important;
+    height: 3.1964rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+ .banner1-img{
+    width: 2.16rem;
+    height: 2.16rem;
+}
+.banner1-img-div{
+    width: 2.16rem;
+    height: 1.0364rem;
+    padding: .0719982em;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    /* align-items: center; */
+
+}
+.banner1-img-div-p{
+    font-size: 0.201598rem;
+    /* white-space: normal; */
+    /* color: #444; */
+    /* font-size: .37333rem; */
+    /* line-height: .53333rem; */
+    height: .52rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    white-space: normal;
+}
+.banner1-img-div-p1{
+    font-size: 0.1728rem;
+    width: 1.7183rem;
+    margin-top: .05333rem;
+    color: #999;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* position: relative; */
+}
+.banner1-img-div-span{
+    float: right;
+    /* position: absolute; */
+    color: crimson;
+    font-size: .288rem !important;
+}
+.edn{
+    width: 7.5rem;
+    height: .63rem;
+    color: #b5b5b5;
+    font-size: .17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 220, 220);
+}
+
+.tab-box{
+    width: 7.5rem;
+    height: .7198rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tab-box-div{
+    width: 37.5rem;
+    height: .5242rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.tab-box-div-img{
+    width: .3023rem;
+    height: .3023rem; 
+}
+.tab-box-div-p{
+    font-size: .14rem;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+/* .nav{
+    width:7.5rem;
+    height: 1.6rem;
+    background-color: orange;
+} */
+/* .header_city{
+    color: #ff5c5c;
+    border: none;
+    margin-top: 0.1rem;
+}
+.search_box{
+    width: 4.7rem;
+    height: 0.4rem;
+    margin-left: 1.3rem;
+    margin-top: 0.1rem;
+    border-radius: 0.2rem;
+    background-color: #f3f3f3;
+    padding-left: 0.6rem;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    position: relative;
+}
+.search_box::after{
+    content: "";
+    display: inline-block;
+    z-index: 10;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url(../imges/123.png) no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header i{
+    color: #ff5c5c;
+    font-size: 0.4rem;
+} */

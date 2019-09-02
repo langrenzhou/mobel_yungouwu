@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/initializ.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet" href="../../css/css-lz/login.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="go_back">
+            <a href="../../index.html">
+                <i class="iconfont iconxiaoyu"></i>
+            </a>
+        </div>
+        <!--请输入你的手机号码 -->
+        <!-- <div class="login_box"> -->
+        <!-- <div class="login_box disp_n">
+            <div class="tip">
+                请输入你的手机号码
+            </div>
+            <div class="sign_phone">
+                <i class="iconfont iconshouji-copy-copy-copy-copy"></i>
+                <span>手机号码</span>
+            </div>
+            <div class="user_input">
+                <label for="u_input">+86</label>
+                <input id="u_input" type="text" placeholder="请输入手机号">
+            </div>
+            <div class="tip_info">
+                登录即创建帐户
+            </div>
+            <div class="protocol">
+                <i class="iconfont iconduihao duihao"></i>我已阅读并同意 百联通用户服务协议、安付宝用户服务协议、安付宝隐私权政策
+            </div>
+        </div> -->
+        <!-- 输入手机收到的验证码 -->
+        <!-- <div class="verify_code_box disp_n"> -->
+        <div class="verify_code_box">
+            <div class="tip">
+                请输入6位验证码
+            </div>
+            <div class="send_tip">
+                我们向<span> 1********** </span> 发送了一个验证码。请输入该验证码。
+            </div>
+            <div class="user_input">
+                <input id="u_input" type="text" placeholder="------">
+                <div>
+                    <span class="time"></span>
+                    <span class="resend">重新发送</span>
+                </div>
+            </div>
+            <div class="tip_info">
+                收不到短信，试试<span>语音验证码</span>
+            </div>
+        </div>
+        <!-- go_next -->
+        <div class="go_next pf">
+            <i class="iconfont iconnext"></i>
+        </div>
+    </div>
+    <!-- 弹出错误提示信息 -->
+    <div class="error_tips pa disp_n">
+        请输入正确的验证码
+    </div>
+    <!-- 遮罩层 滑块验证 -->
+    <!-- <div class="cover_slide_verify pa">
+        <div class="slide_verify">
+            <div class="title">
+                请完成安全验证<i class="iconfont iconclose"></i>
+            </div>
+            <div class="slide_box">
+                <div class="slide_pic">
+                    <img src="../../images/image_lz/slide_verify_pic.jpg">
+                </div>
+                <div class="slide pr">
+                    向右拖动滑块填充拼图
+                    <div class="slide_small pa">
+                        <i class="iconfont iconyoujiantou"></i>
+                    </div>
+                    <div class="slide_bg pa"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/zepto-master/src/zepto.js"></script>
+    <script src="../../js/zepto-master/src/event.js"></script>
+    <script src="../../js/zepto-master/src/touch.js"></script>
+    <script src="../../js/zepto-master/src/ajax.js"></script>
+    <script src="../../js/js-lz/verify_code.js"></script>
+</body>
+
+</html>

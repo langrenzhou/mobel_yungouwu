@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/css-MF/initializ.css">
+    <link rel="stylesheet" href="../../css/css-MF/goHome.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <style type="text/css">
+    </style>
+</head>
+<script src="../../js/rem.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=GpEa0mfnsmpyCfAe0GDZTXOlGTj9pzTR"></script>
+
+<body>
+
+    <div class="goHOmeWrap">
+        <div class="choiceAddress">
+            <div class="iconback">
+                <a href="../../index.html">
+                    <i class="iconfont iconjiantou_qiehuanzuo"></i>
+                </a>
+            </div>
+            <div>
+                <span>选择收货地址</span>
+            </div>
+        </div>
+        <div class="addressSearch">
+            <div class="addressContent">
+                <div class="iconSearch">
+                    <i class="iconfont iconsousuokuang iconsearch"></i>
+                </div>
+                <input type="text" class="inputAddressKey" placeholder="请输入收货地址，如小区名，写字楼名">
+            </div>
+        </div>
+        <div class="localtion">
+            <div class="localContainer">
+                <div class="curposition">
+                    <i class="iconfont iconsuodingweizhi fontnowlocal"></i>
+                    <div class="nowposition">
+                        <span>当前位置</span>
+                    </div>
+                </div>
+                <div class="reposition">
+                    <i class="iconfont iconshuaxin iconlocal"></i>
+                    <div class="refreshPosition">
+                        <span>重新定位</span>
+                    </div>
+                </div>
+            </div>
+            <div class="localAddress">
+                <span></span>
+            </div>
+            <div class="logo-container">
+                <button class="logo-now">
+                    <span>立即登录</span>
+                </button>
+                <div class="moreAddress">
+                    <span>登录后同步更多收货地址</span>
+                </div>
+            </div>
+            <div class="nearAddress">
+                <div>
+                    <i class="iconfont"></i>
+                    <span>附近地址推荐</span>
+                </div>
+                <div class="more">
+                    <span>更多</span>
+                    <i class="iconfont iconxiaoyuha iconmore"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="allmap"></div>
+    <script src="../../js/zepto-master/src/zepto.js"></script>
+    <script src="../../js/zepto-master/src/event.js"></script>
+    <script src="../../js/zepto-master/src/touch.js"></script>
+    <script src="../../js/js-MF/gohome.js"></script>
+</body>
+
+</html>
