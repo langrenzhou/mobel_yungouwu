@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/css-dc/list_left.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+</head>
+<div class="search">
+    <div class="frame_box">
+        <i class="iconfont iconsousuokuang"></i>
+        <p>搜索你想找的商品</p>
+    </div>
+    <div class="more">
+        <i class="iconfont iconshenglvehao iconfontActive"></i>
+        <i class="iconfont iconclose "></i>
+    </div>
+
+</div>
+<div class="nav">
+    <div class="box">
+        <a href="../../index.html">
+        <i class="iconfont iconshouye1"></i>
+        <p class="title">首页</p>
+        </a>
+    </div>
+    <div class="box">
+        <a href="../html-MF/search.html">
+        <i class="iconfont iconsousuo"></i>
+        <p class="title">搜索</p>
+        </a>
+    </div>
+    <div class="box">
+        <a href="#">
+        <i class="iconfont iconfenlei1"></i>
+        <p class="title">分类</p>
+        </a>
+    </div>
+    <div class="box">
+        <a href="../html-lz/shopping_car.html">
+        <i class="iconfont icongouwuche"></i>
+        <p class="title">购物车</p>
+        </a>
+    </div>
+    <div class="box">
+        <a href="../html-lz/personalCenter.html">
+        <i class="iconfont iconxingmingyonghumingnicheng"></i>
+        <p class="title">我的</p>
+        </a>
+    </div>
+</div>
+
+<div class="wrap fl">
+    <ul class="box"></ul>
+</div>
+
+<div class="content_wrap fl">
+    <ul class="box"></ul>
+</div>
+
+<body>
+    <script src="../../js/bscroll.min.js"></script>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/zepto-master/src/zepto.js"></script>
+    <script src="../../js/zepto-master/src/event.js"></script>
+    <script src="../../js/zepto-master/src/touch.js"></script>
+    <script src="../../js/zepto-master/src/ajax.js"></script>
+    <script src="../../js/zepto-master/src/fx.js"></script>
+    <script>
+        var bs = new BScroll(".wrap", {
+            scrollY: true,
+            probeType: 2,
+            click:true
+        });
+        var bs = new BScroll(".content_wrap", {
+            scrollY: true,
+            probeType: 2,
+            click:true
+        });
+        left_list();
+
+        function left_list(index) {
+            var str = '';
+            $.ajax({
+                type: 'POST',
+                url: '../../php/php-dc/list-dc.php',
+                dataType: 'json',
+                error: function () {
+                    console.log('404')
+                },
+                success: function (res) {
+                    var str = '';
+                    for (key in res) {
+                        str += `
+                        <li class="list">${res[key].title}</li>
+                        `;
+                    }
+                    $('.wrap>.box').html(str);
+                    $('.box>.list:first-child').addClass('active');
+                    click();
+                },
+            });
+        };
+        // 下面是点击的时候右侧出现商品展示
+        function click() {
+            $('.list').tap(function () {
+                var index = $(this).index() + 1;
+                $(this).addClass("active").siblings().removeClass("active");
+                right_content(index)
+            });
+        };
+        right_content(1)
+        // 下面是右边的小标题ajax请求
+        function right_content(index) {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    index: index,
+                },
+                url: '../../php/php-dc/right_content.php',
+                error: function () {
+                    console.log(404);
+                },
+                success: function (res) {
+                    // console.log(index);
+                    var str = '';
+                    for (key in res) {
+                        str += `
+                        <li class="item_list clearfix">
+                            <p class="li_header">${res[key].li_head}</p>
+                            <ul class="pro_content"></ul>
+                        </li>
+                        `;
+                        // console.log(key)
+                    };
+                    $('.content_wrap>.box').html(str);
+                    list_content(index);
+                },
+            });
+        }
+        // list_content(1)
+        // 下面是右边的商品详情请求
+        function list_content(index) {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    num: index
+                },
+                url: '../../php/php-dc/more_select.php',
+                error: function () {
+                    console.log(404);
+                },
+                success: function (pro_content) {
+                    var length = $(".content_wrap .item_list").length;
+                    for (var i = 0; i < length; i++) {
+                        content_list(i)
+                    }
+
+                    function content_list(aaa) {
+                        for (key in pro_content) {
+                            var str = '';
+                            if (pro_content[key].pro_id == aaa) {
+                                str += `
+                                <li class="pro_list">
+                    <a href="./pro_list.html"><img src="${pro_content[key].img_url}" alt=""></a>
+                    <a href="javaScripot:;" class="pro_title">${pro_content[key].pro_title}</a>
+                    </li>
+                                `;
+                                $(' .item_list').eq(i).find('ul').append(str)
+                            };
+                        }
+                    }
+
+                }
+            })
+        };
+        // 下面是点击三个点导航的动画
+        var flag = true;
+        $(".search>.more>.iconfont").tap(function () {
+            if (flag) {
+                $(this).removeClass('iconfontActive').siblings().addClass('iconfontActive');
+                $('.nav').animate({
+                    top: '0.88rem',
+                }, 500, function () {
+                    $(this).css({
+                        zIndex: '30'
+                    })
+                });
+                flag = false;
+            } else {
+                $(this).removeClass('iconfontActive').siblings().addClass('iconfontActive');
+                $('.nav').css({
+                    zIndex: '10'
+                }).animate({
+                    top: '-2rem',
+                },500)
+                flag = true;
+            };
+        });
+        $('.frame_box').tap(function(){
+            location.href='../html-MF/search.html';
+        })
+    </script>
+</body>
+
+</html>

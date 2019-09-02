@@ -17,6 +17,7 @@ $(document).ready(function () {
     var scrollTop = new BScroll(".scrollWrap", {
         probeType: 3,
         bounce: false,
+        click:true
     })
 
     scrollTop.on("scroll", function (e) {
@@ -29,11 +30,8 @@ $(document).ready(function () {
         //懒加载初始化
         echo.init({
             offset: -100,
-            throttle: 200 //设置图片延迟加载的时间
+            throttle: 0 //设置图片延迟加载的时间
         })
-        // $('.lazy').lazyload({
-        //     threshold: 0
-        // });
     })
 
     //betterScroll初始化
@@ -81,6 +79,10 @@ $(document).ready(function () {
             `
             $(".hot-list").html(html);
         }
+    })
+    $(".hot-list").on("li","tap",function(){
+        console.log(1)
+        // window.location.href="./html/html-MF/super-group.html"
     })
     //拼团
     var pintuanContainer = new BScroll(".pintuan-wrap", {

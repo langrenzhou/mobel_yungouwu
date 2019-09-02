@@ -57,6 +57,7 @@
 
 .top-nav-list li {
   text-align: center;
+  display: flex;
 }
 
 .header .close {

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>八佰伴</title>
+    <link rel="stylesheet" href="../../css/css-LR/babaiban.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="head">
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/01.webp" alt="">
+        </a>
+    </div>
+    <!--  母婴生活-->
+    <div class="mysh">
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/02.webp" alt="">
+        </a>
+    </div>
+    <!-- 母婴生活产品 -->
+    <div class="mysh-cp">
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/03.jpg" alt="">
+        </a>
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/04.jpg" alt="">
+        </a>
+    </div>
+    <ul class="mysh-cp-ul">
+        </ul>
+    <!-- 大牌美妆 -->
+    <div class="dpmz">
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/03.webp" alt="">
+        </a>
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/05.jpg" alt="">
+        </a>
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/06.jpg" alt="">
+        </a>
+    </div>
+    <ul class="mysh-cp-ul">
+        </ul>
+    <!-- 品质家具 -->
+    <div class="pzjj">
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/07.webp" alt="">
+        </a>
+        <a href="">
+            <img src="../../images/images_Lr/babaiban_LR/08.jpg" alt="">
+        </a>
+        <ul class="mysh-cp-ul"></ul>
+    </div>
+    <!-- 回到顶部 -->
+    <a class="hddb-a">
+        <div class="hddb iconfont iconshuangshangjiantou-"></div>
+    </a>
+    <script src="../../js/js_LR/zyl.js"></script>
+    <script src="../../js/js_LR/zepto_LR.js"></script>
+    <script src="../../js/js_LR/event_LR.js"></script>
+    <script src="../../js/js_LR/touch_LR.js"></script>
+    <script src="../../js/js_LR/ajax_LR.js"></script>
+    <script>
+        $.ajax({
+            url: "../../php/php_LR/babaiban.php",
+            dataType: "json",
+            error: function () {
+                alert('请求失败')
+            },
+            success: function (asd) {
+                var html = ""
+                var html2 = ""
+                var html3 = ""
+                for (var i = 0; i < 27; i++) {
+                    html +=
+                        "<li class='mysh-cp-ul-li'><div class='mysh-cp-ul-li-area'><div class='mysh-cp-ul-li-area-IMG'><a href=''><img src=" +
+                        asd[i].img_url + " alt=''></a></div><div class='mysh-cp-ul-li-area-title'>" + asd[i]
+                        .text + "</div><div class='mysh-cp-ul-li-area-zhekou'>" + asd[i].zhekou +
+                        "</div><div class='mysh-cp-ul-li-area-price'><div class='mysh-cp-ul-li-area-price-price'>￥" +
+                        asd[i].price +
+                        "</div><div class='mysh-cp-ul-li-area-jiahao'><div class='jiahao iconfont iconwei-'></div></div></div></div></li>"
+                }
+                $('.mysh-cp-ul').eq(0).html(html)
+                for (var i = 27; i < 57; i++) {
+                    html2 +=
+                        "<li class='mysh-cp-ul-li'><div class='mysh-cp-ul-li-area'><div class='mysh-cp-ul-li-area-IMG'><a href=''><img src=" +
+                        asd[i].img_url + " alt=''></a></div><div class='mysh-cp-ul-li-area-title'>" + asd[i]
+                        .text + "</div><div class='mysh-cp-ul-li-area-zhekou'>" + asd[i].zhekou +
+                        "</div><div class='mysh-cp-ul-li-area-price'><div class='mysh-cp-ul-li-area-price-price'>￥" +
+                        asd[i].price +
+                        "</div><div class='mysh-cp-ul-li-area-jiahao'><div class='jiahao iconfont iconwei-'></div></div></div></div></li>"
+                }
+                $('.mysh-cp-ul').eq(1).html(html2)
+                for (var i = 57; i < 72; i++) {
+                    html3 +=
+                        "<li class='mysh-cp-ul-li'><div class='mysh-cp-ul-li-area'><div class='mysh-cp-ul-li-area-IMG'><a href=''><img src=" +
+                        asd[i].img_url + " alt=''></a></div><div class='mysh-cp-ul-li-area-title'>" + asd[i]
+                        .text + "</div><div class='mysh-cp-ul-li-area-zhekou'>" + asd[i].zhekou +
+                        "</div><div class='mysh-cp-ul-li-area-price'><div class='mysh-cp-ul-li-area-price-price'>￥" +
+                        asd[i].price +
+                        "</div><div class='mysh-cp-ul-li-area-jiahao'><div class='jiahao iconfont iconwei-'></div></div></div></div></li>"
+                }
+                $('.mysh-cp-ul').eq(2).html(html3)
+            }
+        })
+        $(".hddb-a").tap(function () {
+            var top = $('html,body').scrollTop()
+            var top_s = top / 100
+            
+            
+           
+            var timer = setInterval(function () {
+                top=top - top_s
+                if (top <= 0) {
+                    clearInterval(timer)
+                }
+                $('html,body').scrollTop(top)
+            }, 10)
+        })
+    </script>
+</body>
+
+</html>

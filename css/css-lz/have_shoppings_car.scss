@@ -1,0 +1,370 @@
+.disp_f {
+    display: flex;
+}
+
+.disp_n {
+    display: none;
+}
+
+.js_ct_bt {
+    justify-content: space-between;
+}
+
+.js_ct_ar {
+    justify-content: space-around;
+}
+
+.js_ct_c {
+    justify-content: center;
+}
+
+.js_ct_st {
+    justify-content: flex-start;
+}
+
+.js_ct_end {
+    justify-content: flex-end;
+}
+
+.align_it_c {
+    align-items: center;
+}
+
+.align_it_end {
+    align-items: flex-end;
+}
+
+.align_ct_ar {
+    align-content: space-around;
+}
+
+.align_sf_c {
+    align-self: center;
+}
+
+.client_w {
+    width: 100vw;
+}
+
+.client_h {
+    height: 100vh;
+}
+
+.box_siz_b {
+    box-sizing: border-box;
+}
+
+.text_align_r {
+    text-align: right;
+}
+
+.text_align_c {
+    text-align: center;
+}
+
+$fs:font-size;
+$h:height;
+$lh:line-height;
+$bkg:background;
+
+@mixin fun($n1, $n2) {
+    width: $n1;
+    height: $n2;
+
+}
+
+.header_wrap {
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    .header {
+        #{$h}: .65rem;
+        #{$lh}: .65rem;
+        @extend .disp_f;
+        #{$fs}: .26rem;
+        @extend .js_ct_bt;
+        @extend .client_w;
+        @extend .box_siz_b;
+        padding: 0 .15rem;
+        #{$bkg}-color: #f5f5f5;
+
+        a {
+            color: #000;
+        }
+
+        i {
+            #{$fs}: .3rem;
+        }
+
+        .sign {
+            @include fun(.307rem, 100%);
+        }
+
+        .sign>i:last-child {
+            top: 0;
+            left: 0;
+            color: #fe8477;
+            display: none;
+        }
+    }
+}
+
+.header_nav {
+    ul {
+        @extend .client_w;
+        height: 1rem;
+        @extend .disp_f;
+        @extend .js_ct_ar;
+
+        li {
+            height: 100%;
+            @extend .disp_f;
+            @extend .js_ct_c;
+            @extend .text_align_c;
+            flex-direction: column;
+
+            i {
+                #{$fs}: .3rem;
+            }
+        }
+    }
+
+}
+
+.header>span {
+    margin-right: -1.9rem;
+}
+
+.header_nav {
+    display: none;
+
+    ul {
+        #{$bkg}-color: #000;
+        border-bottom: .05rem solid #fe8477;
+
+        li {
+            color: #fff;
+
+            span {
+                #{$fs}: .17rem;
+                padding-top: .1rem;
+            }
+        }
+    }
+
+}
+
+.bs_wrap {
+    @include fun(100vw, 100vh);
+}
+
+.bs_cont input,
+.account_box input {
+    @extend .align_sf_c;
+    display: inline-block;
+    @include fun(.32rem, .32rem);
+    border-radius: 50%;
+    background-color: #e6133c;
+    color: #fff;
+    vertical-align: -.06rem;
+}
+
+.bs_cont {
+    min-height: 10rem;
+    padding-top: .65rem;
+}
+
+.classify_title {
+    @include fun(100%, .72rem);
+    @extend .box_siz_b;
+    padding: 0 .2rem;
+    background: #fff;
+    #{$fs}: .28rem;
+    color: #333;
+    #{$lh}: .72rem;
+
+    i {
+        #{$fs}: .28rem;
+        padding: 0 .1rem;
+    }
+
+    span {
+        padding-left: .5rem;
+    }
+}
+
+.product_box {
+    #{$fs}: .28rem;
+    @extend .client_w;
+
+    .products {
+        border: {
+            bottom: 1px solid #dedede;
+            top: 1px solid #dedede;
+        }
+
+        width: 100%;
+        @extend .box_siz_b;
+        padding: .2rem;
+        @extend .disp_f;
+        @extend .js_ct_bt;
+    }
+
+    .product_pic {
+        @include fun(1.5rem, 1.5rem);
+        border: .5px solid #ccc;
+        border-radius: 0.04rem;
+
+        img {
+            @include fun(100%, 100%);
+        }
+
+        .inventory {
+            left: 0;
+            bottom: 0;
+            @extend .disp_f;
+            @extend .js_ct_c;
+            @extend .text_align_c;
+            @include fun(100%, .4rem);
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+        }
+    }
+
+    .product_info {
+        width: 5.12rem;
+
+        .title {
+            @include fun(100%, .34rem);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            #{$fs}: .24rem;
+            color: #333;
+        }
+
+        .sports_item {
+            @extend .disp_f;
+            padding-top: .32rem;
+        }
+
+        .rush_purchase,
+        .reserve {
+            @include fun(.72rem, .34rem);
+            @extend .disp_f;
+            @extend .js_ct_c;
+            @extend .text_align_c;
+            border: 1px solid #eb5572;
+            #{$fs}: .24rem;
+            color: #eb5572;
+            border-radius: 0.04rem;
+            background: #fff;
+            margin-right: .08rem;
+        }
+
+        .reserve {
+            @include fun(.8rem, .34rem);
+
+            i {
+                height: 100%;
+                #{$fs}: .24rem;
+                @extend .disp_f;
+                @extend .align_it_c;
+            }
+        }
+
+        .sprice_num {
+            @include fun(100%, .52rem);
+            @extend .disp_f;
+            @extend .js_ct_bt;
+            @extend .align_it_end;
+
+            div {
+                @extend .disp_f;
+            }
+
+            .unit_price {
+                #{$fs}: 0.28rem;
+                color: #e6133c;
+            }
+
+            .minus,
+            .num,
+            .plus {
+                display: inline-block;
+                @include fun(.44rem, .44rem);
+                cursor: pointer;
+                border: .5px solid #757575;
+                @extend .text_align_c;
+                #{$lh}: .44rem;
+            }
+
+            .num {
+                border: {
+                    left: none;
+                    right: none;
+                }
+            }
+        }
+    }
+}
+
+.account_box {
+    left: 0;
+    bottom: 0;
+    @include fun(100vw, 1rem);
+    @extend .box_siz_b;
+    padding-left: .2rem;
+    @extend .disp_f;
+    @extend .js_ct_bt;
+    @extend .align_it_c;
+    #{$fs}: 0.24rem;
+    border-top: .5px solid #e6e6e6;
+
+    .total_discounts {
+        @include fun(3.98rem, 100%);
+        @extend .disp_f;
+        flex-direction: column;
+        @extend .js_ct_ar;
+
+        .total,
+        .discounts {
+            @extend .disp_f;
+            @extend .js_ct_bt;
+        }
+
+        .total {
+            margin-top: .1rem;
+            #{$fs}: 0.28rem;
+            color: #333;
+
+            .total_price {
+                #{$fs}: 0.36rem;
+                color: #e6133c;
+                ;
+            }
+        }
+
+        .discounts {
+            color: #999;
+        }
+    }
+
+}
+
+.account_box>span {
+    #{$fs}: 0.28rem;
+    color: #333;
+    margin-left: -.1rem;
+}
+
+.close_account {
+    @extend .disp_f;
+    @include fun(2rem, 100%);
+    background: #e6133c;
+    @extend .js_ct_c;
+    @extend .align_it_c;
+    font-size: 0.36rem;
+    color: #fff;
+}

@@ -1,0 +1,321 @@
+@mixin fun($n1, $n2) {
+    width: $n1;
+    height: $n2;
+}
+
+.disp_f {
+    display: flex;
+}
+
+.disp_b {
+    display: block;
+}
+
+.disp_n {
+    display: none;
+}
+
+.box_siz_b {
+    box-sizing: border-box;
+}
+
+.js_ct_bt {
+    justify-content: space-between;
+}
+
+.js_ct_c {
+    justify-content: center;
+}
+
+.align_s_c {
+    align-self: center;
+}
+
+.align_it_end {
+    align-items: flex-end;
+}
+
+.align_it_c {
+    align-items: center;
+}
+
+$fs:font-size;
+
+.wrap {
+    @include fun(100vw, 100vh);
+    padding: .3rem;
+    @extend .box_siz_b;
+}
+
+.go_back {
+    height: 0.6rem;
+    @extend .disp_f;
+
+    a {
+        color: #000;
+        @extend .align_s_c;
+    }
+
+    a,
+    i {
+        #{$fs}: .4rem;
+        font-weight: bold;
+    }
+}
+
+.login_box,
+.verify_code_box {
+    width: 100%;
+    padding: .5rem .7rem;
+    @extend .box_siz_b;
+
+    .tip {
+        #{$fs}: .5rem;
+        color: #333;
+        font-weight: 100;
+    }
+
+    .sign_phone {
+        @include fun(100%, 1.44rem);
+        @extend .disp_f;
+        @extend .align_it_end;
+        color: #999;
+
+        i {
+            #{$fs}: .4rem;
+            margin-bottom: -.05rem;
+        }
+
+        span {
+            #{$fs}: .24rem;
+        }
+    }
+
+
+
+    .user_input {
+        @include fun(100%, 1rem);
+        border-bottom: .05rem solid red;
+        #{$fs}: .4rem;
+        @extend .disp_f;
+        @extend .align_it_c;
+
+        label {
+            color: #333;
+        }
+
+        #u_input {
+            color: #999;
+            outline: none;
+            border: none;
+            padding: 0 .5rem;
+        }
+    }
+
+    .tip_info,
+    .protocol {
+        @include fun(100%, .86rem);
+        padding-top: .5rem;
+        @extend .box_siz_b;
+        #{$fs}: .24rem;
+        color: #999;
+    }
+
+    .protocol {
+        @include fun(100%, 1.22rem);
+
+        .tap_style {
+            vertical-align: middle;
+        }
+
+        #duihao {
+            display: inline-block;
+            @include fun(.3rem, .3rem);
+            margin-right: .15rem;
+            border: .01rem solid #999;
+            #{$fs}: .2rem;
+            color: red;
+            line-height: .3rem;
+            text-align: center;
+        }
+    }
+}
+
+.verify_code_box {
+
+    .send_tip {
+        @include fun(100%, 1.34rem);
+        padding-top: .5rem;
+        @extend .box_siz_b;
+        #{$fs}: .28rem;
+        color: #999;
+    }
+
+    .user_input {
+        @extend .js_ct_bt;
+        color: #333;
+
+        #u_input {
+            @extend .box_siz_b;
+            @include fun(3rem, 100%);
+        }
+
+        // input::-webkit-input-placeholder {
+        //     font-size: .4rem;
+        // }
+
+        // input::-moz-placeholder {
+        //     font-size: .4rem;
+        // }
+
+        // input::-ms-input-placeholder {
+        //     font-size: .4rem;
+        // }
+    }
+
+    .tip_info {
+        text-align: right;
+        padding-top: .2rem;
+
+        span {
+            color: red;
+        }
+    }
+
+}
+
+.go_next .go_next_color {
+    color: red;
+}
+
+.go_next {
+    right: 0;
+    bottom: 0;
+    @include fun(2.1rem, 2.1rem);
+    line-height: 2.1rem;
+    text-align: center;
+
+    i {
+        #{$fs}: 1.5rem;
+        color: #999;
+        // color: red;
+    }
+}
+
+.error_tips {
+    @include fun(3rem, .5rem);
+    right: 2.5rem;
+    bottom: 4.95rem;
+    background-color: lightgreen;
+    color: #000;
+    #{$fs}: .24rem;
+    line-height: .5rem;
+    text-align: center;
+    border-radius: .05rem;
+}
+
+
+.cover_slide_verify {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    @extend .disp_f;
+    @extend .js_ct_c;
+    @extend .align_it_c;
+
+    .slide_verify {
+        width: 3.5rem;
+        height: 0;
+        border: .5px solid #e4e7eb;
+
+        background-color: #fff;
+        @extend .box_siz_b;
+
+        .title {
+            @include fun(100%, .5rem);
+            padding: 0 .15rem;
+            @extend .box_siz_b;
+            border-bottom: .5px solid #e4e7eb;
+            #{$fs}: .16rem;
+            color: #45494c;
+            @extend .disp_f;
+            @extend .js_ct_bt;
+            @extend .align_it_c;
+        }
+
+        .slide_box {
+            padding: .15rem;
+
+            .slide_pic {
+                @include fun(100%, 1.6rem);
+                margin-bottom: .15rem;
+
+                .bg_pic {
+                    @include fun(100%, 100%);
+                }
+
+                .small_pic {
+                    @include fun(0.61rem, 100%);
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            .slide {
+                @include fun(100%, .4rem);
+                #{$fs}: .14rem;
+                color: #45494c;
+                @extend .box_siz_b;
+                border: .5px solid #e4e7eb;
+                background-color: #ccc;
+                @extend .disp_f;
+                @extend .js_ct_c;
+                @extend .align_it_c;
+            }
+
+            .slide_small,
+            .slide_bg {
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+
+            .slide_small {
+                @include fun(.4rem, 100%);
+                border: .5px solid #333;
+                @extend .disp_f;
+                @extend .js_ct_c;
+                @extend .align_it_c;
+            }
+
+            .slide_small>i:last-child {
+                color: green;
+            }
+
+            .bg_blue {
+                background-color: rgb(49, 217, 223);
+                border: .5px solid rgb(73, 117, 236);
+            }
+
+            .move_style {
+                background-color: rgb(73, 117, 236);
+                color: #fff;
+                border-color: rgb(73, 117, 236);
+            }
+
+            .suc_bg_green {
+                background-color: rgb(158, 180, 164);
+                border: .5px solid rgb(64, 170, 73);
+            }
+
+            .suc_move_style {
+                background-color: rgb(64, 170, 73);
+                color: #fff;
+                border-color: rgb(64, 170, 73);
+            }
+
+        }
+    }
+}

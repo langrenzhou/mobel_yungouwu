@@ -112,7 +112,11 @@ $(function () {
                             <span class="limit-num">${res[i].buy_num}</span>
                             <span>件</span>
                         </div>
-                        <div class="buy"><span>马上抢</span></div>
+                        <div class="buy">
+                        <a href="../html-lz/shopping_car.html">
+                        <span>马上抢</span>
+                        </a>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -214,7 +218,9 @@ $(function () {
                         </div>
                     </div>
                     <div class="temai-cart">
+                    <a href="../html-lz/shopping_car.html">
                         <i class="iconfont icongouwuche2 iconcart"></i>
+                        </a>
                     </div>
                 </li>
                     `;

@@ -129,6 +129,9 @@
     left: 0;
     z-index: 2;
 }
+.stick-container a,.scroll-top a{
+    display: flex;
+}
 .scroll-top-stick .search-container{
     background: #f4f4f4;
 }
@@ -182,6 +185,14 @@
     margin-right: 0.46rem;
     align-items: center;
 }
+.lookmore a{
+    color: #999999;
+}
+.lookmore .fontmore{
+    font-size: 0.16rem;
+    color: #999999;
+}
+
 .hot-img img{
     width: 3.14rem;
     height: 0.34rem;

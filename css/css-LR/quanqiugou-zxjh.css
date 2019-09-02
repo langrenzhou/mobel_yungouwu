@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100px;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.head {
+    width: 7.5rem;
+    font-size: 0;
+}
+
+.header {
+    width: 7.5rem;
+    font-size: 0;
+}
+
+.header-s {
+    width: 7.5rem;
+    font-size: 0;
+}
+
+.qqrqmzdp {
+    width: 7.5rem;
+    font-size: 0;
+}
+
+.cp {
+    width: 7.5rem;
+}
+
+.cp-ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #F6E5D5;
+}
+
+.cp-ul-li {
+    width: 2.3rem;
+    height: 4.2rem;
+    background-color: white;
+    margin-top: 0.05rem;
+    font-size: 0.26rem;
+}
+.cp-ul-li-area{
+    width: 2.2rem;
+    margin: 0 auto;
+}
+.cp-ul-li-area-text{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;/*显示几行*/
+    overflow: hidden;
+}
+.cp-ul-li-area-title{
+    width: 100%;
+    line-height: 0.4rem;
+    height:0.4rem;
+    border: 0.01rem solid red;
+    text-align: center;
+    color: red;
+}
+.cp-ul-li-area-old_price{
+    color: #ccc;
+    text-decoration: line-through;
+}
+.cp-ul-li-area-price{
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ color: red;
+}
+.cp-ul-li-area-price .jiahao{
+    font-size: 0.3rem;
+}
+.jiahao{
+    width: 0.4rem;
+    height: 0.4rem;
+    border: 0.01rem solid red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 0.4rem;
+}
+.bzshzxjh{
+    width: 7.5rem;
+    font-size: 0;
+}
+.sjyh{
+    width: 7.5rem;
+    font-size: 0;
+}
+.gd{
+    width: 7.5rem;
+    font-size: 0;
+}
