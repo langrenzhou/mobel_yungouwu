@@ -9,7 +9,8 @@ $(function () {
     })
     superGrouds.on("scroll", function () {
         let top = $(".temai-wrap").offset().top;
-        if (top < 100) {
+        console.log(top)
+        if (top <100) {
             $(".temai-header-wrap").css("display", "block");
         } else {
             $(".temai-header-wrap").css("display", "none");
